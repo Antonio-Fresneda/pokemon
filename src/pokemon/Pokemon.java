@@ -3,7 +3,7 @@ package pokemon;
 import java.util.Arrays;
 
 public class Pokemon {
-	
+
 	private String nombre;
 	private String mote;
 	private int vitalidad;
@@ -21,7 +21,8 @@ public class Pokemon {
 	private String estado;
 	private String objeto;
 	private int experiencia;
-	public pokemon() {
+
+	public Pokemon() {
 		this.nombre = "";
 		this.mote = "";
 		this.vitalidad = 0;
@@ -39,10 +40,10 @@ public class Pokemon {
 		this.experiencia = 0;
 	}
 
-	public pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
+	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, String[] movimiento, int fertilidad,
 			String sexo, String[] tipo, String estado, String objeto, int experiencia) {
-	
+
 		super();
 		this.nombre = nombre;
 		this.mote = mote;
@@ -226,6 +227,3 @@ public class Pokemon {
 
 	}
 }
-
-
-
