@@ -15,7 +15,7 @@ public class Pokemon {
 	private int velocidad;
 	private int estamina;
 	private int nivel;
-	private String[] movimiento = new Movimiento[4];
+	private Movimiento[] movimiento = new Movimiento[4];
 	private int fertilidad;
 	private String sexo;
 	private String[] tipo = new String[2];
@@ -42,7 +42,7 @@ public class Pokemon {
 	}
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
-			int defensaEspecial, int velocidad, int estamina, int nivel, String[] movimiento, int fertilidad,
+			int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento, int fertilidad,
 			String sexo, String[] tipo, String estado, String objeto, int experiencia) {
 
 		super();
@@ -145,11 +145,11 @@ public class Pokemon {
 		this.nivel = nivel;
 	}
 
-	public String[] getMovimiento() {
+	public Movimiento[] getMovimiento() {
 		return movimiento;
 	}
 
-	public void setMovimiento(String[] movimiento) {
+	public void setMovimiento(Movimiento[] movimiento) {
 		this.movimiento = movimiento;
 	}
 
@@ -234,8 +234,9 @@ public class Pokemon {
 		
 	}
 	
-	public void Descansar() {	
-	
+	public void Descansar(int estamina) {	
+		estamina=estamina+50;
+		
 	}
 	
 	public void AprenderMovimiento() {
