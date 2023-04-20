@@ -196,9 +196,6 @@ public class Pokemon {
 		return experiencia;
 	}
 
-	public void setExperiencia(int experiencia) {
-		this.experiencia = experiencia;
-	}
 
 	@Override
 	public String toString() {
