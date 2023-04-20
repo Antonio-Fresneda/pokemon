@@ -3,7 +3,8 @@ package pokemon;
 import java.util.Arrays;
 
 public class Pokemon {
-
+	
+	private int id_pokemon;
 	private String nombre;
 	private String mote;
 	private int vitalidad;
@@ -14,7 +15,7 @@ public class Pokemon {
 	private int velocidad;
 	private int estamina;
 	private int nivel;
-	private String[] movimiento = new String[4];
+	private String[] movimiento = new Movimiento[4];
 	private int fertilidad;
 	private String sexo;
 	private String[] tipo = new String[2];
@@ -196,6 +197,9 @@ public class Pokemon {
 		return experiencia;
 	}
 
+	public void setExperiencia(int experiencia) {
+		this.experiencia = experiencia;
+	}
 
 	@Override
 	public String toString() {
@@ -223,4 +227,21 @@ public class Pokemon {
 		}
 
 	}
+	public void AtacarPokemon() {
+	}
+	
+	public void ComprobarVentaja() {
+		
+	}
+	
+	public void Descansar() {	
+	
+	}
+	
+	public void AprenderMovimiento() {
+		
+	}
+
+
+
 }
