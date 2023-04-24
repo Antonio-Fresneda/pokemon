@@ -1,0 +1,8 @@
+package pokemon;
+
+public class Tipo {
+
+	public static String ACERO, AGUA, BICHO, DRAGÓN, ELÉCTRICO, FANTASMA, FUEGO, HADA, HIELO, LUCHA, NORMAL, PLANTA,
+			PSÍQUICO, ROCA, SINIESTRO, TIERRA, VENENO, VOLADOR;
+
+}
