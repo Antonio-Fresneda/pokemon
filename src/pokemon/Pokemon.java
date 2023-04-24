@@ -39,6 +39,8 @@ public class Pokemon {
 		this.estado = "";
 		this.objeto = "";
 		this.experiencia = 0;
+		
+		
 	}
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
