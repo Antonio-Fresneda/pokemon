@@ -3,7 +3,7 @@ package pokemon;
 import java.util.Arrays;
 
 public class Pokemon {
-	
+
 	private int id_pokemon;
 	private String nombre;
 	private String mote;
@@ -18,10 +18,12 @@ public class Pokemon {
 	private Movimiento[] movimiento = new Movimiento[4];
 	private int fertilidad;
 	private String sexo;
-	private String[] tipo = new String[2];
+	private Tipo tipo1;
+	private Tipo tipo2;
 	private String estado;
 	private String objeto;
 	private int experiencia;
+	private int ventaja;
 
 	public Pokemon() {
 		this.nombre = "";
@@ -39,13 +41,13 @@ public class Pokemon {
 		this.estado = "";
 		this.objeto = "";
 		this.experiencia = 0;
-		
-		
+		this.ventaja = 0;
+
 	}
 
 	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento, int fertilidad,
-			String sexo, String[] tipo, String estado, String objeto, int experiencia) {
+			String sexo, Tipo tipo1, Tipo tipo2, String estado, String objeto, int experiencia, int ventaja) {
 
 		super();
 		this.nombre = nombre;
@@ -61,10 +63,12 @@ public class Pokemon {
 		this.movimiento = movimiento;
 		this.fertilidad = fertilidad;
 		this.sexo = sexo;
-		this.tipo = tipo;
+		this.tipo1 = tipo1;
+		this.tipo2 = tipo2;
 		this.estado = estado;
 		this.objeto = objeto;
 		this.experiencia = experiencia;
+		this.ventaja = ventaja;
 	}
 
 	public String getNombre() {
@@ -171,12 +175,36 @@ public class Pokemon {
 		this.sexo = sexo;
 	}
 
-	public String[] getTipo() {
-		return tipo;
+	public int getId_pokemon() {
+		return id_pokemon;
 	}
 
-	public void setTipo(String[] tipo) {
-		this.tipo = tipo;
+	public void setId_pokemon(int id_pokemon) {
+		this.id_pokemon = id_pokemon;
+	}
+
+	public Tipo getTipo1() {
+		return tipo1;
+	}
+
+	public void setTipo1(Tipo tipo1) {
+		this.tipo1 = tipo1;
+	}
+
+	public Tipo getTipo2() {
+		return tipo2;
+	}
+
+	public void setTipo2(Tipo tipo2) {
+		this.tipo2 = tipo2;
+	}
+
+	public int getVentaja() {
+		return ventaja;
+	}
+
+	public void setVentaja(int ventaja) {
+		this.ventaja = ventaja;
 	}
 
 	public String getEstado() {
@@ -205,12 +233,12 @@ public class Pokemon {
 
 	@Override
 	public String toString() {
-		return "Pokemon [nombre=" + nombre + ", mote=" + mote + ", vitalidad=" + vitalidad + ", ataque=" + ataque
-				+ ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial + ", defensaEspecial=" + defensaEspecial
-				+ ", velocidad=" + velocidad + ", estamina=" + estamina + ", nivel=" + nivel + ", movimiento="
-				+ Arrays.toString(movimiento) + ", fertilidad=" + fertilidad + ", sexo=" + sexo + ", tipo="
-				+ Arrays.toString(tipo) + ", estado=" + estado + ", objeto=" + objeto + ", experiencia=" + experiencia
-				+ "]";
+		return "Pokemon [id_pokemon=" + id_pokemon + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
+				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
+				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
+				+ ", nivel=" + nivel + ", movimiento=" + Arrays.toString(movimiento) + ", fertilidad=" + fertilidad
+				+ ", sexo=" + sexo + ", tipo1=" + tipo1 + ", tipo2=" + tipo2 + ", estado=" + estado + ", objeto="
+				+ objeto + ", experiencia=" + experiencia + ", ventaja=" + ventaja + "]";
 	}
 
 	public void subirNivel(int experiencia, int nivel, int vitalidad, int ataque, int defensa, int ataqueEspecial,
@@ -229,22 +257,24 @@ public class Pokemon {
 		}
 
 	}
+
 	public void AtacarPokemon() {
 	}
-	
-	public void ComprobarVentaja() {
-		
+
+	public int ComprobarVentaja(int ventaja, Tipo ACERO, Tipo AGUA, Tipo BICHO, Tipo DRAGÓN, Tipo ELÉCTRICO,
+			Tipo FANTASMA, Tipo FUEGO, Tipo HADA, Tipo HIELO, Tipo LUCHA, Tipo NORMAL, Tipo PLANTA, Tipo PSÍQUICO,
+			Tipo ROCA, Tipo SINIESTRO, Tipo TIERRA, Tipo VENENO, Tipo VOLADOR) {
+
+		return ventaja;
 	}
-	
-	public void Descansar(int estamina) {	
-		estamina=estamina+50;
-		
+
+	public void Descansar(int estamina) {
+		estamina = estamina + 50;
+
 	}
-	
+
 	public void AprenderMovimiento() {
-		
+
 	}
-
-
 
 }
