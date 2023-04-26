@@ -277,4 +277,9 @@ public class Pokemon {
 
 	}
 
+	public void aumentarEstadisticas(int aumentoEstadisticas) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
