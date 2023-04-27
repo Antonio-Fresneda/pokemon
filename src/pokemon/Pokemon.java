@@ -246,13 +246,13 @@ public class Pokemon {
 		for (int i = 1; i < 100; i++) {
 			if (experiencia == 10 * nivel) {
 				i++;
-				vitalidad = (int) Math.floor(Math.random() * (1 - 5) + 5);
-				ataque = (int) Math.floor(Math.random() * (1 - 5) + 5);
-				defensa = (int) Math.floor(Math.random() * (1 - 5) + 5);
-				ataqueEspecial = (int) Math.floor(Math.random() * (1 - 5) + 5);
-				defensaEspecial = (int) Math.floor(Math.random() * (1 - 5) + 5);
-				velocidad = (int) Math.floor(Math.random() * (1 - 5) + 5);
-				estamina = (int) Math.floor(Math.random() * (1 - 5) + 5);
+				vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				ataqueEspecial = ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
 			}
 		}
 
@@ -282,4 +282,6 @@ public class Pokemon {
 		
 	}
 
-}
+	}
+
+
