@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		Connection connection = null;
-		String url = "jdbc:mysql://localhost:3306/Banco ";
+		String url = "jdbc:mysql://localhost:3306/pokemon ";
 		String login = "root";
 		String password = "";
 		try {
