@@ -12,12 +12,13 @@
             <Image url="@../../resources/img/EjTHX_lXcAAa0o8.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="91.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="EQUIPO" />
-      <Button layoutX="299.0" layoutY="305.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="COMBATE" />
-      <Button layoutX="91.0" layoutY="476.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CRIAR" />
-      <Button layoutX="91.0" layoutY="305.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CAPTURA" />
-      <Button layoutX="299.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CAJA" />
-      <Button layoutX="299.0" layoutY="476.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="TIENDA" />
-      <Button layoutX="192.0" layoutY="587.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="POKEDEX" />
+      <Button layoutX="91.0" layoutY="112.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="EQUIPO" />
+      <Button fx:id="btnCombate" layoutX="299.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnCombate" prefHeight="50.0" prefWidth="119.0" text="COMBATE" />
+      <Button layoutX="91.0" layoutY="405.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CRIAR" />
+      <Button fx:id="btnCaptura" layoutX="91.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnCaptura" prefHeight="50.0" prefWidth="119.0" text="CAPTURA" />
+      <Button layoutX="299.0" layoutY="112.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CAJA" />
+      <Button layoutX="299.0" layoutY="405.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="TIENDA" />
+      <Button layoutX="91.0" layoutY="562.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="POKEDEX" />
+      <Button layoutX="299.0" layoutY="562.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="ENTRENAR" />
    </children>
 </AnchorPane>
