@@ -124,7 +124,6 @@ CONSTRAINT POKE_MOVI2_FK FOREIGN KEY (ID_MOVIMIENTO) REFERENCES MOVIMIENTO (ID_M
 
 INSERT INTO pokedex VALUES(001,"BULBASUR","PLANTA","VENENO","https://images.wikidexcdn.net/mwuploads/wikidex/5/53/latest/20151123152943/Bulbasaur_oro.png?20151123152943",null,16);
 
-
 INSERT INTO pokedex VALUES (002,"Ivysaur","PLANTA""VENENO","https://images.wikidexcdn.net/mwuploads/wikidex/2/27/latest/20151123193448/Ivysaur_oro.png?20151123193448",null,32);
 
 INSERT INTO pokedex VALUES (003,"VENUSAUR","PLANTA","VENENO","https://images.wikidexcdn.net/mwuploads/wikidex/d/d8/latest/20151123231335/Venusaur_oro.png?20151123231335",null,null);
@@ -142,3 +141,9 @@ INSERT INTO pokedex VALUES (005,"CHARMELON","FUEGO",null,"https://images.wikidex
 INSERT INTO pokedex VALUES (006,"CHARIZARD","FUEGO","VOLADOR","https://images.wikidexcdn.net/mwuploads/wikidex/e/e1/latest/20151123185850/Charizard_oro.png?20151123185850",null,null);
 
 INSERT INTO pokedex VALUES (010,"CATERPIE","BICHO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/f/f0/latest/20151123185615/Caterpie_oro.png?20151123185615",null,10);
+
+INSERT INTO entrenador VALUES (001,"Luis",10000,null);
+
+INSERT INTO pokemon VALUES (001,001,001,null,'h',5,20,20,20,20,20,20,20,3,1);
+INSERT INTO pokemon VALUES (001,002,004,null,'h',5,20,20,20,20,20,20,20,3,1);
+INSERT INTO pokemon VALUES (001,003,007,null,'h',5,20,20,20,20,20,20,20,3,1);
