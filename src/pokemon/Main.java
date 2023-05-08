@@ -1,4 +1,4 @@
-
+ 
 package pokemon;
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		Connection connection = null;
@@ -27,6 +27,8 @@ public class Main {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(url, login, password);
 			System.out.println("Conexión establecida");
+			
+			launch(args);
 			// Acceso a datos utilizando el objeto de conexión . . .
 		} catch (SQLException sqle) {
 			Throwable e = null;
@@ -44,4 +46,18 @@ public class Main {
 
 	}
 
+
+
+	public void start(Stage primaryStage) throws Exception {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("../vista/InicioSesion.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setTitle("Pokemon");
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			primaryStage.setResizable(false);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
