@@ -6,28 +6,24 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0"
-	prefWidth="972.0" xmlns="http://javafx.com/javafx/19"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="controller.InicioSesionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicioSesionController">
 	<children>
-		<ImageView fitHeight="548.0" fitWidth="972.0"
-			pickOnBounds="true" preserveRatio="true">
+		<ImageView fitHeight="548.0" fitWidth="972.0" pickOnBounds="true" preserveRatio="true">
 			<image>
-				<Image
-					url="@../../resources/img/pokemon-Ho-Oh-1363655-wallhere.com.jpg" />
+				<Image url="@../../resources/img/pokemon-Ho-Oh-1363655-wallhere.com.jpg" />
 			</image>
 		</ImageView>
-		<PasswordField layoutX="88.0" layoutY="232.0"
-			prefHeight="32.0" prefWidth="149.0" promptText="Contraseña" />
-		<TextField layoutX="88.0" layoutY="186.0" prefHeight="32.0"
-			prefWidth="149.0" promptText="Usuario" />
-		<Button fx:id="btnLogin" layoutX="88.0" layoutY="279.0"
-			mnemonicParsing="false" onAction="#btnlogin" prefHeight="32.0"
-			prefWidth="60.0" text="Login" />
-		<Button layoutX="177.0" layoutY="279.0" mnemonicParsing="false"
-			prefHeight="32.0" prefWidth="60.0" text="Nuevo" />
+		<PasswordField fx:id="textoContraseña" layoutX="88.0" layoutY="232.0" prefHeight="32.0" prefWidth="149.0" promptText="Contraseña" />
+		<TextField fx:id="textoUsuario" layoutX="88.0" layoutY="186.0" prefHeight="32.0" prefWidth="149.0" promptText="Usuario" />
+		<Button fx:id="btnLogin" layoutX="88.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="32.0" prefWidth="60.0" text="Login" />
+		<Button fx:id="btnNuevo" layoutX="177.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefHeight="32.0" prefWidth="60.0" text="Nuevo" />
+      <Text fx:id="txtRigth" fill="#0c9400" layoutX="367.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡Usuario creado correctamente!" textAlignment="CENTER" wrappingWidth="238.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
 	</children>
 </AnchorPane>

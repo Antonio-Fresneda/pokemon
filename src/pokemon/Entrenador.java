@@ -1,5 +1,8 @@
 package pokemon;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,6 +14,8 @@ public class Entrenador {
 	private ArrayList<Pokemon> cajaPokemon;
 	private ArrayList<Objeto> mochila;
 	private Random rand;
+	private int idEntrenador;
+	private int Password;
 
 	public Entrenador(String nombre) {
 		this.nombre = nombre;
@@ -19,6 +24,10 @@ public class Entrenador {
 		this.cajaPokemon = new ArrayList<>();
 		this.mochila = new ArrayList<>();
 		this.rand = new Random();
+	}
+
+	public Entrenador() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getNombre() {
@@ -69,6 +78,29 @@ public class Entrenador {
 		this.rand = rand;
 	}
 
+	public int getIdEntrenador() {
+		return idEntrenador;
+	}
+
+	public void setIdEntrenador(int idEntrenador) {
+		this.idEntrenador = idEntrenador;
+	}
+
+	public int getPassword() {
+		return Password;
+	}
+
+	public void setPassword(int password) {
+		Password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "Entrenador [nombre=" + nombre + ", pokedollars=" + pokedollars + ", equipoPrincipal=" + equipoPrincipal
+				+ ", cajaPokemon=" + cajaPokemon + ", mochila=" + mochila + ", rand=" + rand + ", idEntrenador="
+				+ idEntrenador + ", Password=" + Password + "]";
+	}
+
 	public void moverAEquipoSecundario(Pokemon pokemon) {
 		if (equipoPrincipal.size() > 1) {
 			equipoPrincipal.remove(pokemon);
@@ -96,34 +128,34 @@ public class Entrenador {
 			aumentoEstadisticas = 5;
 			break;
 		case "furioso":
-			costoEntrenamiento = 30* pokemon.getNivel();
-			aumentoEstadisticas =5;
+			costoEntrenamiento = 30 * pokemon.getNivel();
+			aumentoEstadisticas = 5;
 			break;
 		case "funcional":
-			costoEntrenamiento = 40* pokemon.getNivel();
-			aumentoEstadisticas =5;
+			costoEntrenamiento = 40 * pokemon.getNivel();
+			aumentoEstadisticas = 5;
 			break;
-		case"onirico":
-			costoEntrenamiento =40* pokemon.getNivel();
-			aumentoEstadisticas =5;
+		case "onirico":
+			costoEntrenamiento = 40 * pokemon.getNivel();
+			aumentoEstadisticas = 5;
 			break;
 		default:
 			System.out.println("tipo de entrenamiento no valido");
 			return;
 		}
-		
-		if (pokedollars>=costoEntrenamiento) {
-			pokedollars-= costoEntrenamiento;
+
+		if (pokedollars >= costoEntrenamiento) {
+			pokedollars -= costoEntrenamiento;
 			pokemon.aumentarEstadisticas(aumentoEstadisticas);
-		}else {
+		} else {
 			System.out.println("no tienes sufucientes pokedollars para realizar este entrenamiento");
 		}
 	}
-	
+
 	public void capturarPokemon(Pokemon pokemon) {
 		cajaPokemon.add(pokemon);
 	}
+
 	
-	
-	
+
 }
