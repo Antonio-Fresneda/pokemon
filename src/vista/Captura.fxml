@@ -5,16 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CapturaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CapturaController">
 	<children>
-		<ImageView fitHeight="560.0" fitWidth="815.0" layoutX="-48.0" pickOnBounds="true" preserveRatio="true">
+		<ImageView fitHeight="479.0" fitWidth="870.0" layoutX="-9.0" pickOnBounds="true" preserveRatio="true">
 			<image>
 				<Image url="@../../resources/img/d67c3cbce4d7e9355e8522e10434d76c.jpg" />
 			</image>
 		</ImageView>
-		<Button fx:id="btnBuscar" layoutX="435.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnBuscar" prefHeight="54.0" prefWidth="157.0" text="BUSCAR" />
-		<Button fx:id="btnCaptura" layoutX="176.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnCapturar" prefHeight="54.0" prefWidth="157.0" text="CAPTURAR" />
+		<Button fx:id="btnBuscar" layoutX="431.0" layoutY="377.0" mnemonicParsing="false" onAction="#btnBuscar" prefHeight="54.0" prefWidth="157.0" text="BUSCAR" />
+		<Button fx:id="btnCapturar" layoutX="161.0" layoutY="377.0" mnemonicParsing="false" onAction="btnAccionCapturar" prefHeight="54.0" prefWidth="157.0" text="CAPTURAR" />
       <Button fx:id="btnAtrasCaptura" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAtrasCaptura" prefHeight="37.0" prefWidth="93.0" text="ATRAS" />
-      <ImageView fitHeight="231.0" fitWidth="271.0" layoutX="241.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
 	</children>
 </AnchorPane>

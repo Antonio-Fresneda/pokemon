@@ -32,7 +32,24 @@ public class Captura {
 	public String toString() {
 		return "Captura [pokeballs=" + pokeballs + ", pokemon=" + pokemon + "]";
 	}
-
+	
+	public void capturarPokemon(int pokeballs) {
+		
+		int ratioCaptura= (int) (Math.random()*3+1);;
+		if(pokeballs>0) {
+			System.out.println("Has lanzado una pokeball");
+			pokeballs--;
+				if(ratioCaptura==1||ratioCaptura==2) {
+					System.out.println("¡POKEMON CAPTURADO!");
+					//CapturaCrud.InsertarPokemon();
+				}else {
+					System.out.println("El pokemon se ha escapado");
+				}
+			
+		}else {
+			System.out.println("No te quedan pokeballs");
+		}
+	}
 	
 	
 	

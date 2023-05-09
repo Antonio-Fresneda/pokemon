@@ -13,9 +13,9 @@
          </image>
       </ImageView>
       <Button layoutX="382.0" layoutY="241.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="EQUIPO" />
-      <Button fx:id="btnCombate" layoutX="654.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnCombate" prefHeight="50.0" prefWidth="119.0" text="COMBATE" />
+      <Button fx:id="btnCombate" layoutX="654.0" layoutY="107.0" mnemonicParsing="false" onAction="btnPonerCombate" prefHeight="50.0" prefWidth="119.0" text="COMBATE" />
       <Button layoutX="127.0" layoutY="380.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CRIAR" />
-      <Button fx:id="btnCaptura" layoutX="382.0" layoutY="380.0" mnemonicParsing="false" onAction="#btnCaptura" prefHeight="50.0" prefWidth="119.0" text="CAPTURA" />
+      <Button fx:id="btnCaptura" layoutX="382.0" layoutY="380.0" mnemonicParsing="false" onAction="btnPonerCaptura" prefHeight="50.0" prefWidth="119.0" text="CAPTURA" />
       <Button layoutX="382.0" layoutY="107.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CAJA" />
       <Button layoutX="654.0" layoutY="380.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="TIENDA" />
       <Button layoutX="127.0" layoutY="107.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="ENTRENAR" />

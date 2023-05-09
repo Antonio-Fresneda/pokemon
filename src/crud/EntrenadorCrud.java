@@ -3,17 +3,14 @@ package crud;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import com.mysql.cj.xdevapi.Statement;
-
-import controller.InicioSesionController;
+import java.sql.Statement;
 
 public class EntrenadorCrud {
 	
-	public static void insertarDatos(String nombre, String contraseña) {
+	public static void insertarDatos(String nombre, String contraseña,int pokedolar) {
 
 	        Connection connection = null;
-	        java.sql.Statement statement = null;
+	        Statement statement = null;
 	        String url = "jdbc:mysql://localhost:3306/pokemon ";
 	        String login = "root";
 	        String password = "";
@@ -24,8 +21,8 @@ public class EntrenadorCrud {
 	            connection = DriverManager.getConnection(url, login, password);
 	            statement = connection.createStatement();
 
-	            String sql = "INSERT INTO entrenador (nom_entrenador, password)" + " VALUES ('" + nombre + "', '"
-	                            + contraseña + "')";
+	            String sql = "INSERT INTO entrenador (nom_entrenador, PASSWORD, POKEDOLAR)" + " VALUES ('" + nombre + "', '"
+	                            + contraseña + "','"+pokedolar+"')";
 	            statement.executeUpdate(sql);
 
 	            System.out.println("Datos insertados correctamente.");
