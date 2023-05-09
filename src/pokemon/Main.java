@@ -1,4 +1,4 @@
- 
+
 package pokemon;
 
 import java.sql.Connection;
@@ -27,7 +27,7 @@ public class Main extends Application {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(url, login, password);
 			System.out.println("Conexión establecida");
-			
+
 			launch(args);
 			// Acceso a datos utilizando el objeto de conexión . . .
 		} catch (SQLException sqle) {
@@ -45,8 +45,6 @@ public class Main extends Application {
 		}
 
 	}
-
-
 
 	public void start(Stage primaryStage) throws Exception {
 		try {

@@ -5,20 +5,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
-      <ImageView fitHeight="817.0" fitWidth="598.0" layoutY="-107.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="514.0" fitWidth="912.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/img/EjTHX_lXcAAa0o8.jpg" />
+            <Image url="@../../resources/img/14759-pokemon.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="91.0" layoutY="112.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="EQUIPO" />
-      <Button fx:id="btnCombate" layoutX="299.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnCombate" prefHeight="50.0" prefWidth="119.0" text="COMBATE" />
-      <Button layoutX="91.0" layoutY="405.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CRIAR" />
-      <Button fx:id="btnCaptura" layoutX="91.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnCaptura" prefHeight="50.0" prefWidth="119.0" text="CAPTURA" />
-      <Button layoutX="299.0" layoutY="112.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CAJA" />
-      <Button layoutX="299.0" layoutY="405.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="TIENDA" />
-      <Button layoutX="91.0" layoutY="562.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="POKEDEX" />
-      <Button layoutX="299.0" layoutY="562.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="ENTRENAR" />
+      <Button layoutX="382.0" layoutY="241.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="EQUIPO" />
+      <Button fx:id="btnCombate" layoutX="654.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnCombate" prefHeight="50.0" prefWidth="119.0" text="COMBATE" />
+      <Button layoutX="127.0" layoutY="380.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CRIAR" />
+      <Button fx:id="btnCaptura" layoutX="382.0" layoutY="380.0" mnemonicParsing="false" onAction="#btnCaptura" prefHeight="50.0" prefWidth="119.0" text="CAPTURA" />
+      <Button layoutX="382.0" layoutY="107.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="CAJA" />
+      <Button layoutX="654.0" layoutY="380.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="TIENDA" />
+      <Button layoutX="127.0" layoutY="107.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" text="ENTRENAR" />
    </children>
 </AnchorPane>

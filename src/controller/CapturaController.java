@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import crud.CapturaCrud;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,11 +45,27 @@ public class CapturaController extends Application {
 		}
 	}
 
-	public void btnCapturar(ActionEvent event) {
-
+	public void btnCapturar(ActionEvent event,int pokeballs) {
+			
+		int ratioCaptura= (int) (Math.random()*3+1);;
+			if(pokeballs>0) {
+				System.out.println("Has lanzado una pokeball");
+				pokeballs--;
+					if(ratioCaptura==1||ratioCaptura==2) {
+						System.out.println("¡POKEMON CAPTURADO!");
+					}else {
+						System.out.println("El pokemon se ha escapado");
+					}
+				
+			}else {
+				System.out.println("No te quedan pokeballs");
+			}
+			
+		
 	}
 
 	public void btnBuscar(ActionEvent event) {
+		CapturaCrud.buscarPokemon();
 	}
 
 }
