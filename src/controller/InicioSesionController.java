@@ -34,7 +34,7 @@ public class InicioSesionController {
 	@FXML
 	public void btnLogin(ActionEvent event) {
 		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Menu.fxml"));
+			FXMLLoader Loader = new FXMLLoader(getClass().getResource("/vista/Menu.fxml"));
 			Parent root = Loader.load();
 			Scene scene = new Scene(root);
 			stage = (Stage)((Node) event.getSource()).getScene().getWindow();
@@ -55,6 +55,8 @@ public class InicioSesionController {
 		EntrenadorCrud.insertarDatos(textoUsuario.getText(), textoContraseña.getText(),pokedolar= (int) (Math.random() * 201) + 800);
 		
 		System.out.println("Se le han otorgado"+pokedolar+" pokedolar");
+		
+		
 
 		
 	}
