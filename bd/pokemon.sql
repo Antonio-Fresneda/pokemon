@@ -196,3 +196,35 @@ INSERT INTO pokedex VALUES (032,"NIDORAN ♂","VENENO",null,"https://images.wiki
 INSERT INTO pokedex VALUES (033,"NIDORINO","VENENO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/7/75/latest/20151123222953/Nidorino_oro.png",null,32);
 
 INSERT INTO pokedex VALUES (034,"NIDOKING","VENENO","TIERRA","https://images.wikidexcdn.net/mwuploads/wikidex/a/a5/latest/20151123222906/Nidoking_oro.png",null,null);
+
+INSERT INTO pokedex VALUES (035,"CLEFAIRY","HADA",null,"https://images.wikidexcdn.net/mwuploads/wikidex/b/b3/latest/20151123190116/Clefairy_oro.png",null,4);
+
+INSERT INTO pokedex VALUES (036,"CLEFABLE","HADA",null,"https://images.wikidexcdn.net/mwuploads/wikidex/a/ab/latest/20151123190106/Clefable_oro.png",null,null);
+
+INSERT INTO pokedex VALUES (037,"VULPIX","FUEGO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/2/23/latest/20151123231509/Vulpix_oro.png",null,4);
+
+INSERT INTO pokedex VALUES (038,"NINETALES","FUEGO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/7/71/latest/20151123223013/Ninetales_oro.png",null,null);
+
+INSERT INTO pokedex VALUES (039,"JIGGLYPUFF","NORMAL","HADA","https://images.wikidexcdn.net/mwuploads/wikidex/2/26/latest/20151123193510/Jigglypuff_oro.png",null,null);
+
+INSERT INTO pokedex VALUES (040,"WIGGLITUFF","NORMAL","HADA","https://images.wikidexcdn.net/mwuploads/wikidex/4/4e/latest/20151123231533/Wigglytuff_oro.png",null,null);
+
+INSERT INTO pokedex VALUES (041,"ZUBAT","VENENO","VOLADOR","https://images.wikidexcdn.net/mwuploads/wikidex/a/a5/latest/20151123231631/Zubat_oro.png");
+
+INSERT INTO pokedex VALUES (042,"");
+
+INSERT INTO pokedex VALUES (043,"");
+
+INSERT INTO pokedex VALUES (044,"");
+
+INSERT INTO pokedex VALUES (045,"");
+
+INSERT INTO pokedex VALUES (046,"");
+
+INSERT INTO pokedex VALUES (047,"");
+
+INSERT INTO pokedex VALUES (048,"");
+
+INSERT INTO pokedex VALUES (049,"");
+
+INSERT INTO pokedex VALUES (050,"");
