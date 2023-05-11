@@ -6,6 +6,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Random;
 
+import java.util.Scanner;
+import java.util.List;
+
 public class Entrenador {
 
 	private String nombre;
@@ -157,18 +160,50 @@ public class Entrenador {
 	}
 
 	public void establecerNivelMaximoEquipo(int maxNivelRival) {
-		// TODO Auto-generated method stub
+		
+		for (Pokemon pokemon : equipoPrincipal) {
+			int nivel = pokemon.getNivel ();
+			if (nivel < maxNivelRival) {
+				pokemon.setNivel(maxNivelRival);
+			}
+		}
 		
 	}
 
 	public int obtenerMaxNivelPokemon() {
-		// TODO Auto-generated method stub
-		return 0;
+		int maxNivel = 0;
+		
+		for (Pokemon pokemon : equipoPrincipal) {
+			int nivel = pokemon.getNivel();
+			if (nivel < maxNivel) {
+				
+			}
+		}
+		return maxNivel;
 	}
 
 	public Pokemon elegirPokemon() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		 ArrayList<Pokemon> equipo = getEquipoPrincipal();
+		    int numPokemons = equipo.size();
+
+		    System.out.println("Elige un Pokémon para el combate:");
+
+		    for (int i = 0; i < numPokemons; i++) {
+		        Pokemon pokemon = equipo.get(i);
+		        System.out.println((i + 1) + ". " + pokemon.getNombre() + " (Nivel: " + pokemon.getNivel() + ")");
+		    }
+
+		    Scanner scanner = new Scanner(System.in);
+		    int opcion = -1;
+
+		    while (opcion < 1 || opcion > numPokemons) {
+		        System.out.print("Ingresa el número del Pokémon: ");
+		        opcion = scanner.nextInt();
+		    }
+
+		    return equipo.get(opcion - 1);
+		}
+		
+	
 
 }
