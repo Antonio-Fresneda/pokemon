@@ -156,4 +156,19 @@ public class Entrenador {
 		cajaPokemon.add(pokemon);
 	}
 
+	public void establecerNivelMaximoEquipo(int maxNivelRival) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int obtenerMaxNivelPokemon() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Pokemon elegirPokemon() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
