@@ -110,7 +110,7 @@ public class Entrenador {
 	}
 
 	public void moverAEquipoPrincipal(Pokemon pokemon) {
-		if (equipoPrincipal.size() < 4) {
+		if (equipoPrincipal.size() <= 6) {
 			cajaPokemon.remove(pokemon);
 			equipoPrincipal.add(pokemon);
 		} else {
@@ -155,7 +155,5 @@ public class Entrenador {
 	public void capturarPokemon(Pokemon pokemon) {
 		cajaPokemon.add(pokemon);
 	}
-
-	
 
 }

@@ -49,5 +49,6 @@
             <Image url="@../../resources/img/d14iutd-b5021b0f-ef4c-49f7-92d2-100cdf7b6e87-removebg-preview.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnAtrasTienda" layoutX="21.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnAccionAtrasTienda" text="ATRAS" />
    </children>
 </AnchorPane>

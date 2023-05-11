@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,23 +11,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
-import javafx.event.ActionEvent;
-
 public class MenuController {
-
-	private Stage stage;
-	
 	@FXML
 	private Button btnCombate;
 	@FXML
 	private Button btnCaptura;
 	@FXML
 	private Button btnTienda;
-
-
-	
+	@FXML
+	private Stage stage;
 	// Event Listener on Button[#btnCombate].onAction
 	@FXML
 	public void btnPonerCombate(ActionEvent event) {
@@ -32,7 +27,7 @@ public class MenuController {
 			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Combate.fxml"));
 			Parent root = Loader.load();
 			Scene scene = new Scene(root);
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); 
+			stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
 			stage.setResizable(false);
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
@@ -57,8 +52,10 @@ public class MenuController {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}	
 	}
+	// Event Listener on Button[#btnTienda].onAction
+	@FXML
 	public void btnPonerTienda(ActionEvent event) {
 		try {
 			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Tienda.fxml"));
@@ -74,5 +71,4 @@ public class MenuController {
 			e.printStackTrace();
 		}
 	}
-
 }

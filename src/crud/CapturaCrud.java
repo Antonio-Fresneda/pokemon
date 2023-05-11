@@ -2,17 +2,24 @@ package crud;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+
+import pokemon.Pokemon;
+
 public class CapturaCrud {
 
-	public static void buscarPokemon() {
+	public static Pokemon buscarPokemon() {
 		Connection connection = null;
 		Statement statement = null;
 		String url = "jdbc:mysql://localhost:3306/pokemon ";
 		String login = "root";
 		String password = "";
+		
+		Pokemon p=null;
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -20,8 +27,20 @@ public class CapturaCrud {
 			statement = connection.createStatement();
 
 			String query = "SELECT NUM_POKEDEX, nom_pokemon, sprite FROM pokedex ORDER BY RAND() LIMIT 1;";
+			
 
-			statement.executeUpdate(query);
+
+			ResultSet rs = statement.executeQuery(query);
+			
+
+			while (rs.next()) {
+				String sprite = rs.getString("sprite");
+				 p = new Pokemon();
+
+				p.setImagen(sprite);
+			}
+
+
 			System.out.println("Has encontrado un pokemon");
 
 		} catch (ClassNotFoundException e) {
@@ -44,6 +63,7 @@ public class CapturaCrud {
 				}
 			}
 		}
+		return p;
 	}
 
 	public static void InsertarPokemon(int idEntrenador, int idPokemon, int numPokedex, String mote, char sexo,
@@ -67,7 +87,7 @@ public class CapturaCrud {
 					+ "', '" + velocidad + "', '" + estamina + "', '" + fertilidad + "', '" + equipo + "')";
 
 			statement.executeUpdate(query);
-			System.out.println("Has sido traspasado a la caja");
+			System.out.println("El pokemon ha sido traspasado a la caja");
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

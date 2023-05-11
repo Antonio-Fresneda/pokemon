@@ -1,7 +1,45 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
+
+import javafx.event.ActionEvent;
 
 public class TiendaController {
-	
-}
+	@FXML
+	private Button btnAtrasTienda;
+	@FXML
+	private Stage stage;
+	private Scene scene;
+	private Parent root;
+	// Event Listener on Button[#btnAtrasTienda].onAction
+	@FXML
+	public void btnAccionAtrasTienda(ActionEvent event) throws IOException {
+		try {
+			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Menu.fxml"));
+			Parent root = Loader.load();
+			Scene scene = new Scene(root);
+			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			stage.setResizable(false);
+			stage.setTitle("Pokemon");
+			stage.setScene(scene);
+			stage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+//		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../vista/Menu.fxml")));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//		stage.setScene(scene);
+//        stage.show();
+    }
+	}
+

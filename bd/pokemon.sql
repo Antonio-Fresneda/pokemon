@@ -122,21 +122,21 @@ CONSTRAINT POKE_MOVI2_FK FOREIGN KEY (ID_MOVIMIENTO) REFERENCES MOVIMIENTO (ID_M
  
 
 
-INSERT INTO pokedex VALUES(001,"BULBASUR","PLANTA","VENENO","https://images.wikidexcdn.net/mwuploads/wikidex/5/53/latest/20151123152943/Bulbasaur_oro.png?20151123152943",null,16);
+INSERT INTO pokedex VALUES(001,"BULBASUR","PLANTA","VENENO","resources/imgPokemon/bulsbasur.png",null,16);
 
-INSERT INTO pokedex VALUES (002,"Ivysaur","PLANTA","VENENO","https://images.wikidexcdn.net/mwuploads/wikidex/2/27/latest/20151123193448/Ivysaur_oro.png?20151123193448",null,32);
+INSERT INTO pokedex VALUES (002,"Ivysaur","PLANTA","VENENO","resources/imgPokemon/bulsbasur.png",null,32);
 
-INSERT INTO pokedex VALUES (003,"VENUSAUR","PLANTA","VENENO","https://images.wikidexcdn.net/mwuploads/wikidex/d/d8/latest/20151123231335/Venusaur_oro.png?20151123231335",null,null);
+INSERT INTO pokedex VALUES (003,"VENUSAUR","PLANTA","VENENO","resources/imgPokemon/bulsbasur.png",null,null);
 
-INSERT INTO pokedex VALUES (007,"SQUIRTLE","AGUA",null,"https://images.wikidexcdn.net/mwuploads/wikidex/d/d5/latest/20151123230829/Squirtle_oro.png?20151123230829,"null,16);
+INSERT INTO pokedex VALUES (007,"SQUIRTLE","AGUA",null,"resources/imgPokemon/Charmander.png",null,16);
 
-INSERT INTO pokedex  VALUES (008,"WARTORTLE","AGUA",null,"https://images.wikidexcdn.net/mwuploads/wikidex/1/13/latest/20151123231501/Wartortle_oro.png?20151123231501",null,36);
+INSERT INTO pokedex  VALUES (008,"WARTORTLE","AGUA",null,"resources/imgPokemon/Charmeleon.png",null,36);
 
-INSERT INTO pokedex VALUES (009,"BLASTOISE","AGUA",null,"https://images.wikidexcdn.net/mwuploads/wikidex/b/b5/latest/20151123152822/Blastoise_oro.png?20151123152822",null,null);
+INSERT INTO pokedex VALUES (009,"BLASTOISE","AGUA",null,"resources/imgPokemon/Charizard.png",null,null);
 
-INSERT INTO pokedex VALUES(004,"CHARMANDER","FUEGO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/1/1d/latest/20151123185955/Charmander_oro.png?20151123185955",null,16)
+INSERT INTO pokedex VALUES(004,"CHARMANDER","FUEGO",null,"resources/imgPokemon/Charizard.png",null,16)
 
-INSERT INTO pokedex VALUES (005,"CHARMELON","FUEGO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/f/f5/latest/20151123190014/Charmeleon_oro.png?20151123190014",null,36);
+INSERT INTO pokedex VALUES (005,"CHARMELON","FUEGO",null,"resources/imgPokemon/Wartortle.png",null,36);
 
 INSERT INTO pokedex VALUES (006,"CHARIZARD","FUEGO","VOLADOR","https://images.wikidexcdn.net/mwuploads/wikidex/e/e1/latest/20151123185850/Charizard_oro.png?20151123185850",null,null);
 

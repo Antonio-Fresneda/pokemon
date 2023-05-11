@@ -24,7 +24,8 @@ public class Pokemon {
 	private String objeto;
 	private int experiencia;
 	private int ventaja;
-
+	private String imagen;
+	
 	public Pokemon() {
 		this.nombre = "";
 		this.mote = "";
@@ -303,6 +304,14 @@ public class Pokemon {
 	public void aumentarEstadisticas(int aumentoEstadisticas) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 }
