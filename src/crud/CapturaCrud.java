@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-
 import pokemon.Pokemon;
 
 public class CapturaCrud {
@@ -18,7 +16,7 @@ public class CapturaCrud {
 		String url = "jdbc:mysql://localhost:3306/pokemon ";
 		String login = "root";
 		String password = "";
-		
+
 		Pokemon p=null;
 
 		try {
@@ -27,22 +25,23 @@ public class CapturaCrud {
 			statement = connection.createStatement();
 
 			String query = "SELECT NUM_POKEDEX, nom_pokemon, sprite FROM pokedex ORDER BY RAND() LIMIT 1;";
-			
-
 
 			ResultSet rs = statement.executeQuery(query);
 			
-
 			while (rs.next()) {
 				String sprite = rs.getString("sprite");
-				 p = new Pokemon();
-
+//				String numPokedex = rs.getString("numPokedex");
+//				String nombrePokemon = rs.getString("nomPokemon");
+				
+				
+				p = new Pokemon();
 				p.setImagen(sprite);
+				
+					
 			}
 
-
 			System.out.println("Has encontrado un pokemon");
-
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

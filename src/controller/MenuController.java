@@ -19,6 +19,8 @@ public class MenuController {
 	@FXML
 	private Button btnTienda;
 	@FXML
+	private Button btnPonerCaja;
+	@FXML
 	private Stage stage;
 	// Event Listener on Button[#btnCombate].onAction
 	@FXML
@@ -59,6 +61,21 @@ public class MenuController {
 	public void btnPonerTienda(ActionEvent event) {
 		try {
 			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Tienda.fxml"));
+			Parent root = Loader.load();
+			Scene scene = new Scene(root);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setResizable(false);
+			stage.setTitle("Pokemon");
+			stage.setScene(scene);
+			stage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void btnAccionPonerCaja(ActionEvent event) {
+		try {
+			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Caja.fxml"));
 			Parent root = Loader.load();
 			Scene scene = new Scene(root);
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

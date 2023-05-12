@@ -34,6 +34,21 @@ public class Captura {
 	}
 	
 	public void capturarPokemon(int pokeballs) {
+		int idEntrenador;
+		int idPokemon; 
+		int numPokedex; 
+		String mote;
+		char sexo;
+		int nivel;
+		int vitalidad;
+		int ataque;
+		int defensa; 
+		int ataEspecial;
+		int defEspecial; 
+		int velocidad;
+		int estamina;
+		int fertilidad;
+		int equipo;
 		
 		int ratioCaptura= (int) (Math.random()*3+1);;
 		if(pokeballs>0) {
