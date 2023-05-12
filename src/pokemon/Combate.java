@@ -119,12 +119,12 @@ public class Combate {
 	 
 	        if (pokemonJugadorKO == 6) {
 	            ganador = rival;
-	             jugador.entregarPokédollars(ganador);
-	            jugador.ganarExperiencia(calcularExperiencia());
+//	             jugador.entregarPokédollars(ganador);
+//	            jugador.ganarExperiencia(calcularExperiencia());
 	        } else {
 	            ganador = jugador;
-	            rival.entregarPokédollars(ganador);
-	            rival.ganarExperiencia(calcularExperiencia());
+//	            rival.entregarPokédollars(ganador);
+//	            rival.ganarExperiencia(calcularExperiencia());
 	        }
 
 	        System.out.println("El ganador del combate es: " + ganador.getNombre());
@@ -135,8 +135,8 @@ public class Combate {
 	        
 	    }
 	 
-	 private double calcularExperiencia() {
-	        Pokemon pokemonRival = rival.obtenerPokemonActivo();
-	        return (jugador.obtenerNivelPokemonActivo() + pokemonRival.getNivel() * 10) / 4.0;
-	    }
+//	 private double calcularExperiencia() {
+//	        Pokemon pokemonRival = rival.obtenerPokemonActivo();
+//	        return (jugador.obtenerNivelPokemonActivo() + pokemonRival.getNivel() * 10) / 4.0;
+//	    }
 }

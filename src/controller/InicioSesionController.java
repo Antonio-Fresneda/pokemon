@@ -28,36 +28,48 @@ public class InicioSesionController {
 	private Button btnNuevo;
 	@FXML
 	private Stage stage;
-	
 
 	// Event Listener on Button[#btnLogin].onAction
 	@FXML
 	public void btnLogin(ActionEvent event) {
-		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("/vista/Menu.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
-			stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-			stage.setResizable(false);
-			stage.setTitle("Pokemon");
-			stage.setScene(scene);
-			stage.showAndWait();
 
-		} catch (IOException e) {
-			e.printStackTrace();
+		if ((textoUsuario.getText().length() != 0) && (textoContraseña.getText().length() != 0)) {
+
+			EntrenadorCrud.comprobarDatos(textoUsuario.getText(), textoContraseña.getText());
+			if (EntrenadorCrud.cambioDeVentana == true) {
+				try {
+					FXMLLoader Loader = new FXMLLoader(getClass().getResource("/vista/Menu.fxml"));
+					Parent root = Loader.load();
+					Scene scene = new Scene(root);
+					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+					stage.setResizable(false);
+					stage.setTitle("Pokemon");
+					stage.setScene(scene);
+					stage.showAndWait();
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else if (EntrenadorCrud.obtenerCambioDeVentana() == false) {
+
+			}
+		} else {
+
 		}
+
 	}
 
 	// Event Listener on Button[#btnNuevo].onAction
 	@FXML
 	public void btnRegistrarse(ActionEvent event) {
 		int pokedolar;
-		EntrenadorCrud.insertarDatos(textoUsuario.getText(), textoContraseña.getText(),pokedolar= (int) (Math.random() * 201) + 800);
-		
-		System.out.println("Se le han otorgado"+pokedolar+" pokedolar");
-		
-		
+		if ((textoUsuario.getText().length() != 0) && (textoContraseña.getText().length() != 0)) {
+			EntrenadorCrud.insertarDatos(textoUsuario.getText(), textoContraseña.getText(),
+					pokedolar = (int) (Math.random() * 201) + 800);
+			System.out.println("Se le han otorgado" + pokedolar + " pokedolar");
 
-		
+		} else {
+			System.out.println("CAMPOS VACIO");
+		}
 	}
 }

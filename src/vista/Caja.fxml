@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1104.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="994.0" fitWidth="1275.0" layoutX="-35.0" layoutY="-203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/img/CAJA.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="48.0" layoutY="82.0" prefHeight="212.0" prefWidth="1008.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="NOMBRE" />
+          <TableColumn text="NIVEL" />
+            <TableColumn prefWidth="82.0" text="MOTE " />
+            <TableColumn prefWidth="82.0" text="TIPO 1" />
+            <TableColumn prefWidth="66.0" text="TIPO 2" />
+            <TableColumn prefWidth="68.0" text="SEXO" />
+            <TableColumn prefWidth="68.0" text="VIDA" />
+            <TableColumn prefWidth="68.0" text="ATA" />
+            <TableColumn prefWidth="58.0" text="DEF" />
+            <TableColumn prefWidth="71.0" text="ATA-ESPE" />
+            <TableColumn prefWidth="67.0" text="DEF-ESPE" />
+            <TableColumn prefWidth="73.0" text="VELOCIDAD" />
+            <TableColumn prefWidth="68.0" text="ESTAMINA" />
+            <TableColumn prefWidth="81.0" text="FERTILIDAD" />
+        </columns>
+      </TableView>
+      <TableView layoutX="48.0" layoutY="363.0" prefHeight="212.0" prefWidth="1008.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="NOMBRE" />
+            <TableColumn text="NIVEL" />
+            <TableColumn prefWidth="82.0" text="MOTE " />
+            <TableColumn prefWidth="82.0" text="TIPO 1" />
+            <TableColumn prefWidth="66.0" text="TIPO 2" />
+            <TableColumn prefWidth="68.0" text="SEXO" />
+            <TableColumn prefWidth="68.0" text="VIDA" />
+            <TableColumn prefWidth="68.0" text="ATA" />
+            <TableColumn prefWidth="58.0" text="DEF" />
+            <TableColumn prefWidth="71.0" text="ATA-ESPE" />
+            <TableColumn prefWidth="67.0" text="DEF-ESPE" />
+            <TableColumn prefWidth="73.0" text="VELOCIDAD" />
+            <TableColumn prefWidth="68.0" text="ESTAMINA" />
+            <TableColumn prefWidth="81.0" text="FERTILIDAD" />
+         </columns>
+      </TableView>
+      <Label layoutX="505.0" layoutY="24.0" prefHeight="43.0" prefWidth="260.0" text="CAJA" textAlignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="481.0" layoutY="308.0" prefHeight="43.0" prefWidth="260.0" text="EQUIPO">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
