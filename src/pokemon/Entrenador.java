@@ -203,6 +203,50 @@ public class Entrenador {
 
 		    return equipo.get(opcion - 1);
 		}
+
+	public Pokemon obtenerPokemonActivo() {
+		    
+		    if (!equipoPrincipal.isEmpty()) {
+		        return equipoPrincipal.get(0);
+		    }
+		    
+		    if (!cajaPokemon.isEmpty()) {
+		        return cajaPokemon.get(0);
+		    }
+		    return null;
+	}
+
+	public int obtenerNivelPokemonActivo() { 
+		    Pokemon pokemonActivo = obtenerPokemonActivo();
+
+		    if (pokemonActivo != null) {
+		        return pokemonActivo.getNivel();
+		}
+
+		return 0;
+	}
+
+	public void ganarExperiencia(double calcularExperiencia) {
+		    Entrenador rival = null;
+			int maxNivelRival = rival.obtenerMaxNivelPokemon();
+		    Pokemon pokemonActivo = obtenerPokemonActivo();
+
+		    if (pokemonActivo != null) {
+		        int experienciaGanada = (pokemonActivo.getNivel() + maxNivelRival * 10) / 4;
+		        pokemonActivo.setExperiencia(experienciaGanada);
+		        System.out.println("¡Tu Pokémon ha ganado " + experienciaGanada + " puntos de experiencia!");
+		    
+		}
+
+		
+	}
+
+	public void entregarPokédollars(Entrenador ganador) {
+		    int pokedollarsEntregados = (int) Math.floor(getPokedollars() / 3.0);
+		    ganador.setPokedollars(ganador.getPokedollars() + pokedollarsEntregados);
+		    setPokedollars(getPokedollars() - pokedollarsEntregados);
+		    System.out.println("Se han entregado " + pokedollarsEntregados + " Pokédollars al ganador.");
+	}
 		
 	
 
