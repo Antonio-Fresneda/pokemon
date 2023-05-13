@@ -57,11 +57,13 @@ public class CapturaController {
 	
 	@FXML
 	public void btnBuscar(ActionEvent event) {
+		
 		Pokemon p = CapturaCrud.buscarPokemon();
 
 		File file = new File(p.getImagen());
 
 		Image image = new Image(file.toURI().toString());
+		
 		
 		imgPokemonEncontrado.setImage(image);
 		imgPokemonEncontrado.setVisible(true);
@@ -76,7 +78,21 @@ public class CapturaController {
 	
 	@FXML
 	public void btnAccionCapturar(ActionEvent event) {
-		
+//		int idEntrenador;
+//		int idPokemon; 
+//		int numPokedex; 
+//		String mote;
+//		char sexo;
+//		int nivel;
+//		int vitalidad;
+//		int ataque;
+//		int defensa; 
+//		int ataEspecial;
+//		int defEspecial; 
+//		int velocidad;
+//		int estamina;
+//		int fertilidad;
+//		int equipo;
 		int pokeballs = 10;
 		int ratioCaptura= (int) (Math.random()*3+1);;
 		if(pokeballs>0) {
@@ -91,7 +107,11 @@ public class CapturaController {
 					imgPokemonEncontrado.setVisible(false);
 					pokeball.setVisible(true);
 					
-					//CapturaCrud.InsertarPokemon();
+//					CapturaCrud.InsertarPokemon(null, null, rs.getString("numPokedex)+, null, 0, 1,vitalidad=(int)(Math.random() * ((20 - 1) + 1)) + 1, 
+//					ataque=(int)(Math.random() * ((20 - 1) + 1)),defensa=(int)(Math.random() * ((20 - 1) + 1)), ataEspecial=(int)(Math.random() * ((20 - 1) + 1)), 
+//					defEspecial=(int)(Math.random() * ((20 - 1) + 1)), velocidad=(int)(Math.random() * ((20 - 1) + 1)), 
+//					, estamina=(int)(Math.random() * ((20 - 1) + 1)), fertilidad=(int)(Math.random() * ((20 - 1) + 1)),equipo=2+);
+				
 				}else {
 					System.out.println("El pokemon se ha escapado");
 				}

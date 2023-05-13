@@ -6,7 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -27,7 +27,15 @@ public class InicioSesionController {
 	@FXML
 	private Button btnNuevo;
 	@FXML
+	private Label labMensajeCorrecto;
+	@FXML
+	private Label labMensajePokeDolar;
+	@FXML
+	private Label labMensajeInCorrecto;
+
+	@FXML
 	private Stage stage;
+	
 
 	// Event Listener on Button[#btnLogin].onAction
 	@FXML
@@ -51,7 +59,7 @@ public class InicioSesionController {
 					e.printStackTrace();
 				}
 			} else if (EntrenadorCrud.obtenerCambioDeVentana() == false) {
-
+				labMensajeInCorrecto.setText("USUARIO O CONTRASEÑA INCORRECTO");
 			}
 		} else {
 			
@@ -67,6 +75,8 @@ public class InicioSesionController {
 			EntrenadorCrud.insertarDatos(textoUsuario.getText(), textoContraseña.getText(),
 					pokedolar = (int) (Math.random() * 201) + 800);
 			System.out.println("Se le han otorgado" + pokedolar + " pokedolar");
+			labMensajePokeDolar.setText("Se le han otorgado " + pokedolar + " pokedolar");
+			labMensajeCorrecto.setText("ENTRENADOR REGISTRADO CORRECTAMENTE");
 
 		} else {
 			System.out.println("CAMPOS VACIO");
