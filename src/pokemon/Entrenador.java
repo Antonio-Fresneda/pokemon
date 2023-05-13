@@ -197,7 +197,7 @@ public class Entrenador {
 		    int opcion = -1;
 
 		    while (opcion < 1 || opcion > numPokemons) {
-		        System.out.print("Ingresa el número del Pokémon: ");
+		        System.out.print("Ingresa el número de pokemon: ");
 		        opcion = scanner.nextInt();
 		    }
 
