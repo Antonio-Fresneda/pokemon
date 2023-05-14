@@ -1,6 +1,12 @@
 package pokemon;
 
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class Combate {
 
@@ -11,6 +17,7 @@ public class Combate {
 	private int pokemonJugadorKO;
 	private int pokemonRivalKO;
 	private int pokedollars;
+	private List<Turno> listaTurnos;
 
 	public Combate(Entrenador jugador, Entrenador rival, Turno turno, Pokemon pokemonJugadorKO,
 			Pokemon pokemonRivalKO) {
@@ -131,4 +138,43 @@ public class Combate {
 		Pokemon pokemonRival = rival.obtenerPokemonActivo();
 		return (jugador.obtenerNivelPokemonActivo() + pokemonRival.getNivel() * 10) / 4.0;
 	}
+	
+	public Combate() {
+        this.listaTurnos = new ArrayList<>();
+	}
+	
+	public void agregarTurno(Turno turno) {
+        listaTurnos.add(turno);
+    }
+	
+	public void retirarse() {
+	    if (jugador == ganador) {
+	        ganador.setPokedollars(ganador.getPokedollars() + rival.getPokedollars() / 3);
+	        System.out.println("El entrenador " + jugador.getNombre() + " se ha retirado del combate.");
+	        System.out.println("El entrenador " + rival.getNombre() + " ha ganado el combate.");
+	        System.out.println("Se le han entregado " + (rival.getPokedollars() / 3) + " Pokedólares al entrenador " + rival.getNombre());
+	    } else if (rival == ganador) {
+	        ganador.setPokedollars(ganador.getPokedollars() + jugador.getPokedollars() / 3);
+	        System.out.println("El entrenador " + rival.getNombre() + " se ha retirado del combate.");
+	        System.out.println("El entrenador " + jugador.getNombre() + " ha ganado el combate.");
+	        System.out.println("Se le han entregado " + (jugador.getPokedollars() / 3) + " Pokedólares al entrenador " + jugador.getNombre());
+	    }
+	}
+
+	 public void exportarTurnosAFichero(String nombreFichero) {
+	        try {
+	            FileWriter fileWriter = new FileWriter(nombreFichero);
+	            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+	            for (Turno turno : listaTurnos) {
+	                printWriter.println(turno);
+	            }
+
+	            printWriter.close();
+	            System.out.println("Los turnos se han exportado correctamente al fichero: " + nombreFichero);
+	        } catch (IOException e) {
+	            System.out.println("Error al exportar los turnos al fichero: " + nombreFichero);
+	            e.printStackTrace();
+	        }
+	    }
 }
