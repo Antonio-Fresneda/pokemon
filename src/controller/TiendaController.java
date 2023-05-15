@@ -20,26 +20,19 @@ public class TiendaController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+
 	// Event Listener on Button[#btnAtrasTienda].onAction
 	@FXML
 	public void btnAccionAtrasTienda(ActionEvent event) throws IOException {
 		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Menu.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			stage.setResizable(false);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));
+			scene = new Scene(root, 910, 504);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
-			stage.showAndWait();
-
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
-//		root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../vista/Menu.fxml")));
-//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//		stage.setScene(scene);
-//        stage.show();
-    }
+		}
 	}
-
+}

@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,6 +18,9 @@ public class CombateController extends Application {
 	@FXML
 	private Button btnHuir;
 	private Stage stage;
+	private Parent root;
+	private Scene scene;
+
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -24,17 +28,14 @@ public class CombateController extends Application {
 
 	public void btnHuir(ActionEvent event) {
 		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Menu.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			stage.setResizable(false);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));
+			scene = new Scene(root, 910, 504);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
-			stage.showAndWait();
-
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
-}
+		}
 	}
+}

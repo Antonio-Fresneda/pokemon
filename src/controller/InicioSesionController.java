@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import crud.EntrenadorCrud;
 import javafx.event.ActionEvent;
@@ -35,7 +36,8 @@ public class InicioSesionController {
 
 	@FXML
 	private Stage stage;
-	
+	private Scene scene;
+	private Parent root;
 
 	// Event Listener on Button[#btnLogin].onAction
 	@FXML
@@ -46,15 +48,12 @@ public class InicioSesionController {
 			EntrenadorCrud.comprobarDatos(textoUsuario.getText(), textoContraseña.getText());
 			if (EntrenadorCrud.cambioDeVentana == true) {
 				try {
-					FXMLLoader Loader = new FXMLLoader(getClass().getResource("/vista/Menu.fxml"));
-					Parent root = Loader.load();
-					Scene scene = new Scene(root);
+					root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));
+					scene = new Scene(root, 910, 504);
 					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-					stage.setResizable(false);
 					stage.setTitle("Pokemon");
 					stage.setScene(scene);
-					stage.showAndWait();
-
+					stage.show();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -62,7 +61,7 @@ public class InicioSesionController {
 				labMensajeInCorrecto.setText("USUARIO O CONTRASEÑA INCORRECTO");
 			}
 		} else {
-			
+
 		}
 
 	}

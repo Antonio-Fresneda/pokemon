@@ -13,12 +13,12 @@ CONSTRAINT POKEDEX_PK PRIMARY KEY pokedex (num_pokedex),
 
 
 CREATE TABLE pokemon (
-ID_ENTRENADOR INTEGER(5) AUTO_INCREMENT,
-ID_POKEMON DECIMAL(5),
-NUM_POKEDEX DECIMAL(5),
+ID_ENTRENADOR INTEGER(5) ,
+ID_POKEMON INTEGER(5) AUTO_INCREMENT,
+NUM_POKEDEX INTEGER(5),
 MOTE VARCHAR(30),
 SEXO VARCHAR(1) NOT NULL,
-NIVEL DECIMAL(3) NOT NULL,
+NIVEL INTEGER(3) NOT NULL,
 VITALIDAD INTEGER(3) NOT NULL,
 ATAQUE INTEGER(3) NOT NULL,
 DEFENSA INTEGER(3),
@@ -110,8 +110,8 @@ CONSTRAINT MOVIMIENTO_PK PRIMARY KEY MOVIMIENTO(ID_MOVIMIENTO)
 
 
 CREATE TABLE POKE_MOVI (
-ID_POKEMON DECIMAL(5),
-ID_MOVIMIENTO DECIMAL(5),
+ID_POKEMON INTEGER(5),
+ID_MOVIMIENTO INTEGER(5),
 
 CONSTRAINT POKE_MOVI_PK PRIMARY KEY POKE_MOVI(ID_POKEMON,ID_MOVIMIENTO),
 CONSTRAINT POKE_MOVI_FK FOREIGN KEY (ID_POKEMON) REFERENCES POKEMON(ID_POKEMON),
@@ -122,25 +122,25 @@ CONSTRAINT POKE_MOVI2_FK FOREIGN KEY (ID_MOVIMIENTO) REFERENCES MOVIMIENTO (ID_M
  
 
 
-INSERT INTO pokedex VALUES(001,"BULBASUR","PLANTA","VENENO","resources/imgPokemon/bulsbasur.png",null,16);
+INSERT INTO pokedex VALUES(001,"BULBASUR","PLANTA","VENENO","resources/imgPokemon/Bulbasaur.png",null,16);
 
-INSERT INTO pokedex VALUES (002,"Ivysaur","PLANTA","VENENO","resources/imgPokemon/bulsbasur.png",null,32);
+INSERT INTO pokedex VALUES (002,"Ivysaur","PLANTA","VENENO","resources/imgPokemon/Ivysaur.png",null,32);
 
-INSERT INTO pokedex VALUES (003,"VENUSAUR","PLANTA","VENENO","resources/imgPokemon/bulsbasur.png",null,null);
+INSERT INTO pokedex VALUES (003,"VENUSAUR","PLANTA","VENENO","resources/imgPokemon/Venusaur.png",null,null);
 
-INSERT INTO pokedex VALUES (007,"SQUIRTLE","AGUA",null,"resources/imgPokemon/Charmander.png",null,16);
+INSERT INTO pokedex VALUES (007,"SQUIRTLE","AGUA",null,"resources/imgPokemon/Squirtle.png",null,16);
 
-INSERT INTO pokedex  VALUES (008,"WARTORTLE","AGUA",null,"resources/imgPokemon/Charmeleon.png",null,36);
+INSERT INTO pokedex  VALUES (008,"WARTORTLE","AGUA",null,"resources/imgPokemon/Wartortle.png",null,36);
 
-INSERT INTO pokedex VALUES (009,"BLASTOISE","AGUA",null,"resources/imgPokemon/Charizard.png",null,null);
+INSERT INTO pokedex VALUES (009,"BLASTOISE","AGUA",null,"resources/imgPokemon/Blastoise.png",null,null);
 
-INSERT INTO pokedex VALUES(004,"CHARMANDER","FUEGO",null,"resources/imgPokemon/Charizard.png",null,16)
+INSERT INTO pokedex VALUES(004,"CHARMANDER","FUEGO",null,"resources/imgPokemon/Charmander.png",null,16);
 
-INSERT INTO pokedex VALUES (005,"CHARMELON","FUEGO",null,"resources/imgPokemon/Wartortle.png",null,36);
+INSERT INTO pokedex VALUES (005,"CHARMELON","FUEGO",null,"resources/imgPokemon/Charmeleon.png",null,36);
 
-INSERT INTO pokedex VALUES (006,"CHARIZARD","FUEGO","VOLADOR","https://images.wikidexcdn.net/mwuploads/wikidex/e/e1/latest/20151123185850/Charizard_oro.png?20151123185850",null,null);
+INSERT INTO pokedex VALUES (006,"CHARIZARD","FUEGO","VOLADOR","resources/imgPokemon/Charizard.png",null,null);
 
-INSERT INTO pokedex VALUES (010,"CATERPIE","BICHO",null,"https://images.wikidexcdn.net/mwuploads/wikidex/f/f0/latest/20151123185615/Caterpie_oro.png?20151123185615",null,7);
+INSERT INTO pokedex VALUES (010,"CATERPIE","BICHO",null,"resources/imgPokemon/Caterpie.png",null,7);
 
 INSERT INTO entrenador VALUES (001,"Luis",10000,null);
 

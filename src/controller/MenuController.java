@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,68 +23,62 @@ public class MenuController {
 	private Button btnPonerCaja;
 	@FXML
 	private Stage stage;
+	private Scene scene;
+	private Parent root;
+
 	// Event Listener on Button[#btnCombate].onAction
 	@FXML
 	public void btnPonerCombate(ActionEvent event) {
 		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Combate.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow(); 
-			stage.setResizable(false);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Combate.fxml")));
+			scene = new Scene(root, 870, 517);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
-			stage.showAndWait();
-
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+
 	// Event Listener on Button[#btnCaptura].onAction
 	@FXML
 	public void btnPonerCaptura(ActionEvent event) {
 		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Captura.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Captura.fxml")));
+			scene = new Scene(root, 843, 478);
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			stage.setResizable(false);
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
-			stage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}	
-	}
-	// Event Listener on Button[#btnTienda].onAction
-	@FXML
-	public void btnPonerTienda(ActionEvent event) {
-		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Tienda.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			stage.setResizable(false);
-			stage.setTitle("Pokemon");
-			stage.setScene(scene);
-			stage.showAndWait();
-
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	public void btnAccionPonerCaja(ActionEvent event) {
+
+	// Event Listener on Button[#btnTienda].onAction
+	@FXML
+	public void btnPonerTienda(ActionEvent event) {
 		try {
-			FXMLLoader Loader = new FXMLLoader(getClass().getResource("../vista/Caja.fxml"));
-			Parent root = Loader.load();
-			Scene scene = new Scene(root);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Tienda.fxml")));
+			scene = new Scene(root, 761, 446);
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			stage.setResizable(false);
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
-			stage.showAndWait();
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
+	public void btnAccionPonerCaja(ActionEvent event) {
+		try {
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Caja.fxml")));
+			scene = new Scene(root, 1124, 776);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("Pokemon");
+			stage.setScene(scene);
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

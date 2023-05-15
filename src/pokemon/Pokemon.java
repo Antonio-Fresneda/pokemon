@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class Pokemon {
 
-	private int id_pokemon;
+	private int idPokemon;
+	private int numPokedex;
 	private String nombre;
 	private String mote;
 	private int vitalidad;
@@ -18,8 +19,8 @@ public class Pokemon {
 	private Movimiento[] movimiento = new Movimiento[4];
 	private int fertilidad;
 	private String sexo;
-	private Tipo tipo1;
-	private Tipo tipo2;
+	private String tipo1;
+	private String tipo2;
 	private String estado;
 	private String objeto;
 	private int experiencia;
@@ -27,6 +28,8 @@ public class Pokemon {
 	private String imagen;
 	
 	public Pokemon() {
+		this.idPokemon=0;
+		this.numPokedex=0;
 		this.nombre = "";
 		this.mote = "";
 		this.vitalidad = 0;
@@ -38,7 +41,7 @@ public class Pokemon {
 		this.estamina = 0;
 		this.nivel = 0;
 		this.fertilidad = 0;
-		this.sexo = "";
+		this.sexo="";
 		this.estado = "";
 		this.objeto = "";
 		this.experiencia = 0;
@@ -46,11 +49,13 @@ public class Pokemon {
 
 	}
 
-	public Pokemon(String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
+	public Pokemon(int idPokemon,int numPokedex,String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento, int fertilidad,
-			String sexo, Tipo tipo1, Tipo tipo2, String estado, String objeto, int experiencia, int ventaja) {
+			String sexo, String tipo1, String tipo2, String estado, String objeto, int experiencia, int ventaja) {
 
 		super();
+		this.idPokemon=idPokemon;
+		this.numPokedex=numPokedex;
 		this.nombre = nombre;
 		this.mote = mote;
 		this.vitalidad = vitalidad;
@@ -176,27 +181,27 @@ public class Pokemon {
 		this.sexo = sexo;
 	}
 
-	public int getId_pokemon() {
-		return id_pokemon;
+	public int getIdPokemon() {
+		return idPokemon;
 	}
 
-	public void setId_pokemon(int id_pokemon) {
-		this.id_pokemon = id_pokemon;
+	public void setIdPokemon(int idPokemon) {
+		this.idPokemon = idPokemon;
 	}
 
-	public Tipo getTipo1() {
+	public String getTipo1() {
 		return tipo1;
 	}
 
-	public void setTipo1(Tipo tipo1) {
-		this.tipo1 = tipo1;
+	public void setTipo1(String string) {
+		this.tipo1 = string;
 	}
 
-	public Tipo getTipo2() {
+	public String getTipo2() {
 		return tipo2;
 	}
 
-	public void setTipo2(Tipo tipo2) {
+	public void setTipo2(String tipo2) {
 		this.tipo2 = tipo2;
 	}
 
@@ -231,10 +236,18 @@ public class Pokemon {
 	public void setExperiencia(int experiencia) {
 		this.experiencia = experiencia;
 	}
+	
+	public int getNumPokedex() {
+		return numPokedex;
+	}
+
+	public void setNumPokedex(int numPokedex) {
+		this.numPokedex = numPokedex;
+	}
 
 	@Override
 	public String toString() {
-		return "Pokemon [id_pokemon=" + id_pokemon + ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
+		return "Pokemon [idPokemon=" + idPokemon +",numPokedex="+numPokedex+ ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
 				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
 				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
 				+ ", nivel=" + nivel + ", movimiento=" + Arrays.toString(movimiento) + ", fertilidad=" + fertilidad
@@ -244,9 +257,9 @@ public class Pokemon {
 
 	public void subirNivel(int experiencia, int nivel, int vitalidad, int ataque, int defensa, int ataqueEspecial,
 			int defensaEspecial, int velocidad, int estamina) {
-		for (int i = 1; i < 100; i++) {
+		for (int n = 1; n < 100; n++) {
 			if (experiencia == 10 * nivel) {
-				i++;
+				nivel++;
 				vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
 				ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
 				defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
@@ -254,6 +267,9 @@ public class Pokemon {
 				defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
 				velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
 				estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				AprenderMovimiento();
+					
+				
 			}
 		}
 
@@ -263,7 +279,18 @@ public class Pokemon {
 	}
 
 	public int ComprobarVentaja(int ventaja) {
-
+		if (ventaja==0.5) {
+			System.out.println("Es poco eficaz");
+		}else if(ventaja==1) {
+			System.out.println("Neutro");
+		}else if(ventaja==0.25) {
+			System.out.println("Es muy poco eficaz");
+		}else if(ventaja==2) {
+			System.out.println("Es eficaz");
+		}else if(ventaja==4) {
+			System.out.println("Es muy eficaz");
+		}
+		
 		double[][] efectividadesPokemon = {
 				/*
 				 * ACERO AGUA BICHO DRAGON ELÉC FANT FUEGO HADA HIELO LUCHA NORMAL PLANTA PSI
@@ -287,6 +314,8 @@ public class Pokemon {
 				{ 2, 1, 0.5, 1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 2, 0 }, // TIERRA
 				{ 0, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 1 }, // VENENO
 				{ 0.5, 1, 2, 1, 0.5, 1, 1, 1, 1, 2, 1, 2, 1, 0.5, 1, 1, 1, 1 } // VOLADOR
+				
+				
 		};
 
 		return ventaja;
@@ -298,7 +327,9 @@ public class Pokemon {
 	}
 
 	public void AprenderMovimiento() {
-
+		System.out.println("Tu "+nombre+" quiere aprender un nuevo movimiento");
+		Movimiento movimiento=new Movimiento();
+		
 	}
 
 	public void aumentarEstadisticas(int aumentoEstadisticas) {
