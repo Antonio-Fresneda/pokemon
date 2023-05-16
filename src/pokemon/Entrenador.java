@@ -19,6 +19,12 @@ public class Entrenador {
 	private Random rand;
 	private int idEntrenador;
 	private int Password;
+	private String Genero;
+	private String Especie;
+	private ArrayList<String> listaTipos;
+	private ArrayList<String> listaAtaques;
+
+
 
 	public Entrenador(String nombre) {
 		this.nombre = nombre;
@@ -27,6 +33,7 @@ public class Entrenador {
 		this.cajaPokemon = new ArrayList<>();
 		this.mochila = new ArrayList<>();
 		this.rand = new Random();
+		this.listaTipos = new ArrayList<>();
 	}
 
 	public Entrenador() {
@@ -95,6 +102,44 @@ public class Entrenador {
 
 	public void setPassword(int password) {
 		Password = password;
+	}
+
+	
+	
+	public String getGenero() {
+		return Genero;
+	}
+
+	public void setGenero(String genero) {
+		this.Genero = genero;
+	}
+
+	public String getEspecie() {
+		return Especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.Especie = especie;
+	}
+	
+	
+
+	public ArrayList<String> getListaTipos() {
+		return listaTipos;
+	}
+
+	public void setListaTipos(ArrayList<String> listaTipos) {
+		this.listaTipos = listaTipos;
+	}
+	
+	public void setListaAtaques(ArrayList<String> listaAtaques) {
+		this.listaAtaques = listaAtaques;
+	}
+    
+
+
+	public ArrayList<String> getListaAtaques() {
+		return listaAtaques;
 	}
 
 	@Override
@@ -248,6 +293,6 @@ public class Entrenador {
 		    System.out.println("Se han entregado " + pokedollarsEntregados + " Pokédollars al ganador.");
 	}
 		
-	
 
+	
 }

@@ -1,6 +1,7 @@
 package pokemon;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Pokemon {
 
@@ -26,8 +27,13 @@ public class Pokemon {
 	private int experiencia;
 	private int ventaja;
 	private String imagen;
-	
+	private String especie;
+
 	public Pokemon() {
+		
+	}
+	
+	public Pokemon(String string, Object nivelMaximo) {
 		this.idPokemon=0;
 		this.numPokedex=0;
 		this.nombre = "";
@@ -75,7 +81,11 @@ public class Pokemon {
 		this.objeto = objeto;
 		this.experiencia = experiencia;
 		this.ventaja = ventaja;
+		
 	}
+
+	
+
 
 	public String getNombre() {
 		return nombre;
@@ -245,6 +255,14 @@ public class Pokemon {
 		this.numPokedex = numPokedex;
 	}
 
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
 	@Override
 	public String toString() {
 		return "Pokemon [idPokemon=" + idPokemon +",numPokedex="+numPokedex+ ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
@@ -345,4 +363,5 @@ public class Pokemon {
 		this.imagen = imagen;
 	}
 
+	
 }
