@@ -52,12 +52,12 @@ public class CapturaController {
 
 	@FXML
 	public void initialize() {
-		 Date d = new Date();
-	        System.out.println(d);
 
-	        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
-	        System.out.println(simpleDateFormat.format(d) + ".log");
+		Date d = new Date();
+		System.out.println(d);
 
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
+		System.out.println(simpleDateFormat.format(d) + ".log");
 
 		btnSiMote.setVisible(false);
 		btnNoMote.setVisible(false);
@@ -68,6 +68,13 @@ public class CapturaController {
 
 	@FXML
 	public void btnBuscar(ActionEvent event) {
+
+		System.out.println("Buscando un nuevo pokemon ...");
+
+		Date d = new Date();
+		System.out.println(d);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
+		System.out.println(simpleDateFormat.format(d) + ".log");
 
 		Pokemon p = CapturaCrud.buscarPokemon();
 
@@ -83,11 +90,14 @@ public class CapturaController {
 		txtParaMote.setVisible(false);
 		PreguntaMote.setVisible(false);
 		pokeball.setVisible(false);
+
 	}
 
 	@FXML
 	public void btnAccionCapturar(ActionEvent event) {
-		Pokemon p = CapturaCrud.buscarPokemon();
+
+//		Pokemon p = CapturaCrud.buscarPokemon();ç
+		Pokemon p=new Pokemon();
 		int idEntrenador;
 		int idPokemon;
 		int numPokedex;
@@ -111,6 +121,11 @@ public class CapturaController {
 			pokeballs--;
 			if (ratioCaptura == 1 || ratioCaptura == 2) {
 				System.out.println("¡POKEMON CAPTURADO!");
+				Date d = new Date();
+				System.out.println(d);
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
+				System.out.println(simpleDateFormat.format(d) + ".log");
+
 				PreguntaMote.setVisible(true);
 				btnSiMote.setVisible(true);
 				btnNoMote.setVisible(true);
@@ -118,7 +133,7 @@ public class CapturaController {
 				imgPokemonEncontrado.setVisible(false);
 				pokeball.setVisible(true);
 
-				p = CapturaCrud.InsertarPokemon(1, p.getNumPokedex(), p.getMote(), p.getSexo(), 1,
+				p = CapturaCrud.InsertarPokemon(1,	numPokedex=CapturaCrud.numPokedex, p.getMote(), sexo='H', 1,
 						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
 						ataque = (int) (Math.random() * ((20 - 1) + 1)),
 						defensa = (int) (Math.random() * ((20 - 1) + 1)),
@@ -140,6 +155,7 @@ public class CapturaController {
 	// Event Listener on Button[#btnAtrasCaptura].onAction
 	@FXML
 	public void btnAtrasCaptura(ActionEvent event) {
+
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));
 			scene = new Scene(root, 910, 504);
@@ -147,6 +163,14 @@ public class CapturaController {
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
 			stage.show();
+			Date d = new Date();
+			
+
+			System.out.println("Has salido de la pantalla de captura ");
+			System.out.println(d);
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
+			System.out.println(simpleDateFormat.format(d) + ".log");
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -26,7 +26,7 @@ public class PokemonCrud {
 		String login = "root";
 		String password = "";
 
-		String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.id_pokemon AND c.equipo=2;";
+		String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.num_pokedex AND c.equipo=2;";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -100,7 +100,7 @@ public class PokemonCrud {
 		String login = "root";
 		String password = "";
 
-		String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.id_pokemon AND c.equipo=1;";
+		String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.num_pokedex AND c.equipo=1;";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

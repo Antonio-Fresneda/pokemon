@@ -10,6 +10,8 @@ import pokemon.Pokemon;
 
 public class CapturaCrud {
 	
+	public static int numPokedex;
+	
 	public static Pokemon buscarPokemon() {
 
 		Connection connection = null;
@@ -34,13 +36,14 @@ public class CapturaCrud {
 				String nombrePokemon = rs.getString("nom_Pokemon");
 				String tipo1 = rs.getString("tipo1");
 				String tipo2 = rs.getString("tipo2");
-				String numPokedex = rs.getString("NUM_POKEDEX");
+				numPokedex = rs.getInt("NUM_POKEDEX");
 
 				p = new Pokemon();
 				p.setImagen(sprite);
 
 				System.out.println("Has encontrado un " + nombrePokemon + " salvaje");
 				System.out.println("Es tipo " + tipo1 + " y " + tipo2 + " ¡ATRAPALO!");
+				System.out.println("Su numero en la pokedex es "+numPokedex);
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -66,7 +69,7 @@ public class CapturaCrud {
 		return p;
 	}
 
-	public static Pokemon InsertarPokemon(int idEntrenador, int numPokedex, String mote, String sexo, int nivel,
+	public static Pokemon InsertarPokemon(int idEntrenador,int numPokedex, String mote, char sexo, int nivel,
 			int vitalidad, int ataque, int defensa, int ataEspecial, int defEspecial, int velocidad, int estamina,
 			int fertilidad, int equipo) {
 		Connection connection = null;
