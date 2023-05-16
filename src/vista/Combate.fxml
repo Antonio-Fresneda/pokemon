@@ -15,28 +15,18 @@
 				<Image url="@../../resources/img/43e78957ab636946acf0498862b67c11.jpg" />
 			</image>
 		</ImageView>
-		<ProgressBar layoutX="49.0" layoutY="48.0" prefHeight="41.0" prefWidth="230.0" progress="0.0" />
-		<ProgressBar layoutX="613.0" layoutY="394.0" prefHeight="41.0" prefWidth="230.0" progress="0.0" />
-		<Text layoutX="613.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="103.13671875">
+		<ProgressBar layoutX="49.0" layoutY="48.0" prefHeight="27.0" prefWidth="230.0" progress="0.0" />
+		<ProgressBar layoutX="613.0" layoutY="408.0" prefHeight="27.0" prefWidth="230.0" progress="0.0" />
+		<Text layoutX="613.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="103.13671875">
          <font>
             <Font size="15.0" />
          </font></Text>
-		<Text layoutX="49.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="123.13671875">
+		<Text layoutX="49.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="123.13671875">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Text layoutX="73.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON-1" wrappingWidth="287.865234375">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Text>
-      <ProgressBar layoutX="49.0" layoutY="123.0" prefHeight="41.0" prefWidth="230.0" progress="0.0" />
-      <ProgressBar layoutX="613.0" layoutY="462.0" prefHeight="41.0" prefWidth="230.0" progress="0.0" />
-      <Text layoutX="521.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POKEMON-2" wrappingWidth="287.865234375">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Text>
-      <Button fx:id="btnHuir" layoutX="770.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnHuir" prefHeight="41.0" prefWidth="86.0" text="HUIR" />
+      <ProgressBar layoutX="49.0" layoutY="91.0" prefHeight="27.0" prefWidth="230.0" progress="0.0" />
+      <ProgressBar layoutX="613.0" layoutY="449.0" prefHeight="27.0" prefWidth="230.0" progress="0.0" />
+      <Button fx:id="btnHuir" layoutX="757.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnHuir" prefHeight="41.0" prefWidth="86.0" text="HUIR" />
 	</children>
 </AnchorPane>
