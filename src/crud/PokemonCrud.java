@@ -11,14 +11,12 @@ import pokemon.Pokemon;
 
 public class PokemonCrud {
 
-	
 	static LinkedList<Pokemon> coleccion = new LinkedList<Pokemon>();
 
 	static LinkedList<Pokemon> coleccionEquipo = new LinkedList<Pokemon>();
-	
+
 	public static LinkedList<Pokemon> getTodoPokemon() {
-		
-		
+
 		LinkedList<Pokemon> coleccion = new LinkedList<Pokemon>();
 
 		Connection connection = null;
@@ -27,7 +25,7 @@ public class PokemonCrud {
 		String login = "root";
 		String password = "";
 
-		String query = "SELECT c.ID_POKEMON,p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.num_pokedex AND c.equipo=2;";
+		String query = "SELECT c.ID_POKEMON,p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.estamina,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.num_pokedex AND c.equipo=2;";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -52,7 +50,7 @@ public class PokemonCrud {
 				pokemon.setDefensaEspecial(rs.getInt("c.def_especial"));
 				pokemon.setVelocidad(rs.getInt("c.velocidad"));
 				pokemon.setFertilidad(rs.getInt("c.fertilidad"));
-				
+				pokemon.setEstamina(rs.getInt("c.estamina"));
 
 				coleccion.add(pokemon);
 
@@ -89,9 +87,9 @@ public class PokemonCrud {
 	public static void setColeccion(LinkedList<Pokemon> coleccion) {
 		PokemonCrud.coleccion = coleccion;
 	}
+
 	public static LinkedList<Pokemon> getTodoPokemonEquipo() {
-		
-		
+
 		LinkedList<Pokemon> coleccionEquipo = new LinkedList<Pokemon>();
 
 		Connection connection = null;
@@ -125,8 +123,6 @@ public class PokemonCrud {
 				pokemon.setDefensaEspecial(rs.getInt("c.def_especial"));
 				pokemon.setVelocidad(rs.getInt("c.velocidad"));
 				pokemon.setFertilidad(rs.getInt("c.fertilidad"));
-				
-				
 
 				coleccion.add(pokemon);
 
@@ -163,23 +159,23 @@ public class PokemonCrud {
 	public static void setColeccionEquipo(LinkedList<Pokemon> coleccionEquipo) {
 		PokemonCrud.coleccionEquipo = coleccionEquipo;
 	}
+
 	public static Pokemon transferirPokemonEquipo(int idPokemon) {
-		Pokemon pokemon=new Pokemon();
-		
+		Pokemon pokemon = new Pokemon();
+
 		Connection connection = null;
 		Statement statement = null;
 		String url = "jdbc:mysql://localhost:3306/pokemon ";
 		String login = "root";
 		String password = "";
 
-		String query = "UPDATE pokemon SET equipo=1 WHERE id_pokemon ="+idPokemon+";";
+		String query = "UPDATE pokemon SET equipo=1 WHERE id_pokemon =" + idPokemon + ";";
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(url, login, password);
 			statement = connection.createStatement();
-			
-			int rowsAffected = statement.executeUpdate(query);
 
+			int rowsAffected = statement.executeUpdate(query);
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -202,7 +198,46 @@ public class PokemonCrud {
 			}
 		}
 		return pokemon;
-	
-		
+
+	}
+
+	public static Pokemon transferirPokemonCaja(int idPokemon) {
+		Pokemon pokemon = new Pokemon();
+
+		Connection connection = null;
+		Statement statement = null;
+		String url = "jdbc:mysql://localhost:3306/pokemon ";
+		String login = "root";
+		String password = "";
+
+		String query = "UPDATE pokemon SET equipo=2 WHERE id_pokemon =" + idPokemon + ";";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(url, login, password);
+			statement = connection.createStatement();
+
+			int rowsAffected = statement.executeUpdate(query);
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return pokemon;
 	}
 }

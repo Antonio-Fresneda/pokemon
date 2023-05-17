@@ -15,7 +15,7 @@ public class Pokemon {
 	private int ataqueEspecial;
 	private int defensaEspecial;
 	private int velocidad;
-	private int estamina;
+	private static int estamina;
 	private int nivel;
 	private Movimiento[] movimiento = new Movimiento[4];
 	private int fertilidad;
@@ -285,18 +285,18 @@ public class Pokemon {
 				defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
 				velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
 				estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				AprenderMovimiento();
+				aprenderMovimiento();
 					
 				
 			}
 		}
 
 	}
-
-	public void AtacarPokemon() {
+	
+	public void atacarPokemon() {
 	}
 
-	public int ComprobarVentaja(int ventaja) {
+	public int comprobarVentaja(int ventaja) {
 		if (ventaja==0.5) {
 			System.out.println("Es poco eficaz");
 		}else if(ventaja==1) {
@@ -339,12 +339,12 @@ public class Pokemon {
 		return ventaja;
 	}
 
-	public void Descansar(int estamina) {
+	public static void descansar() {
 		estamina = estamina + 50;
 
 	}
 
-	public void AprenderMovimiento() {
+	public void aprenderMovimiento() {
 		System.out.println("Tu "+nombre+" quiere aprender un nuevo movimiento");
 		Movimiento movimiento=new Movimiento();
 		

@@ -96,19 +96,19 @@ public class Movimiento {
 			vitalidad = vitalidad - (vitalidad * 0.125);
 		}
 	}
-//
-//	public void MovimientoEstadoDormido(int turno) {
-//		for (int i = 1; i > 100; i++) {
-//			turno++;
-//
-//		}
-//
-//	}
-//
-//	public void MovimientoCongelado(int turno) {
-//		for (int i = 1; i > 100; i++) {
-//			turno++;
-//		}
-//	}
+
+	public void MovimientoEstadoDormido(int turno) {
+		for (int i = 1; i > 100; i++) {
+			turno++;
+			Pokemon.descansar();
+		}
+
+	}
+
+	public void MovimientoCongelado(int turno) {
+		for (int i = 1; i > 100; i++) {
+			turno++;
+		}
+	}
 
 }

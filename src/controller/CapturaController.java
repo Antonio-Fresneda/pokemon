@@ -135,7 +135,7 @@ public class CapturaController {
 				
 				
 				
-				p = CapturaCrud.InsertarPokemon(1,	numPokedex=CapturaCrud.numPokedex,txtParaMote.getText(), sexo='H', 1,
+				p = CapturaCrud.InsertarPokemon(1,	numPokedex=CapturaCrud.numPokedex,null, sexo='H', 1,
 						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
 						ataque = (int) (Math.random() * ((20 - 1) + 1)),
 						defensa = (int) (Math.random() * ((20 - 1) + 1)),
@@ -185,6 +185,9 @@ public class CapturaController {
 
 	public void btnAccionSiMote(ActionEvent event) {
 		txtParaMote.setVisible(true);
+		Pokemon p=new Pokemon();
+		
+		p=CapturaCrud.ponerMote(txtParaMote.getText(),0 );
 
 	}
 

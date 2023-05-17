@@ -210,18 +210,26 @@ public class CajaController implements Initializable {
 		
 		coleccion.remove(p);
 		
-//		Pokemon pokemon = new Pokemon();
 		PokemonCrud.transferirPokemonEquipo(p.getIdPokemon());
 		
 		TablaEquipo.setItems(metodoEquipo());
 		TablaCaja.setItems(metodo());
 		
+		System.out.println("El pokemon fue traspado a tu Equipo");
 	}
 
 	// Event Listener on Button[#transferirToEquipo].onAction
 	@FXML
 	public void transferirAccionToCaja(ActionEvent event) {
+		ObservableList<Pokemon>pokemonSeleccionadoEquipo=TablaEquipo.getSelectionModel().getSelectedItems();
+		Pokemon p=pokemonSeleccionadoEquipo.get(0);
+		coleccion.add(p);
+		equipo.remove(p);
 		
-
+		PokemonCrud.transferirPokemonCaja(p.getIdPokemon());
+		TablaCaja.setItems(metodo());
+		TablaEquipo.setItems(metodoEquipo());
+		
+		System.out.println("El pokemon fue traspado a la Caja");
 	}
 }

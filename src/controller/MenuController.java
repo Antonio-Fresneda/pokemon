@@ -20,6 +20,8 @@ public class MenuController {
 	@FXML
 	private Button btnTienda;
 	@FXML
+	private Button btnEntrenar;
+	@FXML
 	private Button btnPonerCaja;
 	@FXML
 	private Stage stage;
@@ -31,7 +33,7 @@ public class MenuController {
 	public void btnPonerCombate(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Combate.fxml")));
-			scene = new Scene(root, 870, 517);
+			scene = new Scene(root, 993, 588);
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
@@ -83,4 +85,17 @@ public class MenuController {
 			e.printStackTrace();
 		}
 	}
-}
+	public void btnPonerEntrenar(ActionEvent event) {
+		try {
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Entrenar.fxml")));
+			scene = new Scene(root, 737, 613);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("Pokemon");
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	}
+

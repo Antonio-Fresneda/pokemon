@@ -11,7 +11,7 @@ import pokemon.Pokemon;
 public class CapturaCrud {
 	
 	public static int numPokedex;
-	
+	public static int idPokemon;
 	public static Pokemon buscarPokemon() {
 
 		Connection connection = null;
@@ -116,4 +116,47 @@ public class CapturaCrud {
 		return p;
 
 	}
+	public static Pokemon ponerMote(String mote,int idPokemon) {
+		
+		
+		Pokemon pokemon = new Pokemon();
+
+		Connection connection = null;
+		Statement statement = null;
+		String url = "jdbc:mysql://localhost:3306/pokemon ";
+		String login = "root";
+		String password = "";
+
+		String query = "UPDATE pokemon SET mote="+mote+"imag WHERE id_pokemon =" + idPokemon + ";";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(url, login, password);
+			statement = connection.createStatement();
+
+			int rowsAffected = statement.executeUpdate(query);
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return pokemon;
+	}
+	
 }
+
