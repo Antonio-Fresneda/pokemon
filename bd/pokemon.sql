@@ -211,20 +211,62 @@ INSERT INTO pokedex VALUES (040,"WIGGLITUFF","NORMAL","HADA","resources/imgPokem
 
 INSERT INTO pokedex VALUES (041,"ZUBAT","VENENO","VOLADOR","resources/imgPokemon/Zubat.png",null,22);
 
-INSERT INTO pokedex VALUES (042,"");
+INSERT INTO pokedex VALUES (042,"GOLBAT","VENENO","VOLADOR","resources/imgPokemon/Golbat.png",null,40);
 
-INSERT INTO pokedex VALUES (043,"");
+INSERT INTO pokedex VALUES (043,"ODDISH","PLANTA","VENENO","resources/imgPokemon/Oddish.png",null,21);
 
-INSERT INTO pokedex VALUES (044,"");
+INSERT INTO pokedex VALUES (044,"GLOOM","PLANTA","VENENO","resources/imgPokemon/Gloom.png",null,null);
 
-INSERT INTO pokedex VALUES (045,"");
+INSERT INTO pokedex VALUES (045,"VILEPLUME","PLANTA","VENENO","resources/imgPokemon/Vileplume.png",null,null);
 
-INSERT INTO pokedex VALUES (046,"");
+INSERT INTO pokedex VALUES (046,"PARAS","BICHO","PLANTA","resources/imgPokemon/Paras.png",null,24);
 
-INSERT INTO pokedex VALUES (047,"");
+INSERT INTO pokedex VALUES (047,"PARASECT","BICHO","PLANTA","resources/imgPokemon/Parasect.png",null,null);
 
-INSERT INTO pokedex VALUES (048,"");
+INSERT INTO pokedex VALUES (048,"VENONAT","BICHO","VENENO",resources/imgPokemon/Venonat.png",null,31);
 
-INSERT INTO pokedex VALUES (049,"");
+INSERT INTO pokedex VALUES (049,"VENOMOTH","BICHO","VENENO","resources/imgPokemon/Venomoth.png",null,null);
 
-INSERT INTO pokedex VALUES (050,"");
+INSERT INTO pokedex VALUES (050,"DIGLETT","TIERRA",null."resources/imgPokemon/Diglett.png",null,26);
+
+INSERT INTO pokedex VALUES (051,"DUGTRIO","TIERRA",null,"resources/imgPokemon/Dugtrio.png",null,null);
+
+INSERT INTO pokedex VALUES (052,"MEOWTH","NOTMAL",null,"resources/imgPokemon/Meowth.png",null,28);
+
+INSERT INTO pokedex VALUES (053,"PERSIAN","NORMAL",null,"resources/imgPokemon/Persian.png",null,null);
+
+INSERT INTO pokedex VALUES (054,"PSYDUCK","AGUA",null,"resources/imgPokemon/Psyduck.png",null,33);
+
+INSERT INTO pokedex VALUES (055,"GOLDUCK","AGUA",null,"resources/imgPokemon/Golduck.png",null,null);
+
+INSERT INTO pokedex VALUES (056,"MANKEY","LUCHA",null,"resources/imgPokemon/Mankey.png",null,28);
+
+INSERT INTO pokedex VALUES (057,"PRIMEAPE","LUCHA",null,"resources/imgPokemon/Primeape.png",null,35");
+
+INSERT INTO pokedex VALUES (058,"GROWLITHE","FUEGO",null,"resources/imgPokemon/Growlithe.png",null,30);
+
+INSERT INTO pokedex VALUES (059,"ARCANINE","FUEGO",null,"resources/imgPokemon/Arcaine.png",null,null);
+
+INSERT INTO pokedex VALUES (060,"POLIWAG","AGUA",null,"resources/imgPokemon/Poliwag.png",null,25);
+
+INSERT INTO pokedex VALUES (061,"POLIWHIRL","AGUA",null,"resources/imgPokemon/Poliwhirl.png",null,35);
+
+INSERT INTO pokedex VALUES (062,"POLIWRATH","AGUA","LUCHA","resources/imgPokemon/Poliwrath.png",null,null);
+
+INSERT INTO pokedex VALUES (063,"ABRA","PSIQUICO",null,"resources/imgPokemon/Abra.png",null,16);
+
+INSERT INTO pokedex VALUES (064,"KADABRA","PSIQUICO",null,"resources/imgPokemon/Kadabra.png",null,35);
+
+INSERT INTO pokedex VALUES (065,"ALAKAZAM","PSIQUICO",null,"resources/imgPokemon/Alakazam.png",null,50);
+
+INSERT INTO pokedex VALUES (066,"MACHOP","LUCHA",null,"resources/imgPokemon/Machop.png",null,28);
+
+INSERT INTO pokedex VALUES (067,"MACHOKE","LUCHA",null,"resources/imgPokemon/Machoke.png",null,30);
+
+INSERT INTO pokedex VALUES (068,"MACHAMP","LUCHA",null,"resources/imgPokemon/Machamp.png",null,null);
+
+INSERT INTO pokedex VALUES (069,"BELLSPROUT","PLANTA","VENENO","resources/imgPokemon/Bellsprout.png",null,21);
+
+INSERT INTO pokedex VALUES (070,"WEEPINBELL","PLANTA","VENENO","resources/imgPokemon/Weepinbell.png",null,30);
+
+INSERT INTO pokedex VALUES (0,"","","","resources/imgPokemon/.png",,);
