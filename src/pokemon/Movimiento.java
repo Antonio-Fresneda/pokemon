@@ -71,31 +71,31 @@ public class Movimiento {
 				+ ", estamina=" + estamina + "]";
 	}
 
-//	public void MovmientoAtaque(int MovimientoAtaque, int ventaja, int Potencia, int ataque, int estamina) {
-//
-//		MovimientoAtaque = (ataque + Potencia) * ventaja;
-//		estamina = estamina - (Potencia / 2);
-//	}
-//
-//	public void MovimientoEstadoParalizado(int velocidad) {
-//		velocidad = velocidad / 2;
-//	}
-//
-//	public void MovimientoEstadoQuemado(int ataque, int turno, double vitalidad) {
-//		ataque = ataque / 2;
-//		for (int i = 1; i > 100; i++) {
-//			turno++;
-//			vitalidad = vitalidad - (vitalidad * 0.0625);
-//
-//		}
-//	}
-//
-//	public void MovimientoEstadoEnvenenado(int turno, double vitalidad) {
-//		for (int i = 1; i > 100; i++) {
-//			turno++;
-//			vitalidad = vitalidad - (vitalidad * 0.125);
-//		}
-//	}
+	public void MovmientoAtaque(int MovimientoAtaque, int ventaja, int Potencia, int ataque, int estamina) {
+
+		MovimientoAtaque = (ataque + Potencia) * ventaja;
+		estamina = estamina - (Potencia / 2);
+	}
+
+	public void MovimientoEstadoParalizado(int velocidad) {
+		velocidad = velocidad / 2;
+	}
+
+	public void MovimientoEstadoQuemado(int ataque, int turno, double vitalidad) {
+		ataque = ataque / 2;
+		for (int i = 1; i > 100; i++) {
+			turno++;
+			vitalidad = vitalidad - (vitalidad * 0.0625);
+
+		}
+	}
+
+	public void MovimientoEstadoEnvenenado(int turno, double vitalidad) {
+		for (int i = 1; i > 100; i++) {
+			turno++;
+			vitalidad = vitalidad - (vitalidad * 0.125);
+		}
+	}
 //
 //	public void MovimientoEstadoDormido(int turno) {
 //		for (int i = 1; i > 100; i++) {

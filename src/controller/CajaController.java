@@ -96,14 +96,22 @@ public class CajaController implements Initializable {
 	private TableColumn estaEquipo;
 	@FXML
 	private TableColumn fertEquipo;
-
+	@FXML
+	private TableColumn idPokemonCaja;
+	@FXML
+	private TableColumn idPokemonEquipo;
+	@FXML
+	private Button transferirToCaja;
+	@FXML
+	private Button transferirToEquipo;
 
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
 
-	
 	static LinkedList<Pokemon> coleccion;
+	static LinkedList<Pokemon> equipo;
+	
 
 	public ObservableList<Pokemon> metodo() {
 
@@ -118,7 +126,19 @@ public class CajaController implements Initializable {
 		return lista;
 	}
 
+	public ObservableList<Pokemon> metodoEquipo() {
 
+		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
+
+		for (int i = 0; i < equipo.size(); i++) {
+
+			Pokemon p = equipo.get(i);
+
+			lista.add(p);
+		}
+		return lista;
+	}
+	
 	@FXML
 	public void btnAccionAtrasCaja(ActionEvent event) {
 		try {
@@ -136,11 +156,11 @@ public class CajaController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+
 		coleccion = PokemonCrud.getTodoPokemon();
 
 		TablaCaja.setItems(metodo());
-
+		idPokemonCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("idPokemon"));
 		nombreCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nombre"));
 		nivelCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nivel"));
 		moteCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("mote"));
@@ -155,9 +175,10 @@ public class CajaController implements Initializable {
 		fertCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("fertilidad"));
 		estamCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("estamina"));
 		veloCja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
-		
-		coleccion=PokemonCrud.getTodoPokemonEquipo();
-		TablaEquipo.setItems(metodo());
+
+		equipo = PokemonCrud.getTodoPokemonEquipo();
+		TablaEquipo.setItems(metodoEquipo());
+		idPokemonEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("idPokemon"));
 		nombreEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nombre"));
 		nivelEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nivel"));
 		moteEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("mote"));
@@ -172,6 +193,35 @@ public class CajaController implements Initializable {
 		fertEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("fertilidad"));
 		estaEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("estamina"));
 		veloEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
-	
+
+	}
+
+	// Event Listener on Button[#transferirToCaja].onAction
+	@FXML
+	public void transferirAccionToEquipo(ActionEvent event) {
+		
+		ObservableList<Pokemon>pokemonSeleccionado=TablaCaja.getSelectionModel().getSelectedItems();
+		
+		Pokemon p=pokemonSeleccionado.get(0);
+		
+		
+		
+		equipo.add(p);
+		
+		coleccion.remove(p);
+		
+//		Pokemon pokemon = new Pokemon();
+		PokemonCrud.transferirPokemonEquipo(p.getIdPokemon());
+		
+		TablaEquipo.setItems(metodoEquipo());
+		TablaCaja.setItems(metodo());
+		
+	}
+
+	// Event Listener on Button[#transferirToEquipo].onAction
+	@FXML
+	public void transferirAccionToCaja(ActionEvent event) {
+		
+
 	}
 }

@@ -132,8 +132,10 @@ public class CapturaController {
 				pokemonCapturado.setText("¡POKEMON CAPTURADO!");
 				imgPokemonEncontrado.setVisible(false);
 				pokeball.setVisible(true);
-
-				p = CapturaCrud.InsertarPokemon(1,	numPokedex=CapturaCrud.numPokedex, p.getMote(), sexo='H', 1,
+				
+				
+				
+				p = CapturaCrud.InsertarPokemon(1,	numPokedex=CapturaCrud.numPokedex,txtParaMote.getText(), sexo='H', 1,
 						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
 						ataque = (int) (Math.random() * ((20 - 1) + 1)),
 						defensa = (int) (Math.random() * ((20 - 1) + 1)),
@@ -163,6 +165,7 @@ public class CapturaController {
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
 			stage.show();
+			
 			Date d = new Date();
 			
 

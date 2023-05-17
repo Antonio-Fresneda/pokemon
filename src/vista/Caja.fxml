@@ -18,38 +18,40 @@
       </ImageView>
       <TableView fx:id="TablaCaja" layoutX="48.0" layoutY="80.0" prefHeight="294.0" prefWidth="1008.0">
         <columns>
-          <TableColumn fx:id="nombreCaja" prefWidth="106.0" text="NOMBRE" />
-          <TableColumn fx:id="nivelCaja" prefWidth="51.0" text="NIVEL" />
-            <TableColumn fx:id="moteCaja" text="MOTE " />
-            <TableColumn fx:id="tipo1Caja" prefWidth="82.0" text="TIPO 1" />
-            <TableColumn fx:id="tipo2Caja" prefWidth="74.0" text="TIPO 2" />
-            <TableColumn fx:id="sexoCaja" prefWidth="63.0" text="SEXO" />
-            <TableColumn fx:id="vidaCaja" prefWidth="41.0" text="VIDA" />
-            <TableColumn fx:id="ataCaja" prefWidth="54.0" text="ATA" />
-            <TableColumn fx:id="defCaja" prefWidth="67.0" text="DEF" />
-            <TableColumn fx:id="ataEspeCaja" prefWidth="76.0" text="ATA-ESPE" />
+            <TableColumn fx:id="idPokemonCaja" prefWidth="41.0" text="ID" />
+          <TableColumn fx:id="nombreCaja" prefWidth="116.0" text="NOMBRE" />
+          <TableColumn fx:id="nivelCaja" prefWidth="56.0" text="NIVEL" />
+            <TableColumn fx:id="moteCaja" prefWidth="107.0" text="MOTE " />
+            <TableColumn fx:id="tipo1Caja" prefWidth="92.0" text="TIPO 1" />
+            <TableColumn fx:id="tipo2Caja" prefWidth="90.0" text="TIPO 2" />
+            <TableColumn fx:id="sexoCaja" prefWidth="42.0" text="SEXO" />
+            <TableColumn fx:id="vidaCaja" prefWidth="37.0" text="VIDA" />
+            <TableColumn fx:id="ataCaja" prefWidth="35.0" text="ATA" />
+            <TableColumn fx:id="defCaja" prefWidth="37.0" text="DEF" />
+            <TableColumn fx:id="ataEspeCaja" prefWidth="61.0" text="ATA-ESPE" />
             <TableColumn fx:id="defEspeCaja" prefWidth="65.0" text="DEF-ESPE" />
-            <TableColumn fx:id="veloCja" text="VELOCIDAD" />
-            <TableColumn fx:id="estamCaja" prefWidth="79.0" text="ESTAMINA" />
-            <TableColumn fx:id="fertCaja" prefWidth="89.0" text="FERTILIDAD" />
+            <TableColumn fx:id="veloCja" prefWidth="78.0" text="VELOCIDAD" />
+            <TableColumn fx:id="estamCaja" prefWidth="68.0" text="ESTAMINA" />
+            <TableColumn fx:id="fertCaja" prefWidth="82.0" text="FERTILIDAD" />
         </columns>
       </TableView>
-      <TableView fx:id="TablaEquipo" layoutX="41.0" layoutY="456.0" prefHeight="294.0" prefWidth="1008.0">
+      <TableView fx:id="TablaEquipo" layoutX="49.0" layoutY="456.0" prefHeight="294.0" prefWidth="1008.0">
          <columns>
-            <TableColumn fx:id="nombreEquipo" prefWidth="94.0" text="NOMBRE" />
+            <TableColumn fx:id="idPokemonEquipo" prefWidth="43.0" text="ID" />
+            <TableColumn fx:id="nombreEquipo" prefWidth="114.0" text="NOMBRE" />
             <TableColumn fx:id="nivelEquipo" prefWidth="61.0" text="NIVEL" />
-            <TableColumn fx:id="moteEquipo" prefWidth="74.0" text="MOTE " />
-            <TableColumn fx:id="tipo1Equipo" prefWidth="87.0" text="TIPO 1" />
-            <TableColumn fx:id="tipo2Equipo" prefWidth="77.0" text="TIPO 2" />
-            <TableColumn fx:id="sexoEquipo" prefWidth="74.0" text="SEXO" />
-            <TableColumn fx:id="vidaEquipo" prefWidth="54.0" text="VIDA" />
-            <TableColumn fx:id="ataEquipo" prefWidth="60.0" text="ATA" />
-            <TableColumn fx:id="defEquipo" prefWidth="52.0" text="DEF" />
-            <TableColumn fx:id="ataEspeEquipo" prefWidth="75.0" text="ATA-ESPE" />
-            <TableColumn fx:id="defEspeEquipo" prefWidth="68.0" text="DEF-ESPE" />
-            <TableColumn fx:id="veloEquipo" prefWidth="75.0" text="VELOCIDAD" />
+            <TableColumn fx:id="moteEquipo" prefWidth="101.0" text="MOTE " />
+            <TableColumn fx:id="tipo1Equipo" prefWidth="99.0" text="TIPO 1" />
+            <TableColumn fx:id="tipo2Equipo" prefWidth="94.0" text="TIPO 2" />
+            <TableColumn fx:id="sexoEquipo" prefWidth="48.0" text="SEXO" />
+            <TableColumn fx:id="vidaEquipo" prefWidth="42.0" text="VIDA" />
+            <TableColumn fx:id="ataEquipo" prefWidth="31.0" text="ATA" />
+            <TableColumn fx:id="defEquipo" prefWidth="32.0" text="DEF" />
+            <TableColumn fx:id="ataEspeEquipo" prefWidth="51.0" text="ATA-ESPE" />
+            <TableColumn fx:id="defEspeEquipo" prefWidth="58.0" text="DEF-ESPE" />
+            <TableColumn fx:id="veloEquipo" prefWidth="83.0" text="VELOCIDAD" />
             <TableColumn fx:id="estaEquipo" prefWidth="68.0" text="ESTAMINA" />
-            <TableColumn fx:id="fertEquipo" prefWidth="88.0" text="FERTILIDAD" />
+            <TableColumn fx:id="fertEquipo" prefWidth="82.0" text="FERTILIDAD" />
          </columns>
       </TableView>
       <Label alignment="CENTER" layoutX="422.0" layoutY="17.0" prefHeight="43.0" prefWidth="260.0" text="CAJA" textAlignment="CENTER">
@@ -63,5 +65,7 @@
          </font>
       </Label>
       <Button fx:id="btnAtrasCaja" layoutX="41.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnAccionAtrasCaja" prefHeight="35.0" prefWidth="82.0" text="Atras" />
+      <Button fx:id="transferirToCaja" layoutX="876.0" layoutY="392.0" mnemonicParsing="false" onAction="#transferirAccionToCaja" prefHeight="47.0" prefWidth="181.0" text="TRANSFERIR A CAJA" />
+      <Button fx:id="transferirToEquipo" layoutX="48.0" layoutY="393.0" mnemonicParsing="false" onAction="#transferirAccionToEquipo" prefHeight="47.0" prefWidth="181.0" text="TRANSFERIR A EQUIPO" />
    </children>
 </AnchorPane>
