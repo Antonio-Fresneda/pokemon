@@ -38,9 +38,28 @@ public class Pokemon {
 	public int potencia;
 
 	/**
-	 * 
-	 * @param string
-	 * @param nivelMaximo
+	 * Constructor por defecto
+	 * @param idPokemon
+	 * @param numPokedex
+	 * @param nombre
+	 * @param mote
+	 * @param vitalidad
+	 * @param ataque
+	 * @param defensa
+	 * @param ataqueEspecial
+	 * @param defensaEspecial
+	 * @param velocidad
+	 * @param estamina
+	 * @param nivel
+	 * @param movimiento
+	 * @param fertilidad
+	 * @param sexo
+	 * @param tipo1
+	 * @param tipo2
+	 * @param estado
+	 * @param objeto
+	 * @param experiencia
+	 * @param ventaja
 	 */
 	public Pokemon(String string, Object nivelMaximo) {
 		this.idPokemon = 0;
@@ -65,7 +84,7 @@ public class Pokemon {
 	}
 
 	/**
-	 * 
+	 * Constructor con todos los parametros
 	 * @param idPokemon
 	 * @param numPokedex
 	 * @param nombre
