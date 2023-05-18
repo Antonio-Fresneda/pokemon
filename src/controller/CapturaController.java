@@ -11,7 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import pokemon.Logger;
 import pokemon.Pokemon;
 
 import java.io.File;
@@ -35,7 +37,7 @@ public class CapturaController {
 	@FXML
 	private Button btnAtrasCaptura;
 	@FXML
-	private TextField PreguntaMote;
+	private Text PreguntaMote;
 	@FXML
 	private Button btnSiMote;
 	@FXML
@@ -43,7 +45,12 @@ public class CapturaController {
 	@FXML
 	private TextField txtParaMote;
 	@FXML
+	private Text txtAccion;
+	@FXML
+	private Button btnAceptar;
+	@FXML
 	private Label pokemonCapturado;
+	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
@@ -58,12 +65,15 @@ public class CapturaController {
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
-
+		Logger.write("Has entrado en captura " + simpleDateFormat);
+		Logger.close();
+		
 		btnSiMote.setVisible(false);
 		btnNoMote.setVisible(false);
 		txtParaMote.setVisible(false);
 		PreguntaMote.setVisible(false);
 		pokeball.setVisible(false);
+		btnAceptar.setVisible(false);
 	}
 
 	@FXML
@@ -90,14 +100,19 @@ public class CapturaController {
 		txtParaMote.setVisible(false);
 		PreguntaMote.setVisible(false);
 		pokeball.setVisible(false);
+		txtAccion.setVisible(true);
+
+		txtAccion.setText("HAS ENCONTRADO UN " + CapturaCrud.nombrePokemon + " SALVAJE ");
+		
+//		Logger.write("Has encontrado un" + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d) + ".log");
+//		Logger.close();
 
 	}
 
 	@FXML
 	public void btnAccionCapturar(ActionEvent event) {
 
-//		Pokemon p = CapturaCrud.buscarPokemon();ç
-		Pokemon p=new Pokemon();
+		Pokemon p = new Pokemon();
 		int idEntrenador;
 		int idPokemon;
 		int numPokedex;
@@ -118,6 +133,7 @@ public class CapturaController {
 		;
 		if (pokeballs > 0) {
 			System.out.println("Has lanzado una pokeball");
+			txtAccion.setText("Has lanzado una pokebal");
 			pokeballs--;
 			if (ratioCaptura == 1 || ratioCaptura == 2) {
 				System.out.println("¡POKEMON CAPTURADO!");
@@ -132,10 +148,13 @@ public class CapturaController {
 				pokemonCapturado.setText("¡POKEMON CAPTURADO!");
 				imgPokemonEncontrado.setVisible(false);
 				pokeball.setVisible(true);
-				
-				
-				
-				p = CapturaCrud.InsertarPokemon(1,	numPokedex=CapturaCrud.numPokedex,null, sexo='H', 1,
+				txtAccion.setVisible(false);
+
+//				Logger.write("Has capturado un" + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d)
+//						+ ".log");
+//				Logger.close();
+
+				p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, null, sexo = 'H', 1,
 						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
 						ataque = (int) (Math.random() * ((20 - 1) + 1)),
 						defensa = (int) (Math.random() * ((20 - 1) + 1)),
@@ -147,6 +166,7 @@ public class CapturaController {
 
 			} else {
 				System.out.println("El pokemon se ha escapado");
+				txtAccion.setText("El pokemon se ha escapado");
 			}
 
 		} else {
@@ -165,14 +185,16 @@ public class CapturaController {
 			stage.setTitle("Pokemon");
 			stage.setScene(scene);
 			stage.show();
-			
+
 			Date d = new Date();
-			
 
 			System.out.println("Has salido de la pantalla de captura ");
 			System.out.println(d);
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 			System.out.println(simpleDateFormat.format(d) + ".log");
+			
+			Logger.write("Has salido de la ventana captura" + simpleDateFormat.format(d) + ".log");
+			Logger.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -185,13 +207,22 @@ public class CapturaController {
 
 	public void btnAccionSiMote(ActionEvent event) {
 		txtParaMote.setVisible(true);
-		Pokemon p=new Pokemon();
-		
-		p=CapturaCrud.ponerMote(txtParaMote.getText(),0 );
+		btnAceptar.setVisible(true);
 
 	}
 
 	public void btnAccionNoMote(ActionEvent event) {
+		PreguntaMote.setVisible(false);
+		btnSiMote.setVisible(false);
+		btnNoMote.setVisible(false);
+		pokeball.setVisible(false);
 		txtParaMote.setVisible(false);
+		btnAceptar.setVisible(false);
 	}
+
+	public void accionAceptar(ActionEvent event) {
+		// Pokemon p=new Pokemon();
+		// p=CapturaCrud.ponerMote(txtParaMote.getText(),0 );
+	}
+
 }

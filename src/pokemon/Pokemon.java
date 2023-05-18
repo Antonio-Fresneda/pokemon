@@ -2,23 +2,27 @@ package pokemon;
 
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * 
+ * @author Antonio
+ *
+ */
 public class Pokemon {
 
 	private int idPokemon;
 	private int numPokedex;
-	private String nombre;
+	public String nombre;
 	private String mote;
-	private int vitalidad;
-	private int ataque;
-	private int defensa;
-	private int ataqueEspecial;
-	private int defensaEspecial;
-	private int velocidad;
-	private static int estamina;
-	private int nivel;
+	public int vitalidad;
+	public  int ataque;
+	public  int defensa;
+	public int ataqueEspecial;
+	public int defensaEspecial;
+	public int velocidad;
+	public static  int estamina;
+	public int nivel;
 	private Movimiento[] movimiento = new Movimiento[4];
-	private int fertilidad;
+	public int fertilidad;
 	private String sexo;
 	private String tipo1;
 	private String tipo2;
@@ -31,13 +35,15 @@ public class Pokemon {
 	private List<Combate> listaAtaques;
 	private List<String> listaTipos;
 
-	public Pokemon() {
-		
-	}
 	
+/**
+ * 
+ * @param string
+ * @param nivelMaximo
+ */
 	public Pokemon(String string, Object nivelMaximo) {
-		this.idPokemon=0;
-		this.numPokedex=0;
+		this.idPokemon = 0;
+		this.numPokedex = 0;
 		this.nombre = "";
 		this.mote = "";
 		this.vitalidad = 0;
@@ -49,21 +55,45 @@ public class Pokemon {
 		this.estamina = 0;
 		this.nivel = 0;
 		this.fertilidad = 0;
-		this.sexo="";
+		this.sexo = "";
 		this.estado = "";
 		this.objeto = "";
 		this.experiencia = 0;
 		this.ventaja = 0;
 
 	}
-
-	public Pokemon(int idPokemon,int numPokedex,String nombre, String mote, int vitalidad, int ataque, int defensa, int ataqueEspecial,
-			int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento, int fertilidad,
-			String sexo, String tipo1, String tipo2, String estado, String objeto, int experiencia, int ventaja) {
+/**
+ * 
+ * @param idPokemon
+ * @param numPokedex
+ * @param nombre
+ * @param mote
+ * @param vitalidad
+ * @param ataque
+ * @param defensa
+ * @param ataqueEspecial
+ * @param defensaEspecial
+ * @param velocidad
+ * @param estamina
+ * @param nivel
+ * @param movimiento
+ * @param fertilidad
+ * @param sexo
+ * @param tipo1
+ * @param tipo2
+ * @param estado
+ * @param objeto
+ * @param experiencia
+ * @param ventaja
+ */
+	public Pokemon(int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa,
+			int ataqueEspecial, int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento,
+			int fertilidad, String sexo, String tipo1, String tipo2, String estado, String objeto, int experiencia,
+			int ventaja) {
 
 		super();
-		this.idPokemon=idPokemon;
-		this.numPokedex=numPokedex;
+		this.idPokemon = idPokemon;
+		this.numPokedex = numPokedex;
 		this.nombre = nombre;
 		this.mote = mote;
 		this.vitalidad = vitalidad;
@@ -83,15 +113,19 @@ public class Pokemon {
 		this.objeto = objeto;
 		this.experiencia = experiencia;
 		this.ventaja = ventaja;
-		
+
+	}
+/**
+ * 
+ * @return Devuelve get y set de los atributos de arriba
+ */
+	public Pokemon(String moteHijo, List<Combate> ataquesHijo, List<String> tiposHijo) {
+		// TODO Auto-generated constructor stub
 	}
 
-	public Pokemon(String moteHijo, List<Combate> ataquesHijo, List<String> tiposHijo) {
-		 this.mote = moteHijo;
-		this.listaAtaques = ataquesHijo;
-		this.listaTipos = tiposHijo;
-		    }
-
+	public Pokemon() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -252,7 +286,7 @@ public class Pokemon {
 	public void setExperiencia(int experiencia) {
 		this.experiencia = experiencia;
 	}
-	
+
 	public int getNumPokedex() {
 		return numPokedex;
 	}
@@ -267,98 +301,6 @@ public class Pokemon {
 
 	public void setEspecie(String especie) {
 		this.especie = especie;
-	}
-
-	@Override
-	public String toString() {
-		return "Pokemon [idPokemon=" + idPokemon +",numPokedex="+numPokedex+ ", nombre=" + nombre + ", mote=" + mote + ", vitalidad="
-				+ vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial=" + ataqueEspecial
-				+ ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina=" + estamina
-				+ ", nivel=" + nivel + ", movimiento=" + Arrays.toString(movimiento) + ", fertilidad=" + fertilidad
-				+ ", sexo=" + sexo + ", tipo1=" + tipo1 + ", tipo2=" + tipo2 + ", estado=" + estado + ", objeto="
-				+ objeto + ", experiencia=" + experiencia + ", ventaja=" + ventaja + "]";
-	}
-
-	public void subirNivel(int experiencia, int nivel, int vitalidad, int ataque, int defensa, int ataqueEspecial,
-			int defensaEspecial, int velocidad, int estamina) {
-		for (int n = 1; n < 100; n++) {
-			if (experiencia == 10 * nivel) {
-				nivel++;
-				vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				ataqueEspecial = ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				aprenderMovimiento();
-					
-				
-			}
-		}
-
-	}
-	
-	public void atacarPokemon() {
-	}
-
-	public int comprobarVentaja(int ventaja) {
-		if (ventaja==0.5) {
-			System.out.println("Es poco eficaz");
-		}else if(ventaja==1) {
-			System.out.println("Neutro");
-		}else if(ventaja==0.25) {
-			System.out.println("Es muy poco eficaz");
-		}else if(ventaja==2) {
-			System.out.println("Es eficaz");
-		}else if(ventaja==4) {
-			System.out.println("Es muy eficaz");
-		}
-		
-		double[][] efectividadesPokemon = {
-				/*
-				 * ACERO AGUA BICHO DRAGON ELÉC FANT FUEGO HADA HIELO LUCHA NORMAL PLANTA PSI
-				 * ROCA SINIE TIERRA VENENO VOLADOR
-				 */
-				{ 0.5, 0.5, 1, 1, 0.5, 1, 0.5, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1 }, // ACERO
-				{ 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 1, 1 }, // AGUA
-				{ 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 2, 1, 2, 1, 0.5, 0.5 }, // BICHO
-				{ 0.5, 1, 1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, // DRAGÓN
-				{ 1, 2, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0, 1, 2 }, // ELÉCTRICO
-				{ 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 2, 1, 0.5, 1, 1, 1 }, // FANTASMA
-				{ 2, 0.5, 2, 0.5, 1, 1, 0.5, 1, 2, 1, 1, 2, 1, 0.5, 1, 1, 1, 1 }, // FUEGO
-				{ 0.5, 1, 1, 2, 1, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 1, 0.5, 1 }, // HADA
-				{ 0.5, 0.5, 1, 2, 1, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 2, 1, 2 }, // HIELO
-				{ 2, 1, 0.5, 1, 1, 0, 1, 0.5, 2, 1, 2, 1, 0.5, 2, 2, 1, 0.5, 0.5 }, // LUCHA
-				{ 0.5, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1 }, // NORMAL
-				{ 0.5, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 0.5, 0.5 }, // PLANTA
-				{ 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1, 0, 1, 2, 1 }, // PSÍQUICO
-				{ 0.5, 1, 2, 1, 1, 1, 2, 1, 2, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 2 }, // ROCA
-				{ 1, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 0.5, 1, 1, 1 }, // SINIESTRO
-				{ 2, 1, 0.5, 1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 2, 0 }, // TIERRA
-				{ 0, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 1 }, // VENENO
-				{ 0.5, 1, 2, 1, 0.5, 1, 1, 1, 1, 2, 1, 2, 1, 0.5, 1, 1, 1, 1 } // VOLADOR
-				
-				
-		};
-
-		return ventaja;
-	}
-
-	public static void descansar() {
-		estamina = estamina + 50;
-
-	}
-
-	public void aprenderMovimiento() {
-		System.out.println("Tu "+nombre+" quiere aprender un nuevo movimiento");
-		Movimiento movimiento=new Movimiento();
-		
-	}
-
-	public void aumentarEstadisticas(int aumentoEstadisticas) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public String getImagen() {
@@ -379,5 +321,129 @@ public class Pokemon {
 		return null;
 	}
 
+	@Override
+	public String toString() {
+		return "Pokemon [idPokemon=" + idPokemon + ",numPokedex=" + numPokedex + ", nombre=" + nombre + ", mote=" + mote
+				+ ", vitalidad=" + vitalidad + ", ataque=" + ataque + ", defensa=" + defensa + ", ataqueEspecial="
+				+ ataqueEspecial + ", defensaEspecial=" + defensaEspecial + ", velocidad=" + velocidad + ", estamina="
+				+ estamina + ", nivel=" + nivel + ", movimiento=" + Arrays.toString(movimiento) + ", fertilidad="
+				+ fertilidad + ", sexo=" + sexo + ", tipo1=" + tipo1 + ", tipo2=" + tipo2 + ", estado=" + estado
+				+ ", objeto=" + objeto + ", experiencia=" + experiencia + ", ventaja=" + ventaja + "]";
+	}
+	/**
+	 * Método para subir de nivel 
+	 * @param experiencia
+	 * @param nivel
+	 * @param vitalidad
+	 * @param ataque
+	 * @param defensa
+	 * @param ataqueEspecial
+	 * @param defensaEspecial
+	 * @param velocidad
+	 * @param estamina
+	 */
+	public void subirNivel(int experiencia, int nivel, int vitalidad, int ataque, int defensa, int ataqueEspecial,
+			int defensaEspecial, int velocidad, int estamina) {
+		for (int n = 1; n < 100; n++) {
+			if (experiencia == 10 * nivel) {
+				nivel++;
+				vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				ataqueEspecial = ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
+				aprenderMovimiento();
+
+			}
+		}
+
+	}
+	/**
+	 * Metodo para que los pokemon ataquen a sus rivales
+	 *  
+	 */
+	 
+	public void atacarPokemon() {
+	}
 	
+	/**
+	 * Metodo que te compruebe las ventajas y desventajas de los pokemon 
+	 * @param ventaja
+	 * @return
+	 */
+	public int comprobarVentaja(int ventaja) {
+		if (ventaja == 0.5) {
+			System.out.println("Es poco eficaz");
+		} else if (ventaja == 1) {
+			System.out.println("Neutro");
+		} else if (ventaja == 0.25) {
+			System.out.println("Es muy poco eficaz");
+		} else if (ventaja == 2) {
+			System.out.println("Es eficaz");
+		} else if (ventaja == 4) {
+			System.out.println("Es muy eficaz");
+		}
+		//Tabla con las efectividades de los pokemon
+		double[][] efectividadesPokemon = {
+				/*
+				 * ACERO AGUA BICHO DRAGON ELEC FANT FUEGO HADA HIELO LUCHA NORMAL PLANTA PSI
+				 * ROCA SINIE TIERRA VENENO VOLADOR
+				 */
+				{ 0.5, 0.5, 1, 1, 0.5, 1, 0.5, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1 }, // ACERO
+				{ 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 1, 1 }, // AGUA
+				{ 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 2, 1, 2, 1, 0.5, 0.5 }, // BICHO
+				{ 0.5, 1, 1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, // DRAGON
+				{ 1, 2, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0, 1, 2 }, // ELECTRICO
+				{ 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 2, 1, 0.5, 1, 1, 1 }, // FANTASMA
+				{ 2, 0.5, 2, 0.5, 1, 1, 0.5, 1, 2, 1, 1, 2, 1, 0.5, 1, 1, 1, 1 }, // FUEGO
+				{ 0.5, 1, 1, 2, 1, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 1, 0.5, 1 }, // HADA
+				{ 0.5, 0.5, 1, 2, 1, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 2, 1, 2 }, // HIELO
+				{ 2, 1, 0.5, 1, 1, 0, 1, 0.5, 2, 1, 2, 1, 0.5, 2, 2, 1, 0.5, 0.5 }, // LUCHA
+				{ 0.5, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1 }, // NORMAL
+				{ 0.5, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 0.5, 0.5 }, // PLANTA
+				{ 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1, 0, 1, 2, 1 }, // PSIQUICO
+				{ 0.5, 1, 2, 1, 1, 1, 2, 1, 2, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 2 }, // ROCA
+				{ 1, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 1, 1, 2, 1, 0.5, 1, 1, 1 }, // SINIESTRO
+				{ 2, 1, 0.5, 1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 2, 0 }, // TIERRA
+				{ 0, 1, 1, 1, 1, 0.5, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 1 }, // VENENO
+				{ 0.5, 1, 2, 1, 0.5, 1, 1, 1, 1, 2, 1, 2, 1, 0.5, 1, 1, 1, 1 } // VOLADOR
+
+		};
+
+		return ventaja;
+	}
+	/**
+	 * Metodo para que descanse el pokemon
+	 */
+	
+	public static void descansar() {
+		estamina = estamina + 50;
+
+	}
+	/**
+	 * Metodo para que el pokemon aprenda un nuevo movimiento
+	 */
+	public void aprenderMovimiento() {
+		System.out.println("Tu " + nombre + " quiere aprender un nuevo movimiento");
+		Movimiento movimiento = new Movimiento();
+
+	}
+
+	/**
+	 * Metodo que aumenta las estadisticas de los pokemon
+	 * @param aumentoEstadisticas
+	 */
+	public void aumentarEstadisticas(int aumentoEstadisticas) {
+		vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		ataqueEspecial = ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
+
+	}
+
 }

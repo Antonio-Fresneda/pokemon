@@ -95,7 +95,8 @@ public class EntrenarController {
 	}
 
 	public void accionPesado(ActionEvent event) {
-
+		
+		
 	}
 
 	public void accionFurioso(ActionEvent event) {

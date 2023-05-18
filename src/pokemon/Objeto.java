@@ -1,5 +1,9 @@
 package pokemon;
-
+/**
+ * 
+ * @author Antonio
+ *
+ */
 public class Objeto {
 	
 	    private String nombre;

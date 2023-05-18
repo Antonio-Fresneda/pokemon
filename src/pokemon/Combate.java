@@ -115,11 +115,11 @@ public class Combate {
 
 		if (pokemonJugadorKO == 6) {
 			ganador = rival;
-			jugador.entregarPokédollars(ganador);
+			jugador.entregarPokedollars(ganador);
 			jugador.ganarExperiencia(calcularExperiencia());
 		} else {
 			ganador = jugador;
-			rival.entregarPokédollars(ganador);
+			rival.entregarPokedollars(ganador);
 			rival.ganarExperiencia(calcularExperiencia());
 		}
 

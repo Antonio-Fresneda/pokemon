@@ -1,6 +1,7 @@
 package pokemon;
 
 public class Movimiento {
+	
 	private int Potencia;
 	private int ventaja;
 	private int ataque;

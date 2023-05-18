@@ -9,9 +9,11 @@ import java.sql.Statement;
 import pokemon.Pokemon;
 
 public class CapturaCrud {
-	
+
 	public static int numPokedex;
 	public static int idPokemon;
+	public static String nombrePokemon;
+
 	public static Pokemon buscarPokemon() {
 
 		Connection connection = null;
@@ -33,7 +35,7 @@ public class CapturaCrud {
 
 			while (rs.next()) {
 				String sprite = rs.getString("sprite");
-				String nombrePokemon = rs.getString("nom_Pokemon");
+				nombrePokemon = rs.getString("nom_Pokemon");
 				String tipo1 = rs.getString("tipo1");
 				String tipo2 = rs.getString("tipo2");
 				numPokedex = rs.getInt("NUM_POKEDEX");
@@ -43,7 +45,7 @@ public class CapturaCrud {
 
 				System.out.println("Has encontrado un " + nombrePokemon + " salvaje");
 				System.out.println("Es tipo " + tipo1 + " y " + tipo2 + " ¡ATRAPALO!");
-				System.out.println("Su numero en la pokedex es "+numPokedex);
+				System.out.println("Su numero en la pokedex es " + numPokedex);
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -69,7 +71,7 @@ public class CapturaCrud {
 		return p;
 	}
 
-	public static Pokemon InsertarPokemon(int idEntrenador,int numPokedex, String mote, char sexo, int nivel,
+	public static Pokemon InsertarPokemon(int idEntrenador, int numPokedex, String mote, char sexo, int nivel,
 			int vitalidad, int ataque, int defensa, int ataEspecial, int defEspecial, int velocidad, int estamina,
 			int fertilidad, int equipo) {
 		Connection connection = null;
@@ -116,9 +118,9 @@ public class CapturaCrud {
 		return p;
 
 	}
-	public static Pokemon ponerMote(String mote,int idPokemon) {
-		
-		
+
+	public static Pokemon ponerMote(String mote, int idPokemon) {
+
 		Pokemon pokemon = new Pokemon();
 
 		Connection connection = null;
@@ -127,7 +129,7 @@ public class CapturaCrud {
 		String login = "root";
 		String password = "";
 
-		String query = "UPDATE pokemon SET mote="+mote+"imag WHERE id_pokemon =" + idPokemon + ";";
+		String query = "UPDATE pokemon SET mote=" + mote + " WHERE id_pokemon =" + idPokemon + ";";
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(url, login, password);
@@ -157,6 +159,5 @@ public class CapturaCrud {
 		}
 		return pokemon;
 	}
-	
-}
 
+}
