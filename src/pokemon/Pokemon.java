@@ -2,6 +2,7 @@ package pokemon;
 
 import java.util.Arrays;
 import java.util.List;
+
 /**
  * 
  * @author Antonio
@@ -14,12 +15,12 @@ public class Pokemon {
 	public String nombre;
 	private String mote;
 	public int vitalidad;
-	public  int ataque;
-	public  int defensa;
+	public int ataque;
+	public int defensa;
 	public int ataqueEspecial;
 	public int defensaEspecial;
 	public int velocidad;
-	public static  int estamina;
+	public static int estamina;
 	public int nivel;
 	private Movimiento[] movimiento = new Movimiento[4];
 	public int fertilidad;
@@ -29,18 +30,18 @@ public class Pokemon {
 	private String estado;
 	private String objeto;
 	private int experiencia;
-	private int ventaja;
+	public int ventaja;
 	private String imagen;
 	private String especie;
 	private List<Combate> listaAtaques;
 	private List<String> listaTipos;
+	public int potencia;
 
-	
-/**
- * 
- * @param string
- * @param nivelMaximo
- */
+	/**
+	 * 
+	 * @param string
+	 * @param nivelMaximo
+	 */
 	public Pokemon(String string, Object nivelMaximo) {
 		this.idPokemon = 0;
 		this.numPokedex = 0;
@@ -62,30 +63,31 @@ public class Pokemon {
 		this.ventaja = 0;
 
 	}
-/**
- * 
- * @param idPokemon
- * @param numPokedex
- * @param nombre
- * @param mote
- * @param vitalidad
- * @param ataque
- * @param defensa
- * @param ataqueEspecial
- * @param defensaEspecial
- * @param velocidad
- * @param estamina
- * @param nivel
- * @param movimiento
- * @param fertilidad
- * @param sexo
- * @param tipo1
- * @param tipo2
- * @param estado
- * @param objeto
- * @param experiencia
- * @param ventaja
- */
+
+	/**
+	 * 
+	 * @param idPokemon
+	 * @param numPokedex
+	 * @param nombre
+	 * @param mote
+	 * @param vitalidad
+	 * @param ataque
+	 * @param defensa
+	 * @param ataqueEspecial
+	 * @param defensaEspecial
+	 * @param velocidad
+	 * @param estamina
+	 * @param nivel
+	 * @param movimiento
+	 * @param fertilidad
+	 * @param sexo
+	 * @param tipo1
+	 * @param tipo2
+	 * @param estado
+	 * @param objeto
+	 * @param experiencia
+	 * @param ventaja
+	 */
 	public Pokemon(int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa,
 			int ataqueEspecial, int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento,
 			int fertilidad, String sexo, String tipo1, String tipo2, String estado, String objeto, int experiencia,
@@ -115,10 +117,11 @@ public class Pokemon {
 		this.ventaja = ventaja;
 
 	}
-/**
- * 
- * @return Devuelve get y set de los atributos de arriba
- */
+
+	/**
+	 * 
+	 * @return Devuelve get y set de los atributos de arriba
+	 */
 	public Pokemon(String moteHijo, List<Combate> ataquesHijo, List<String> tiposHijo) {
 		// TODO Auto-generated constructor stub
 	}
@@ -330,8 +333,10 @@ public class Pokemon {
 				+ fertilidad + ", sexo=" + sexo + ", tipo1=" + tipo1 + ", tipo2=" + tipo2 + ", estado=" + estado
 				+ ", objeto=" + objeto + ", experiencia=" + experiencia + ", ventaja=" + ventaja + "]";
 	}
+
 	/**
-	 * Método para subir de nivel 
+	 * Método para subir de nivel
+	 * 
 	 * @param experiencia
 	 * @param nivel
 	 * @param vitalidad
@@ -360,16 +365,24 @@ public class Pokemon {
 		}
 
 	}
+
 	/**
 	 * Metodo para que los pokemon ataquen a sus rivales
-	 *  
+	 * 
 	 */
-	 
+
 	public void atacarPokemon() {
+		Pokemon pokemon = new Pokemon();
+		Pokemon pokemonRival = new Pokemon();
+		int atacar;
+		atacar = (pokemon.ataque + pokemon.potencia)*pokemon.ventaja;
+		;
+		pokemonRival.vitalidad = pokemonRival.vitalidad - atacar;
 	}
-	
+
 	/**
-	 * Metodo que te compruebe las ventajas y desventajas de los pokemon 
+	 * Metodo que te compruebe las ventajas y desventajas de los pokemon
+	 * 
 	 * @param ventaja
 	 * @return
 	 */
@@ -385,7 +398,7 @@ public class Pokemon {
 		} else if (ventaja == 4) {
 			System.out.println("Es muy eficaz");
 		}
-		//Tabla con las efectividades de los pokemon
+		// Tabla con las efectividades de los pokemon
 		double[][] efectividadesPokemon = {
 				/*
 				 * ACERO AGUA BICHO DRAGON ELEC FANT FUEGO HADA HIELO LUCHA NORMAL PLANTA PSI
@@ -414,14 +427,16 @@ public class Pokemon {
 
 		return ventaja;
 	}
+
 	/**
 	 * Metodo para que descanse el pokemon
 	 */
-	
+
 	public static void descansar() {
 		estamina = estamina + 50;
 
 	}
+
 	/**
 	 * Metodo para que el pokemon aprenda un nuevo movimiento
 	 */
@@ -433,6 +448,7 @@ public class Pokemon {
 
 	/**
 	 * Metodo que aumenta las estadisticas de los pokemon
+	 * 
 	 * @param aumentoEstadisticas
 	 */
 	public void aumentarEstadisticas(int aumentoEstadisticas) {

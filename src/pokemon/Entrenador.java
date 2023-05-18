@@ -1,13 +1,10 @@
 package pokemon;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Random;
-
-import java.util.Scanner;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  * 
  * @author Antonio
@@ -185,10 +182,10 @@ public class Entrenador {
 	public void entrenamientoPesado(Pokemon pokemon) {
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		int pokedollar = getPokedollars();
+		
 
 		costoEntrenamiento = 20 * pokemon.getNivel();
-		pokedollar = pokedollar - costoEntrenamiento;
+		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.defensa = pokemon.defensa + 5;
 		pokemon.defensaEspecial = pokemon.defensaEspecial + 5;
 		pokemon.vitalidad = pokemon.vitalidad + 5;
@@ -201,9 +198,9 @@ public class Entrenador {
 	public void entrenamientoFurioso(Pokemon pokemon) {
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		int pokedollar = getPokedollars();
+		
 		costoEntrenamiento = 30 * pokemon.getNivel();
-		pokedollar = pokedollar - costoEntrenamiento;
+		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataque = pokemon.ataque + 5;
 		pokemon.ataqueEspecial = pokemon.ataqueEspecial + 5;
 		pokemon.velocidad = pokemon.velocidad + 5;
@@ -215,9 +212,9 @@ public class Entrenador {
 	public void entrenamientoFuncional(Pokemon pokemon) {
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		int pokedollar = getPokedollars();
+		
 		costoEntrenamiento = 40 * pokemon.getNivel();
-		pokedollar = pokedollar - costoEntrenamiento;
+		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataque = pokemon.ataque + 5;
 		pokemon.defensa = pokemon.defensa + 5;
 		pokemon.vitalidad = pokemon.vitalidad + 5;
@@ -229,9 +226,9 @@ public class Entrenador {
 	public void entrenamientoOnirico(Pokemon pokemon) {
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		int pokedollar = getPokedollars();
+		
 		costoEntrenamiento = 40 * pokemon.getNivel();
-		pokedollar = pokedollar - costoEntrenamiento;
+		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataqueEspecial = pokemon.ataqueEspecial + 5;
 		pokemon.defensaEspecial = pokemon.defensaEspecial + 5;
 		pokemon.velocidad = pokemon.velocidad + 5;

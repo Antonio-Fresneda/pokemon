@@ -144,11 +144,6 @@ INSERT INTO pokedex VALUES (010,"CATERPIE","BICHO",null,"resources/imgPokemon/Ca
 
 INSERT INTO entrenador VALUES (001,"Luis",10000,null);
 
-INSERT INTO pokemon VALUES (001,001,001,null,'h',5,20,20,20,20,20,20,20,3,1);
-INSERT INTO pokemon VALUES (001,002,004,null,'h',5,20,20,20,20,20,20,20,3,1);
-INSERT INTO pokemon VALUES (001,003,007,null,'h',5,20,20,20,20,20,20,20,3,1);
-
-
 INSERT INTO pokedex VALUES (011,"METAPOD","BICHO", null, "resources/imgPokemon/Metapod.png",null,10);
 
 INSERT INTO pokedex VALUES (012,"BUTTERFREE","BICHO","VOLADOR","resources/imgPokemon/Butterfree.png",null,null);
@@ -269,4 +264,3 @@ INSERT INTO pokedex VALUES (069,"BELLSPROUT","PLANTA","VENENO","resources/imgPok
 
 INSERT INTO pokedex VALUES (070,"WEEPINBELL","PLANTA","VENENO","resources/imgPokemon/Weepinbell.png",null,30);
 
-INSERT INTO pokedex VALUES (0,"","","","resources/imgPokemon/.png",,);

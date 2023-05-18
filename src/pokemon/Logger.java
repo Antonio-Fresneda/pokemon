@@ -27,7 +27,7 @@ public class Logger {
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String timestamp = dateFormat.format(new Date());
-			getOrCreateFileWriter().write("Has entrado a captura: "+ timestamp);
+			getOrCreateFileWriter().write(line +" "+ timestamp);
 			getOrCreateFileWriter().newLine();
 			getOrCreateFileWriter().flush();
 		} catch (IOException e) {

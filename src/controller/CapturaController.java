@@ -50,13 +50,15 @@ public class CapturaController {
 	private Button btnAceptar;
 	@FXML
 	private Label pokemonCapturado;
-	
+
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
 
 	// Event Listener on Button[#btnBuscar].onAction
-
+	/**
+	 * Metodo que inicializa cuando te metes a la ventana de captura
+	 */
 	@FXML
 	public void initialize() {
 
@@ -65,9 +67,9 @@ public class CapturaController {
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
+
 		Logger.write("Has entrado en captura " + simpleDateFormat);
-		Logger.close();
-		
+
 		btnSiMote.setVisible(false);
 		btnNoMote.setVisible(false);
 		txtParaMote.setVisible(false);
@@ -76,6 +78,11 @@ public class CapturaController {
 		btnAceptar.setVisible(false);
 	}
 
+	/**
+	 * Metodo que busca al pokemon
+	 * 
+	 * @param event
+	 */
 	@FXML
 	public void btnBuscar(ActionEvent event) {
 
@@ -85,11 +92,11 @@ public class CapturaController {
 		System.out.println(d);
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
-
+		// Llama al metodo buscar pokemon de la clase CapturaCrud
 		Pokemon p = CapturaCrud.buscarPokemon();
 
+		// Te carga la imagen del pokemon en la interfaz
 		File file = new File(p.getImagen());
-
 		Image image = new Image(file.toURI().toString());
 
 		imgPokemonEncontrado.setImage(image);
@@ -103,14 +110,23 @@ public class CapturaController {
 		txtAccion.setVisible(true);
 
 		txtAccion.setText("HAS ENCONTRADO UN " + CapturaCrud.nombrePokemon + " SALVAJE ");
+
+		Logger.write("Has encontrado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d) + ".log");
 		
-//		Logger.write("Has encontrado un" + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d) + ".log");
-//		Logger.close();
 
 	}
 
+	/**
+	 * Metodo para captura pokemon
+	 * 
+	 * @param event
+	 */
 	@FXML
 	public void btnAccionCapturar(ActionEvent event) {
+		Date d = new Date();
+		System.out.println(d);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
+		System.out.println(simpleDateFormat.format(d) + ".log");
 
 		Pokemon p = new Pokemon();
 		int idEntrenador;
@@ -128,19 +144,16 @@ public class CapturaController {
 		int estamina;
 		int fertilidad;
 		int equipo;
-		int pokeballs = 10;
+		int pokeballs = 20;
 		int ratioCaptura = (int) (Math.random() * 3 + 1);
-		;
+
 		if (pokeballs > 0) {
 			System.out.println("Has lanzado una pokeball");
-			txtAccion.setText("Has lanzado una pokebal");
+			txtAccion.setText("Has lanzado una pokeball");
+			Logger.write("Has lanzado una pokeball " + simpleDateFormat.format(d) + ".log");
 			pokeballs--;
 			if (ratioCaptura == 1 || ratioCaptura == 2) {
 				System.out.println("¡POKEMON CAPTURADO!");
-				Date d = new Date();
-				System.out.println(d);
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
-				System.out.println(simpleDateFormat.format(d) + ".log");
 
 				PreguntaMote.setVisible(true);
 				btnSiMote.setVisible(true);
@@ -150,9 +163,8 @@ public class CapturaController {
 				pokeball.setVisible(true);
 				txtAccion.setVisible(false);
 
-//				Logger.write("Has capturado un" + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d)
-//						+ ".log");
-//				Logger.close();
+				Logger.write("Has capturado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d)
+						+ ".log");
 
 				p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, null, sexo = 'H', 1,
 						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
@@ -167,10 +179,14 @@ public class CapturaController {
 			} else {
 				System.out.println("El pokemon se ha escapado");
 				txtAccion.setText("El pokemon se ha escapado");
+				Logger.write("El pokemon se ha escapado " + simpleDateFormat.format(d) + ".log");
 			}
 
 		} else {
 			System.out.println("No te quedan pokeballs");
+			System.out.println(simpleDateFormat.format(d) + ".log");
+
+			Logger.write("No te quedan pokeballs " + simpleDateFormat.format(d) + ".log");
 		}
 	}
 
@@ -192,8 +208,8 @@ public class CapturaController {
 			System.out.println(d);
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 			System.out.println(simpleDateFormat.format(d) + ".log");
-			
-			Logger.write("Has salido de la ventana captura" + simpleDateFormat.format(d) + ".log");
+
+			Logger.write("Has salido de la ventana captura " + simpleDateFormat.format(d) + ".log");
 			Logger.close();
 
 		} catch (IOException e) {

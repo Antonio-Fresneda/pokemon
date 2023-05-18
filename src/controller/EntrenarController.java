@@ -20,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import pokemon.Entrenador;
 import pokemon.Pokemon;
 
 public class EntrenarController {
@@ -61,6 +62,7 @@ public class EntrenarController {
 	private Scene scene;
 	private Stage stage;
 
+	private Entrenador e;
 	static LinkedList<Pokemon> coleccion;
 
 	public ObservableList<Pokemon> metodo() {
@@ -78,7 +80,7 @@ public class EntrenarController {
 
 	public void initialize() {
 		// TODO Auto-generated method stub
-
+		e = new Entrenador();// Aqui teneis que pasarle el entranador logueado
 		coleccion = PokemonCrud.getTodoPokemonEquipo();
 		tablaEntrenar.setItems(metodo());
 		idEntrenar.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("idPokemon"));
@@ -95,20 +97,36 @@ public class EntrenarController {
 	}
 
 	public void accionPesado(ActionEvent event) {
-		
-		
+		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
+
+		Pokemon p = pokemonSeleccionado.get(0);
+
+		e.entrenamientoPesado(p);
+
 	}
 
 	public void accionFurioso(ActionEvent event) {
+		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
+		Pokemon p = pokemonSeleccionado.get(0);
+
+		e.entrenamientoFurioso(p);
 	}
 
 	public void accionFuncional(ActionEvent event) {
+		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
+		Pokemon p = pokemonSeleccionado.get(0);
+
+		e.entrenamientoFuncional(p);
 	}
 
 	public void accionOnirico(ActionEvent event) {
+		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
+		Pokemon p = pokemonSeleccionado.get(0);
+
+		e.entrenamientoOnirico(p);
 	}
 
 	public void accionAtrasEntrenar(ActionEvent event) {
