@@ -23,8 +23,7 @@ public class Entrenador {
 	private String Especie;
 	private ArrayList<String> listaTipos;
 	private ArrayList<String> listaAtaques;
-
-
+	private Object madre;
 
 	public Entrenador(String nombre) {
 		this.nombre = nombre;
@@ -37,7 +36,7 @@ public class Entrenador {
 	}
 
 	public Entrenador() {
-		
+
 	}
 
 	public String getNombre() {
@@ -104,8 +103,6 @@ public class Entrenador {
 		Password = password;
 	}
 
-	
-	
 	public String getGenero() {
 		return Genero;
 	}
@@ -121,8 +118,6 @@ public class Entrenador {
 	public void setEspecie(String especie) {
 		this.Especie = especie;
 	}
-	
-	
 
 	public ArrayList<String> getListaTipos() {
 		return listaTipos;
@@ -131,12 +126,10 @@ public class Entrenador {
 	public void setListaTipos(ArrayList<String> listaTipos) {
 		this.listaTipos = listaTipos;
 	}
-	
+
 	public void setListaAtaques(ArrayList<String> listaAtaques) {
 		this.listaAtaques = listaAtaques;
 	}
-    
-
 
 	public ArrayList<String> getListaAtaques() {
 		return listaAtaques;
@@ -205,94 +198,159 @@ public class Entrenador {
 	}
 
 	public void establecerNivelMaximoEquipo(int maxNivelRival) {
-		
+
 		for (Pokemon pokemon : equipoPrincipal) {
-			int nivel = pokemon.getNivel ();
+			int nivel = pokemon.getNivel();
 			if (nivel < maxNivelRival) {
 				pokemon.setNivel(maxNivelRival);
 			}
 		}
-		
+
 	}
 
 	public int obtenerMaxNivelPokemon() {
 		int maxNivel = 0;
-		
+
 		for (Pokemon pokemon : equipoPrincipal) {
 			int nivel = pokemon.getNivel();
 			if (nivel < maxNivel) {
-				
+
 			}
 		}
 		return maxNivel;
 	}
 
 	public Pokemon elegirPokemon() {
-		 ArrayList<Pokemon> equipo = getEquipoPrincipal();
-		    int numPokemons = equipo.size();
+		ArrayList<Pokemon> equipo = getEquipoPrincipal();
+		int numPokemons = equipo.size();
 
-		    System.out.println("Elige un Pokémon para el combate:");
+		System.out.println("Elige un Pokémon para el combate:");
 
-		    for (int i = 0; i < numPokemons; i++) {
-		        Pokemon pokemon = equipo.get(i);
-		        System.out.println((i + 1) + ". " + pokemon.getNombre() + " (Nivel: " + pokemon.getNivel() + ")");
-		    }
-
-		    Scanner scanner = new Scanner(System.in);
-		    int opcion = -1;
-
-		    while (opcion < 1 || opcion > numPokemons) {
-		        System.out.print("Ingresa el número de pokemon: ");
-		        opcion = scanner.nextInt();
-		    }
-
-		    return equipo.get(opcion - 1);
+		for (int i = 0; i < numPokemons; i++) {
+			Pokemon pokemon = equipo.get(i);
+			System.out.println((i + 1) + ". " + pokemon.getNombre() + " (Nivel: " + pokemon.getNivel() + ")");
 		}
 
-	public Pokemon obtenerPokemonActivo() {
-		    
-		    if (!equipoPrincipal.isEmpty()) {
-		        return equipoPrincipal.get(0);
-		    }
-		    
-		    if (!cajaPokemon.isEmpty()) {
-		        return cajaPokemon.get(0);
-		    }
-		    return null;
+		Scanner scanner = new Scanner(System.in);
+		int opcion = -1;
+
+		while (opcion < 1 || opcion > numPokemons) {
+			System.out.print("Ingresa el número de pokemon: ");
+			opcion = scanner.nextInt();
+		}
+
+		return equipo.get(opcion - 1);
 	}
 
-	public int obtenerNivelPokemonActivo() { 
-		    Pokemon pokemonActivo = obtenerPokemonActivo();
+	public Pokemon obtenerPokemonActivo() {
 
-		    if (pokemonActivo != null) {
-		        return pokemonActivo.getNivel();
+		if (!equipoPrincipal.isEmpty()) {
+			return equipoPrincipal.get(0);
+		}
+
+		if (!cajaPokemon.isEmpty()) {
+			return cajaPokemon.get(0);
+		}
+		return null;
+	}
+
+	public int obtenerNivelPokemonActivo() {
+		Pokemon pokemonActivo = obtenerPokemonActivo();
+
+		if (pokemonActivo != null) {
+			return pokemonActivo.getNivel();
 		}
 
 		return 0;
 	}
 
 	public void ganarExperiencia(double calcularExperiencia) {
-		    Entrenador rival = null;
-			int maxNivelRival = rival.obtenerMaxNivelPokemon();
-		    Pokemon pokemonActivo = obtenerPokemonActivo();
+		Entrenador rival = null;
+		int maxNivelRival = rival.obtenerMaxNivelPokemon();
+		Pokemon pokemonActivo = obtenerPokemonActivo();
 
-		    if (pokemonActivo != null) {
-		        int experienciaGanada = (pokemonActivo.getNivel() + maxNivelRival * 10) / 4;
-		        pokemonActivo.setExperiencia(experienciaGanada);
-		        System.out.println("¡Tu Pokémon ha ganado " + experienciaGanada + " puntos de experiencia!");
-		    
+		if (pokemonActivo != null) {
+			int experienciaGanada = (pokemonActivo.getNivel() + maxNivelRival * 10) / 4;
+			pokemonActivo.setExperiencia(experienciaGanada);
+			System.out.println("¡Tu Pokémon ha ganado " + experienciaGanada + " puntos de experiencia!");
+
 		}
 
-		
 	}
 
 	public void entregarPokédollars(Entrenador ganador) {
-		    int pokedollarsEntregados = (int) Math.floor(getPokedollars() / 3.0);
-		    ganador.setPokedollars(ganador.getPokedollars() + pokedollarsEntregados);
-		    setPokedollars(getPokedollars() - pokedollarsEntregados);
-		    System.out.println("Se han entregado " + pokedollarsEntregados + " Pokédollars al ganador.");
+		int pokedollarsEntregados = (int) Math.floor(getPokedollars() / 3.0);
+		ganador.setPokedollars(ganador.getPokedollars() + pokedollarsEntregados);
+		setPokedollars(getPokedollars() - pokedollarsEntregados);
+		System.out.println("Se han entregado " + pokedollarsEntregados + " Pokédollars al ganador.");
 	}
+
+	public Pokemon criarPokemon(Pokemon madre, Pokemon padre) {
+		// Verificar si los Pokémon son compatibles para la crianza
+ if (!sonCompatiblesParaCrianza(madre, padre)) {
+		 System.out.println("Error: Los Pokémon no son compatibles para la crianza.");
+		 return null;
+		 }
+
+
+ String moteMadre = madre.getMote();
+		 String motePadre = padre.getMote();
+		 int longitudMoteMadre = moteMadre.length() / 2;
+		 int longitudMotePadre = motePadre.length() / 2;
+		String mitadMoteMadre = moteMadre.substring(0, longitudMoteMadre);
+		 String mitadMotePadre = motePadre.substring(longitudMotePadre);
+		String moteHijo = mitadMoteMadre + mitadMotePadre;
+
 		
+		 List<Combate> ataquesMadre = madre.getListaAtaques();
+		 List<Combate> ataquesPadre = padre.getListaAtaques();
+		 int longitudAtaquesMadre = ataquesMadre.size() / 2;
+		 int longitudAtaquesPadre = ataquesPadre.size() / 2;
+		 List<Combate> ataquesHijo = new ArrayList<>();
+		 ataquesHijo.addAll(ataquesMadre.subList(0, longitudAtaquesMadre));
+		 ataquesHijo.addAll(ataquesPadre.subList(0, longitudAtaquesPadre));
+
+		// Mezclar los tipos del hijo
+ List<String> tiposMadre = madre.getListaTipos();
+		 List<String> tiposPadre = padre.getListaTipos();
+		List<String> tiposHijo = new ArrayList<>();
+		 tiposHijo.addAll(tiposMadre);
+		 tiposHijo.addAll(tiposPadre);
+
+		// Obtener las mejores características de cada progenitor
+ int mejorAtaqueMadre = madre.getAtaque();
+		 int mejorAtaquePadre = padre.getAtaque();
+		 int mejorDefensaMadre = madre.getDefensa();
+		 int mejorDefensaPadre = padre.getDefensa();
+		 int mejorVelocidadMadre = madre.getVelocidad();
+		 int mejorVelocidadPadre = padre.getVelocidad();
+
+		// Crear al hijo
+ Pokemon hijo = new Pokemon(moteHijo, ataquesHijo, tiposHijo);
+		 hijo.setAtaque(Math.max(mejorAtaqueMadre, mejorAtaquePadre));
+		 hijo.setDefensa(Math.max(mejorDefensaMadre, mejorDefensaPadre));
+		 hijo.setVelocidad(Math.max(mejorVelocidadMadre, mejorVelocidadPadre));
+
+		 // Reducir la fertilidad de los padres en 1 punto
+ madre.setFertilidad(madre.getFertilidad() - 1);
+		 padre.setFertilidad(padre.getFertilidad() - 1);
+
+		// Devolver al hijo
+return hijo; 
+		    }
+
+	private boolean sonCompatiblesParaCrianza(Pokemon madre, Pokemon padre) {
+		// Verificar si los Pokémon tienen diferentes géneros
+		 if (madre.getSexo().equals(padre.getSexo())) {
+		 return false;
+		}
+
+		 if (!madre.getEspecie().equals(padre.getEspecie())) {
+		return false;
+		}
 
 	
+		 return true;
+		    }
+
 }

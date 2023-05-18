@@ -28,6 +28,8 @@ public class Pokemon {
 	private int ventaja;
 	private String imagen;
 	private String especie;
+	private List<Combate> listaAtaques;
+	private List<String> listaTipos;
 
 	public Pokemon() {
 		
@@ -84,7 +86,11 @@ public class Pokemon {
 		
 	}
 
-	
+	public Pokemon(String moteHijo, List<Combate> ataquesHijo, List<String> tiposHijo) {
+		 this.mote = moteHijo;
+		this.listaAtaques = ataquesHijo;
+		this.listaTipos = tiposHijo;
+		    }
 
 
 	public String getNombre() {
@@ -361,6 +367,16 @@ public class Pokemon {
 
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+
+	public List<Combate> getListaAtaques() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<String> getListaTipos() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
