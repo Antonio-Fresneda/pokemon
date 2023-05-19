@@ -81,6 +81,7 @@ public class Pokemon {
 		this.objeto = "";
 		this.experiencia = 0;
 		this.ventaja = 0;
+		this.potencia=0;
 
 	}
 
@@ -112,7 +113,7 @@ public class Pokemon {
 	public Pokemon(int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa,
 			int ataqueEspecial, int defensaEspecial, int velocidad, int estamina, int nivel, Movimiento[] movimiento,
 			int fertilidad, String sexo, String tipo1, String tipo2, String estado, String objeto, int experiencia,
-			int ventaja) {
+			int ventaja,int potencia) {
 
 		super();
 		this.idPokemon = idPokemon;
@@ -136,6 +137,7 @@ public class Pokemon {
 		this.objeto = objeto;
 		this.experiencia = experiencia;
 		this.ventaja = ventaja;
+		this.potencia= potencia;
 
 	}
 
@@ -343,6 +345,14 @@ public class Pokemon {
 	public List<String> getListaTipos() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public int getPotencia() {
+		return potencia;
+	}
+
+	public void setPotencia(int potencia) {
+		this.potencia = potencia;
 	}
 
 	@Override

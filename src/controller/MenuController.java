@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.EventObject;
 import java.util.Objects;
 
 import javafx.event.ActionEvent;
@@ -24,6 +25,8 @@ public class MenuController {
 	@FXML
 	private Button btnPonerCaja;
 	@FXML
+	private Button btnPokedex;
+
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
@@ -85,6 +88,7 @@ public class MenuController {
 			e.printStackTrace();
 		}
 	}
+
 	public void btnPonerEntrenar(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Entrenar.fxml")));
@@ -97,5 +101,18 @@ public class MenuController {
 			e.printStackTrace();
 		}
 	}
-	}
 
+	public void btnPonerPokedex(ActionEvent event) {
+		try {
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Pokedex.fxml")));
+			scene = new Scene(root, 1046, 522);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("Pokemon");
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+}
