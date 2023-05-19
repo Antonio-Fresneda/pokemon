@@ -25,6 +25,7 @@ public class Entrenador {
 	private ArrayList<String> listaTipos;
 	private ArrayList<String> listaAtaques;
 	private Object madre;
+
 	/**
 	 * 
 	 * @param nombre
@@ -38,16 +39,18 @@ public class Entrenador {
 		this.rand = new Random();
 		this.listaTipos = new ArrayList<>();
 	}
+
 	/**
 	 * 
 	 */
 	public Entrenador() {
 
 	}
-/**
- * 
- * @return  Devuelve get y set de los atributos de arriba
- */
+
+	/**
+	 * 
+	 * @return Devuelve get y set de los atributos de arriba
+	 */
 	public String getNombre() {
 		return nombre;
 	}
@@ -143,6 +146,7 @@ public class Entrenador {
 	public ArrayList<String> getListaAtaques() {
 		return listaAtaques;
 	}
+
 	/**
 	 * 
 	 */
@@ -152,104 +156,77 @@ public class Entrenador {
 				+ ", cajaPokemon=" + cajaPokemon + ", mochila=" + mochila + ", rand=" + rand + ", idEntrenador="
 				+ idEntrenador + ", Password=" + Password + "]";
 	}
-	/**
-	 * Metodo que mueve al pokemon a la caja desde el equipo
-	 * @param pokemon
-	 */
-	public void moverAEquipoSecundario(Pokemon pokemon) {
-		if (equipoPrincipal.size() > 1) {
-			equipoPrincipal.remove(pokemon);
-		} else {
-			System.out.println("No puedes mover al último Pokémon de tu equipo principal a la caja.");
-		}
-	}
-	/**
-	 * Metodo que mueve al pokemon al equipo desde la caja
-	 * @param pokemon
-	 */
-	public void moverAEquipoPrincipal(Pokemon pokemon) {
-		if (equipoPrincipal.size() <= 6) {
-			cajaPokemon.remove(pokemon);
-			equipoPrincipal.add(pokemon);
-		} else {
-			System.out.println("tu equipo principal esta lleno, debe de sacar un pokemon antes de meter otro");
-		}
-	}
+
+
 	/**
 	 * Metodo para que haga el entrenamiento pesado
+	 * 
 	 * @param pokemon
 	 */
 	public static void entrenamientoPesado(Pokemon pokemon) {
-		
+
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		
 
 		costoEntrenamiento = 20 * pokemon.getNivel();
-//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.defensa = pokemon.defensa + 5;
 		pokemon.defensaEspecial = pokemon.defensaEspecial + 5;
 		pokemon.vitalidad = pokemon.vitalidad + 5;
 
 	}
+
 	/**
 	 * Metodo para que haga el entrenamiento furioso
+	 * 
 	 * @param pokemon
 	 */
 	public static void entrenamientoFurioso(Pokemon pokemon) {
-		
+
 		int costoEntrenamiento;
-		;
-		
+
 		costoEntrenamiento = 30 * pokemon.getNivel();
-//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataque = pokemon.ataque + 5;
 		pokemon.ataqueEspecial = pokemon.ataqueEspecial + 5;
 		pokemon.velocidad = pokemon.velocidad + 5;
-//		pokedollar=pokedollar-costoEntrenamiento;
+
 	}
+
 	/**
 	 * Metodo para que haga el entrenamiento funcional
+	 * 
 	 * @param pokemon
 	 */
 	public static void entrenamientoFuncional(Pokemon pokemon) {
-		
+
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		
+
 		costoEntrenamiento = 40 * pokemon.getNivel();
-//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataque = pokemon.ataque + 5;
 		pokemon.defensa = pokemon.defensa + 5;
 		pokemon.vitalidad = pokemon.vitalidad + 5;
 	}
+
 	/**
 	 * Metodo para que haga el entrenamiento onirico
+	 * 
 	 * @param pokemon
 	 */
 	public static void entrenamientoOnirico(Pokemon pokemon) {
-		
+
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
-		
+
 		costoEntrenamiento = 40 * pokemon.getNivel();
-//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataqueEspecial = pokemon.ataqueEspecial + 5;
 		pokemon.defensaEspecial = pokemon.defensaEspecial + 5;
 		pokemon.velocidad = pokemon.velocidad + 5;
-		
-	}
 
-
-	/**
-	 * Metodo para capturarPokemon
-	 * @param pokemon
-	 */
-	public void capturarPokemon(Pokemon pokemon) {
-		cajaPokemon.add(pokemon);
 	}
+	
 	/**
 	 * Metodo para establecer nivel maximo del equipo
+	 * 
 	 * @param maxNivelRival
 	 */
 	public void establecerNivelMaximoEquipo(int maxNivelRival) {
@@ -262,8 +239,10 @@ public class Entrenador {
 		}
 
 	}
+
 	/**
 	 * Metodo para obtener el nivel maximo del pokemon
+	 * 
 	 * @return
 	 */
 	public int obtenerMaxNivelPokemon() {
@@ -277,8 +256,10 @@ public class Entrenador {
 		}
 		return maxNivel;
 	}
+
 	/**
 	 * Metodo para elegir pokemon del equipo
+	 * 
 	 * @return
 	 */
 	public Pokemon elegirPokemon() {
@@ -302,8 +283,10 @@ public class Entrenador {
 
 		return equipo.get(opcion - 1);
 	}
+
 	/**
 	 * Metodo para obtener el pokemon vivo
+	 * 
 	 * @return
 	 */
 	public Pokemon obtenerPokemonActivo() {
@@ -317,8 +300,10 @@ public class Entrenador {
 		}
 		return null;
 	}
+
 	/**
 	 * Metodo para obtener el nivel del pokemon vivo
+	 * 
 	 * @return
 	 */
 	public int obtenerNivelPokemonActivo() {
@@ -330,12 +315,14 @@ public class Entrenador {
 
 		return 0;
 	}
+
 	/**
 	 * Metodo para ganar experiencia
+	 * 
 	 * @param calcularExperiencia
 	 */
 	public void ganarExperiencia(double calcularExperiencia) {
-		Entrenador rival = null;
+		Entrenador rival = new Entrenador();
 		int maxNivelRival = rival.obtenerMaxNivelPokemon();
 		Pokemon pokemonActivo = obtenerPokemonActivo();
 
@@ -347,8 +334,10 @@ public class Entrenador {
 		}
 
 	}
+
 	/**
 	 * Metodo para entregar los pokedollar
+	 * 
 	 * @param ganador
 	 */
 	public void entregarPokedollars(Entrenador ganador) {
@@ -357,8 +346,10 @@ public class Entrenador {
 		setPokedollars(getPokedollars() - pokedollarsEntregados);
 		System.out.println("Se han entregado " + pokedollarsEntregados + " Pokédollars al ganador.");
 	}
+
 	/**
 	 * Metodo para entregar Pokedollars
+	 * 
 	 * @param madre
 	 * @param padre
 	 * @return
@@ -413,8 +404,10 @@ public class Entrenador {
 		return hijo;
 		// Devolver al hijo
 	}
+
 	/**
 	 * Metodo para comprobar que son compatibles para la crianza
+	 * 
 	 * @param madre
 	 * @param padre
 	 * @return

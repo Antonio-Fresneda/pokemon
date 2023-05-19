@@ -494,4 +494,9 @@ public class Pokemon {
 
 	}
 
+	public Integer getCostoEntrenamiento() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
