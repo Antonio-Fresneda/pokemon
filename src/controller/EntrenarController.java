@@ -101,8 +101,9 @@ public class EntrenarController {
 
 		Pokemon p = pokemonSeleccionado.get(0);
 
-		e.entrenamientoPesado(p);
-
+		Entrenador.entrenamientoPesado(p);
+		tablaEntrenar.refresh();
+		System.out.println("El pokemon ha realizado un entrenamiento Pesado");
 	}
 
 	public void accionFurioso(ActionEvent event) {
@@ -110,7 +111,10 @@ public class EntrenarController {
 
 		Pokemon p = pokemonSeleccionado.get(0);
 
-		e.entrenamientoFurioso(p);
+		Entrenador.entrenamientoFurioso(p);
+
+		tablaEntrenar.refresh();
+		System.out.println("El pokemon ha realizado un entrenamiento Furioso");
 	}
 
 	public void accionFuncional(ActionEvent event) {
@@ -118,7 +122,9 @@ public class EntrenarController {
 
 		Pokemon p = pokemonSeleccionado.get(0);
 
-		e.entrenamientoFuncional(p);
+		Entrenador.entrenamientoFuncional(p);
+		tablaEntrenar.refresh();
+		System.out.println("El pokemon ha realizado un entrenamiento Funcional");
 	}
 
 	public void accionOnirico(ActionEvent event) {
@@ -126,7 +132,9 @@ public class EntrenarController {
 
 		Pokemon p = pokemonSeleccionado.get(0);
 
-		e.entrenamientoOnirico(p);
+		Entrenador.entrenamientoOnirico(p);
+		tablaEntrenar.refresh();
+		System.out.println("El pokemon ha realizado un entrenamiento Onirico");
 	}
 
 	public void accionAtrasEntrenar(ActionEvent event) {

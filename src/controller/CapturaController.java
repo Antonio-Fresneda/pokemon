@@ -111,8 +111,8 @@ public class CapturaController {
 
 		txtAccion.setText("HAS ENCONTRADO UN " + CapturaCrud.nombrePokemon + " SALVAJE ");
 
-		Logger.write("Has encontrado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d) + ".log");
-		
+		Logger.write(
+				"Has encontrado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d) + ".log");
 
 	}
 
@@ -166,15 +166,15 @@ public class CapturaController {
 				Logger.write("Has capturado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d)
 						+ ".log");
 
-				p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, null, sexo = 'H', 1,
-						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
-						ataque = (int) (Math.random() * ((20 - 1) + 1)),
-						defensa = (int) (Math.random() * ((20 - 1) + 1)),
-						ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
-						defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
-						velocidad = (int) (Math.random() * ((20 - 1) + 1)),
-						estamina = (int) (Math.random() * ((20 - 1) + 1)),
-						fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
+//				p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, null, sexo = 'H', 1,
+//						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
+//						ataque = (int) (Math.random() * ((20 - 1) + 1)),
+//						defensa = (int) (Math.random() * ((20 - 1) + 1)),
+//						ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+//						defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+//						velocidad = (int) (Math.random() * ((20 - 1) + 1)),
+//						estamina = (int) (Math.random() * ((20 - 1) + 1)),
+//						fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
 
 			} else {
 				System.out.println("El pokemon se ha escapado");
@@ -210,7 +210,6 @@ public class CapturaController {
 			System.out.println(simpleDateFormat.format(d) + ".log");
 
 			Logger.write("Has salido de la ventana captura " + simpleDateFormat.format(d) + ".log");
-			Logger.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -228,17 +227,69 @@ public class CapturaController {
 	}
 
 	public void btnAccionNoMote(ActionEvent event) {
+		Pokemon p = new Pokemon();
+		int idEntrenador;
+		int idPokemon;
+		int numPokedex;
+		String mote;
+		char sexo;
+		int nivel;
+		int vitalidad;
+		int ataque;
+		int defensa;
+		int ataEspecial;
+		int defEspecial;
+		int velocidad;
+		int estamina;
+		int fertilidad;
+		int equipo;
+		p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, txtParaMote.getText(), sexo = 'H', 1,
+				vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1, ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				defensa = (int) (Math.random() * ((20 - 1) + 1)), ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+				defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+				velocidad = (int) (Math.random() * ((20 - 1) + 1)), estamina = (int) (Math.random() * ((20 - 1) + 1)),
+				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
+
 		PreguntaMote.setVisible(false);
 		btnSiMote.setVisible(false);
 		btnNoMote.setVisible(false);
 		pokeball.setVisible(false);
 		txtParaMote.setVisible(false);
 		btnAceptar.setVisible(false);
+
 	}
 
 	public void accionAceptar(ActionEvent event) {
-		// Pokemon p=new Pokemon();
-		// p=CapturaCrud.ponerMote(txtParaMote.getText(),0 );
+		Pokemon p = new Pokemon();
+		int idEntrenador;
+		int idPokemon;
+		int numPokedex;
+		String mote;
+		char sexo;
+		int nivel;
+		int vitalidad;
+		int ataque;
+		int defensa;
+		int ataEspecial;
+		int defEspecial;
+		int velocidad;
+		int estamina;
+		int fertilidad;
+		int equipo;
+		p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, txtParaMote.getText(), sexo = 'H', 1,
+				vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1, ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				defensa = (int) (Math.random() * ((20 - 1) + 1)), ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+				defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+				velocidad = (int) (Math.random() * ((20 - 1) + 1)), estamina = (int) (Math.random() * ((20 - 1) + 1)),
+				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
+
+		PreguntaMote.setVisible(false);
+		btnSiMote.setVisible(false);
+		btnNoMote.setVisible(false);
+		pokeball.setVisible(false);
+		txtParaMote.setVisible(false);
+		btnAceptar.setVisible(false);
+
 	}
 
 }

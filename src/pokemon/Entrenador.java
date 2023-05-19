@@ -179,13 +179,14 @@ public class Entrenador {
 	 * Metodo para que haga el entrenamiento pesado
 	 * @param pokemon
 	 */
-	public void entrenamientoPesado(Pokemon pokemon) {
+	public static void entrenamientoPesado(Pokemon pokemon) {
+		
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
 		
 
 		costoEntrenamiento = 20 * pokemon.getNivel();
-		this.pokedollars = pokedollars - costoEntrenamiento;
+//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.defensa = pokemon.defensa + 5;
 		pokemon.defensaEspecial = pokemon.defensaEspecial + 5;
 		pokemon.vitalidad = pokemon.vitalidad + 5;
@@ -195,26 +196,29 @@ public class Entrenador {
 	 * Metodo para que haga el entrenamiento furioso
 	 * @param pokemon
 	 */
-	public void entrenamientoFurioso(Pokemon pokemon) {
+	public static void entrenamientoFurioso(Pokemon pokemon) {
+		
 		int costoEntrenamiento;
-		int aumentoEstadisticas;
+		;
 		
 		costoEntrenamiento = 30 * pokemon.getNivel();
-		this.pokedollars = pokedollars - costoEntrenamiento;
+//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataque = pokemon.ataque + 5;
 		pokemon.ataqueEspecial = pokemon.ataqueEspecial + 5;
 		pokemon.velocidad = pokemon.velocidad + 5;
+//		pokedollar=pokedollar-costoEntrenamiento;
 	}
 	/**
 	 * Metodo para que haga el entrenamiento funcional
 	 * @param pokemon
 	 */
-	public void entrenamientoFuncional(Pokemon pokemon) {
+	public static void entrenamientoFuncional(Pokemon pokemon) {
+		
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
 		
 		costoEntrenamiento = 40 * pokemon.getNivel();
-		this.pokedollars = pokedollars - costoEntrenamiento;
+//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataque = pokemon.ataque + 5;
 		pokemon.defensa = pokemon.defensa + 5;
 		pokemon.vitalidad = pokemon.vitalidad + 5;
@@ -223,25 +227,20 @@ public class Entrenador {
 	 * Metodo para que haga el entrenamiento onirico
 	 * @param pokemon
 	 */
-	public void entrenamientoOnirico(Pokemon pokemon) {
+	public static void entrenamientoOnirico(Pokemon pokemon) {
+		
 		int costoEntrenamiento;
 		int aumentoEstadisticas;
 		
 		costoEntrenamiento = 40 * pokemon.getNivel();
-		this.pokedollars = pokedollars - costoEntrenamiento;
+//		this.pokedollars = pokedollars - costoEntrenamiento;
 		pokemon.ataqueEspecial = pokemon.ataqueEspecial + 5;
 		pokemon.defensaEspecial = pokemon.defensaEspecial + 5;
 		pokemon.velocidad = pokemon.velocidad + 5;
 		
 	}
 
-//		if (pokedollars >= costoEntrenamiento) {
-//			pokedollars -= costoEntrenamiento;
-//			pokemon.aumentarEstadisticas(aumentoEstadisticas);
-//		} else {
-//			System.out.println("no tienes sufucientes pokedollars para realizar este entrenamiento");
-//		}
-//	}
+
 	/**
 	 * Metodo para capturarPokemon
 	 * @param pokemon

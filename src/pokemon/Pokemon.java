@@ -20,7 +20,7 @@ public class Pokemon {
 	public int ataqueEspecial;
 	public int defensaEspecial;
 	public int velocidad;
-	public static int estamina;
+	public  int estamina;
 	public int nivel;
 	private Movimiento[] movimiento = new Movimiento[4];
 	public int fertilidad;
@@ -29,7 +29,7 @@ public class Pokemon {
 	private String tipo2;
 	private String estado;
 	private String objeto;
-	private int experiencia;
+	public int experiencia;
 	public int ventaja;
 	private String imagen;
 	private String especie;
@@ -39,6 +39,7 @@ public class Pokemon {
 
 	/**
 	 * Constructor por defecto
+	 * 
 	 * @param idPokemon
 	 * @param numPokedex
 	 * @param nombre
@@ -85,6 +86,7 @@ public class Pokemon {
 
 	/**
 	 * Constructor con todos los parametros
+	 * 
 	 * @param idPokemon
 	 * @param numPokedex
 	 * @param nombre
@@ -366,23 +368,20 @@ public class Pokemon {
 	 * @param velocidad
 	 * @param estamina
 	 */
-	public void subirNivel(int experiencia, int nivel, int vitalidad, int ataque, int defensa, int ataqueEspecial,
-			int defensaEspecial, int velocidad, int estamina) {
-		for (int n = 1; n < 100; n++) {
-			if (experiencia == 10 * nivel) {
-				nivel++;
-				vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				ataqueEspecial = ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
-				aprenderMovimiento();
+	public static void subirNivel() {
+			Pokemon p=new Pokemon();
+		if (p.experiencia == 10 * p.nivel) {
+			p.nivel++;
+			p.vitalidad = p.vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			p.ataque = p.ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			p.defensa = p.defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			p.ataqueEspecial = p.ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			p.defensaEspecial = p.defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			p.velocidad = p.velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			p.estamina = p.estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
+			
 
-			}
 		}
-
 	}
 
 	/**
@@ -394,7 +393,7 @@ public class Pokemon {
 		Pokemon pokemon = new Pokemon();
 		Pokemon pokemonRival = new Pokemon();
 		int atacar;
-		atacar = (pokemon.ataque + pokemon.potencia)*pokemon.ventaja;
+		atacar = (pokemon.ataque + pokemon.potencia) * pokemon.ventaja;
 		;
 		pokemonRival.vitalidad = pokemonRival.vitalidad - atacar;
 	}
@@ -452,15 +451,17 @@ public class Pokemon {
 	 */
 
 	public static void descansar() {
-		estamina = estamina + 50;
+		Pokemon p=new Pokemon();
+		p.estamina = p.estamina + 50;
 
 	}
 
 	/**
 	 * Metodo para que el pokemon aprenda un nuevo movimiento
 	 */
-	public void aprenderMovimiento() {
-		System.out.println("Tu " + nombre + " quiere aprender un nuevo movimiento");
+	public static void aprenderMovimiento() {
+		Pokemon pokemon = new Pokemon();
+		System.out.println("Tu " + pokemon.nombre + " quiere aprender un nuevo movimiento");
 		Movimiento movimiento = new Movimiento();
 
 	}
@@ -470,14 +471,16 @@ public class Pokemon {
 	 * 
 	 * @param aumentoEstadisticas
 	 */
-	public void aumentarEstadisticas(int aumentoEstadisticas) {
-		vitalidad = vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
-		ataque = ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
-		defensa = defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
-		ataqueEspecial = ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
-		defensaEspecial = defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
-		velocidad = velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
-		estamina = estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
+	public void aumentarEstadisticas() {
+		Pokemon p=new Pokemon();
+		
+		p.vitalidad = p.vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		p.ataque = p.ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		p.defensa = p.defensa + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		p.ataqueEspecial = p.ataqueEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		p.defensaEspecial = p.defensaEspecial + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		p.velocidad = p.velocidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
+		p.estamina = p.estamina + (int) Math.floor(Math.random() * (1 - 5) + 5);
 
 	}
 
