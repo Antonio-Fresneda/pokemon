@@ -32,7 +32,7 @@ public class CriarController {
 	 
 	 
 	 
-	 public void BottonAccionAtras(ActionEvent event) {
+	 public void bottonActionAtras(ActionEvent event) {
 		 try {
 				root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));
 				scene = new Scene(root, 910, 504);
