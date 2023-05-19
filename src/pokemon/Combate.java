@@ -27,7 +27,11 @@ public class Combate {
 		this.turno = 1;
 		this.pokemonJugadorKO = 0;
 		this.pokemonRivalKO = 0;
-
+		 
+		/**
+		 * @return devuelve get y set a los atributos de arriba
+		 * 
+		 */
 	}
 
 	public int getPokedollars() {
@@ -91,7 +95,12 @@ public class Combate {
 		return "Combate [jugador=" + jugador + ", rival=" + rival + ", turno=" + turno + ", pokemonJugadorKO="
 				+ pokemonJugadorKO + ", pokemonRivalKO=" + pokemonRivalKO + "]";
 	}
-
+	
+	/**
+	 * 
+	 * ; Metodo para comenzar el combate 
+	 */
+	
 	public void comenzarCombate() {
 		Random random = new Random();
 		int maxNivelRival = rival.obtenerMaxNivelPokemon();
@@ -125,7 +134,13 @@ public class Combate {
 
 		System.out.println("El ganador del combate es: " + ganador.getNombre());
 	}
-
+	
+	/**
+	 * Metodo para realizar batalla
+	 * 
+	 * 
+	 */
+	
 	private void realizarBatalla(Pokemon pokemonJugador, Pokemon pokemonRival) {
 		int pokedollarsEntregados = (int) Math.floor(ganador.getPokedollars() / 3.0);
 		ganador.setPokedollars(ganador.getPokedollars() + pokedollarsEntregados);
@@ -133,7 +148,12 @@ public class Combate {
 		System.out.println("Se han entregado " + pokedollarsEntregados + " Pokédollars al ganador.");
 
 	}
-
+	
+	/**
+	 * sirve para calcular la experiencia
+	 * 
+	 */
+	
 	private double calcularExperiencia() {
 		Pokemon pokemonRival = rival.obtenerPokemonActivo();
 		return (jugador.obtenerNivelPokemonActivo() + pokemonRival.getNivel() * 10) / 4.0;
@@ -146,6 +166,11 @@ public class Combate {
 	public void agregarTurno(Turno turno) {
         listaTurnos.add(turno);
     }
+	
+	/**
+	 *  Metodo para retirarse
+	 */
+	
 	
 	public void retirarse() {
 	    if (jugador == ganador) {
@@ -161,6 +186,12 @@ public class Combate {
 	    }
 	}
 
+	/**
+	 * Metodo para exportar turnos a ficheros
+	 * @param nombreFichero
+	 */
+	
+	
 	 public void exportarTurnosAFichero(String nombreFichero) {
 	        try {
 	            FileWriter fileWriter = new FileWriter(nombreFichero);

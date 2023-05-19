@@ -26,6 +26,12 @@ public class Movimiento {
 		this.estamina = estamina;
 	}
 
+	
+	/**
+	 * Devuelve get y set de los atributos de arriba
+	 * @return
+	 */
+	
 	public int getPotencia() {
 		return Potencia;
 	}
