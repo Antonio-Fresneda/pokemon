@@ -26,10 +26,14 @@ public class MenuController {
 	private Button btnPonerCaja;
 	@FXML
 	private Button btnPokedex;
+	@FXML
+	private Button bottonCriar;
 
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	
+	
 
 	/**
 	 * Este metodo Carga la interfaz de usuario de combate desde un archivo FXML y muestra esa escena en la ventana del juego.
@@ -152,5 +156,20 @@ public class MenuController {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void bottonActionCriar (ActionEvent event) {
+		try {
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Criar.fxml")));
+			scene = new Scene(root, 1161, 750);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("Pokemon");
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 }
