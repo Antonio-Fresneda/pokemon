@@ -169,7 +169,6 @@ public class CapturaController {
 				Logger.write("Has capturado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d)
 						+ ".log");
 
-
 			} else {
 				System.out.println("El pokemon se ha escapado");
 				txtAccion.setText("El pokemon se ha escapado");
@@ -222,14 +221,14 @@ public class CapturaController {
 
 	/**
 	 * 
-	 * este metodo se activa cuando se hace clic en el boton y captura un nuevo pokemon
-	 * sin asignarle un 'mote'
-	 * Se generan valores aleatorios para las diferentes estadísticas del Pokémon
-	 *  y se utiliza el método InsertarPokemon de la clase CapturaCrud para insertar el Pokémon en la base de datos.
+	 * este metodo se activa cuando se hace clic en el boton y captura un nuevo
+	 * pokemon sin asignarle un 'mote' Se generan valores aleatorios para las
+	 * diferentes estadísticas del Pokémon y se utiliza el método InsertarPokemon de
+	 * la clase CapturaCrud para insertar el Pokémon en la base de datos.
+	 * 
 	 * @param event
 	 */
-	
-	
+
 	public void btnAccionNoMote(ActionEvent event) {
 		Pokemon p = new Pokemon();
 		int idEntrenador;
@@ -247,7 +246,7 @@ public class CapturaController {
 		int estamina;
 		int fertilidad;
 		int equipo;
-		p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, txtParaMote.getText(), sexo = 'H', 1,
+		p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, txtParaMote.getText(), sexo = Math.random() < 0.5 ? 'h' : 'm', 1,
 				vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1, ataque = (int) (Math.random() * ((20 - 1) + 1)),
 				defensa = (int) (Math.random() * ((20 - 1) + 1)), ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
 				defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
@@ -265,11 +264,13 @@ public class CapturaController {
 	}
 
 	/**
-	 * este metodo  también se activa al hacer clic en un botón y realiza una acción similar a btnAccionNoMote
-	 * pero esta vez se captura un nuevo Pokémon después de ingresar un "mote" a través de un campo de texto.
+	 * este metodo también se activa al hacer clic en un botón y realiza una acción
+	 * similar a btnAccionNoMote pero esta vez se captura un nuevo Pokémon después
+	 * de ingresar un "mote" a través de un campo de texto.
+	 * 
 	 * @param event
 	 */
-	
+
 	public void accionAceptar(ActionEvent event) {
 		Pokemon p = new Pokemon();
 		int idEntrenador;
@@ -287,9 +288,10 @@ public class CapturaController {
 		int estamina;
 		int fertilidad;
 		int equipo;
-		p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, txtParaMote.getText(), sexo = 'H', 1,
-				vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1, ataque = (int) (Math.random() * ((20 - 1) + 1)),
-				defensa = (int) (Math.random() * ((20 - 1) + 1)), ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
+		p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, txtParaMote.getText(),
+				sexo = Math.random() < 0.5 ? 'h' : 'm', 1, vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
+				ataque = (int) (Math.random() * ((20 - 1) + 1)), defensa = (int) (Math.random() * ((20 - 1) + 1)),
+				ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
 				defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
 				velocidad = (int) (Math.random() * ((20 - 1) + 1)), estamina = (int) (Math.random() * ((20 - 1) + 1)),
 				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
