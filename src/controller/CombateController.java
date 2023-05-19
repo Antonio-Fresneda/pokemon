@@ -26,6 +26,14 @@ public class CombateController extends Application {
 
 	}
 
+	/**
+	 * , este método permite al jugador abandonar la situación actual y regresar al menú principal del juego.
+	 * si se produjera alguna excepcion durante el proceso se imprime la traza de la excepción en la consola,
+	 *  utilizando el método printStackTrace() de la clase IOException.
+	 * @param event
+	 */
+	
+	
 	public void btnHuir(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));

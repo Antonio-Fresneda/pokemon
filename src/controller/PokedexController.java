@@ -45,6 +45,15 @@ public class PokedexController {
 	static LinkedList<Pokemon> coleccionPokedex;
 	// Event Listener on Button[#btnAtrasPokedex].onAction
 
+	
+	/**
+	 * Este metodo crea y devuelve una lista observable de objetos de tipo Pokemon. 
+	 * Itera a través de la lista coleccionPokedex, que contiene los Pokémon de la Pokédex,
+	 *  y agrega cada uno de ellos a la lista lista
+	 *  Luego, devuelve la lista completa
+	 * @return
+	 */
+	
 	public ObservableList<Pokemon> metodo() {
 
 		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
@@ -58,6 +67,13 @@ public class PokedexController {
 		return lista;
 	}
 
+	/**
+	 * Este metodo  Obtiene los Pokémon de la Pokédex llamando al método mostrarPokedex() de la clase PokemonCrud
+	 * luego configura la tabla tablaPokedex para mostrar los datos utilizando el método 'metodo' para obtener la lista de Pokémon
+	 * 
+	 * 
+	 */
+	
 	public void initialize() {
 		coleccionPokedex = PokemonCrud.mostrarPokedex();
 		tablaPokedex.setItems(metodo());
@@ -68,6 +84,13 @@ public class PokedexController {
 
 	}
 
+	/**
+	 * Este metodo se ejecuta cuando se hace clic en un botón para regresar a la Pokédex
+	 * Carga la interfaz de usuario del menú principal desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * 
+	 * @param event
+	 */
+	
 	@FXML
 	public void btnAccionAtrasPokedex(ActionEvent event) {
 		try {

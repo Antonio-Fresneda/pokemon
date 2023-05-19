@@ -112,6 +112,12 @@ public class CajaController implements Initializable {
 	static LinkedList<Pokemon> coleccion;
 	static LinkedList<Pokemon> equipo;
 
+	/**
+	 * 
+	 * los metodos "metodo" y "equipo" se utilizan para llenar tablas en la interfaz de usuario.
+	 * @return
+	 */
+	
 	public ObservableList<Pokemon> metodo() {
 
 		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
@@ -138,6 +144,11 @@ public class CajaController implements Initializable {
 		return lista;
 	}
 
+	/**
+	 * Este metodo se activa cuando se hace clic en un botón y carga una nueva interfaz de usuario desde un archivo FXML.
+	 * @param event
+	 */
+	
 	@FXML
 	public void btnAccionAtrasCaja(ActionEvent event) {
 		try {
@@ -152,6 +163,10 @@ public class CajaController implements Initializable {
 		}
 	}
 
+	/**
+	 * este metodo  se llama al inicializar la interfaz de usuario y realiza varias configuraciones
+	 */
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
@@ -195,6 +210,12 @@ public class CajaController implements Initializable {
 
 	}
 
+	/**
+	 * los Metodos transferirAccionToEquippo y transferirAccionToCaja realizan acciones de transferencia entre la "caja" y el "equipo" de Pokémon
+	 * @param event
+	 */
+	
+	
 	// Event Listener on Button[#transferirToCaja].onAction
 	@FXML
 	public void transferirAccionToEquipo(ActionEvent event) {

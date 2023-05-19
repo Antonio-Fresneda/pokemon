@@ -39,6 +39,14 @@ public class InicioSesionController {
 	private Scene scene;
 	private Parent root;
 
+	/**
+	 * ESte metodo verifica si se han ingresado un nombre de usuario y una contraseña válidos. 
+	 * Luego, verifica los datos proporcionados llamando al método comprobarDatos() de la clase EntrenadorCrud
+	 * Si los datos son válidos y se puede realizar el inicio de sesión, carga la interfaz de usuario del menú principal desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * Si los datos son incorrectos, muestra un mensaje de error en el campo de texto labMensajeInCorrecto 
+	 * @param event
+	 */
+	
 	// Event Listener on Button[#btnLogin].onAction
 	@FXML
 	public void btnLogin(ActionEvent event) {
@@ -66,6 +74,14 @@ public class InicioSesionController {
 
 	}
 
+	/**
+	 * eSte metodo verifica si se han ingresado un nombre de usuario y una contraseña válidos. 
+	 * Luego, inserta los datos del nuevo entrenador llamando al método insertarDatos() de la clase EntrenadorCrud
+	 * Se genera un valor aleatorio para los pokedólares del entrenador y se muestra un mensaje indicando la cantidad otorgada en el campo de texto labMensajePokeDolar
+	 * 
+	 * @param event
+	 */
+	
 	// Event Listener on Button[#btnNuevo].onAction
 	@FXML
 	public void btnRegistrarse(ActionEvent event) {

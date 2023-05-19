@@ -226,6 +226,16 @@ public class CapturaController {
 
 	}
 
+	/**
+	 * 
+	 * este metodo se activa cuando se hace clic en el boton y captura un nuevo pokemon
+	 * sin asignarle un 'mote'
+	 * Se generan valores aleatorios para las diferentes estadísticas del Pokémon
+	 *  y se utiliza el método InsertarPokemon de la clase CapturaCrud para insertar el Pokémon en la base de datos.
+	 * @param event
+	 */
+	
+	
 	public void btnAccionNoMote(ActionEvent event) {
 		Pokemon p = new Pokemon();
 		int idEntrenador;
@@ -260,6 +270,12 @@ public class CapturaController {
 
 	}
 
+	/**
+	 * este metodo  también se activa al hacer clic en un botón y realiza una acción similar a btnAccionNoMote
+	 * pero esta vez se captura un nuevo Pokémon después de ingresar un "mote" a través de un campo de texto.
+	 * @param event
+	 */
+	
 	public void accionAceptar(ActionEvent event) {
 		Pokemon p = new Pokemon();
 		int idEntrenador;

@@ -66,6 +66,11 @@ public class EntrenarController {
 	
 	static LinkedList<Pokemon> coleccion;
 
+	/**
+	 * este metodo se utiliza para cargar los datos de los Pokémon en la tabla de entrenamiento.
+	 * @return
+	 */
+	
 	public ObservableList<Pokemon> metodo() {
 
 		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
@@ -79,6 +84,11 @@ public class EntrenarController {
 		return lista;
 	}
 
+	/**
+	 * Crea una instancia de la clase Entrenador y asigna la lista de Pokémon obtenida de PokemonCrud.getTodoPokemonEquipo() a la tabla.
+	 * establece las propiedades de cada columna de la tabla para que se muestren los atributos
+	 */
+	
 	public void initialize() {
 		// TODO Auto-generated method stub
 		e = new Entrenador();// Aqui teneis que pasarle el entranador logueado
@@ -97,6 +107,14 @@ public class EntrenarController {
 		velocidadEntrenar.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
 	}
 
+	/**
+	 * Los métodos accionPesado(), accionFurioso(), accionFuncional(), accionOnirico()
+	 *  se ejecutan cuando se hace clic en los botones correspondientes de entrenamiento.
+	 *  Obtienen el Pokémon seleccionado de la tabla y realizan el entrenamiento correspondiente llamando a los métodos
+	 *  entrenamientoPesado(), entrenamientoFurioso(), entrenamientoFuncional(), entrenamientoOnirico() de la clase Entrenador
+	 * @param event
+	 */
+	
 	public void accionPesado(ActionEvent event) {
 		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
@@ -107,6 +125,8 @@ public class EntrenarController {
 		System.out.println("El pokemon ha realizado un entrenamiento Pesado");
 	}
 
+	
+	
 	public void accionFurioso(ActionEvent event) {
 		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
@@ -118,6 +138,8 @@ public class EntrenarController {
 		System.out.println("El pokemon ha realizado un entrenamiento Furioso");
 	}
 
+	
+	
 	public void accionFuncional(ActionEvent event) {
 		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
@@ -128,6 +150,8 @@ public class EntrenarController {
 		System.out.println("El pokemon ha realizado un entrenamiento Funcional");
 	}
 
+	
+	
 	public void accionOnirico(ActionEvent event) {
 		ObservableList<Pokemon> pokemonSeleccionado = tablaEntrenar.getSelectionModel().getSelectedItems();
 
@@ -138,6 +162,11 @@ public class EntrenarController {
 		System.out.println("El pokemon ha realizado un entrenamiento Onirico");
 	}
 
+	/**
+	 * este metodo carga la interfaz de usuario del menú principal desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * @param event
+	 */
+	
 	public void accionAtrasEntrenar(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Menu.fxml")));

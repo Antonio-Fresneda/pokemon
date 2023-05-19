@@ -31,6 +31,13 @@ public class MenuController {
 	private Scene scene;
 	private Parent root;
 
+	/**
+	 * Este metodo Carga la interfaz de usuario de combate desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * 
+	 * @param event
+	 */
+	
+	
 	// Event Listener on Button[#btnCombate].onAction
 	@FXML
 	public void btnPonerCombate(ActionEvent event) {
@@ -46,6 +53,12 @@ public class MenuController {
 		}
 	}
 
+	/**
+	 * Este metodo Carga la interfaz de usuario de captura desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * 
+	 * @param event
+	 */
+	
 	// Event Listener on Button[#btnCaptura].onAction
 	@FXML
 	public void btnPonerCaptura(ActionEvent event) {
@@ -61,6 +74,13 @@ public class MenuController {
 		}
 	}
 
+	/**
+	 * ESte metodo se ejecuta cuando se hace clic en un botón para acceder a la tienda del juego.
+	 * Carga la interfaz de usuario de la tienda desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * 
+	 * @param event
+	 */
+	
 	// Event Listener on Button[#btnTienda].onAction
 	@FXML
 	public void btnPonerTienda(ActionEvent event) {
@@ -76,6 +96,12 @@ public class MenuController {
 		}
 	}
 
+	/**
+	 * Este metodo se ejecuta cuando se hace clic en un botón para acceder a la caja de almacenamiento de Pokémon. 
+	 * Carga la interfaz de usuario de la caja desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * @param event
+	 */
+	
 	public void btnAccionPonerCaja(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Caja.fxml")));
@@ -89,6 +115,12 @@ public class MenuController {
 		}
 	}
 
+	/**
+	 * Este metodo se ejecuta cuando se hace clic en un botón para acceder a la opción de entrenamiento en el juego. 
+	 * Carga la interfaz de usuario de entrenamiento desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * @param event
+	 */
+	
 	public void btnPonerEntrenar(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Entrenar.fxml")));
@@ -102,6 +134,12 @@ public class MenuController {
 		}
 	}
 
+	/**
+	 * este metuodo se ejecuta cuando se hace clic en un botón para acceder a la Pokédex en el juego.
+	 * Carga la interfaz de usuario de la Pokédex desde un archivo FXML y muestra esa escena en la ventana del juego.
+	 * @param event
+	 */
+	
 	public void btnPonerPokedex(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/Pokedex.fxml")));

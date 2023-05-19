@@ -20,7 +20,16 @@ public class TiendaController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-
+ 
+	/**
+	 * carga una nueva interfaz de usuario desde un archivo FXML que representa la pantalla del menú principal del juego.
+	 * Si se produce alguna excepción durante el proceso de carga de la interfaz de usuario,
+	 *  se imprime la traza de la excepción en la consola, utilizando el método printStackTrace() de la clase IOException.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
+	
 	// Event Listener on Button[#btnAtrasTienda].onAction
 	@FXML
 	public void btnAccionAtrasTienda(ActionEvent event) throws IOException {
