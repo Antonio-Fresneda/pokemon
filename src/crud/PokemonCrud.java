@@ -11,6 +11,13 @@ import pokemon.Pokemon;
 
 public class PokemonCrud {
 
+	/**
+	 *  este metodo devuelve una lista enlazada (LinkedList) de todos los Pokémon.
+	 *  Realiza una consulta a una base de datos MySQL para obtener los detalles de los Pokémon
+	 *  crea instancias de la clase Pokemon y los agrega a la lista enlazada. Luego, devuelve la lista con todos los Pokémon.
+	 * @return
+	 */
+	
 	public static LinkedList<Pokemon> getTodoPokemon() {
 
 		LinkedList<Pokemon> coleccion = new LinkedList<Pokemon>();
@@ -76,6 +83,13 @@ public class PokemonCrud {
 
 	}
 
+	/**
+	 * este metodo es similar al anterior, pero devuelve una lista enlazada de los Pokémon que están en el equipo.
+	 * También realiza una consulta a la base de datos y agrega los Pokémon correspondientes a la lista enlazada
+	 * Luego, devuelve la lista de Pokémon en el equipo.
+	 * @return
+	 */
+	
 	public static LinkedList<Pokemon> getTodoPokemonEquipo() {
 
 		LinkedList<Pokemon> coleccionEquipo = new LinkedList<Pokemon>();
@@ -141,6 +155,15 @@ public class PokemonCrud {
 
 	}
 
+	/**
+	 * Los métodos transferirPokemonEquipo() y transferirPokemonCaja() actualizan el estado de un Pokémon en la base de datos
+	 * Estos métodos cambian el valor del atributo "equipo" del Pokémon seleccionado a 1 o 2,
+	 * indicando si el Pokémon debe estar en el equipo o en la caja. 
+	 * Ambos métodos devuelven una instancia de la clase Pokemon, pero parece que no se utiliza
+	 * @param idPokemon
+	 * @return
+	 */
+	
 	public static Pokemon transferirPokemonEquipo(int idPokemon) {
 		Pokemon pokemon = new Pokemon();
 
@@ -222,6 +245,14 @@ public class PokemonCrud {
 		return pokemon;
 	}
 
+	/**
+	 *  este metodo devuelve una lista enlazada de los Pokémon en la Pokédex.
+	 *  Realiza una consulta a la base de datos para obtener el número de Pokédex, el nombre y los tipos de cada Pokémon
+	 *  crea instancias de la clase Pokemon y las agrega a la lista enlazada.
+	 *  Finalmente, devuelve la lista de Pokémon en la Pokédex
+	 * @return
+	 */
+	
 	public static LinkedList<Pokemon> mostrarPokedex() {
 
 		LinkedList<Pokemon> coleccionPokedex = new LinkedList<Pokemon>();

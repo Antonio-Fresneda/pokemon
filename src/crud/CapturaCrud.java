@@ -14,6 +14,13 @@ public class CapturaCrud {
 	public static int idPokemon;
 	public static String nombrePokemon;
 
+	/**
+	 * este metodo busca un Pokémon en la base de datos.
+	 * crea una declaración SQL para seleccionar aleatoriamente un Pokémon de la tabla "pokedex" y ejecuta la declaración
+	 * recorre el resultado y crea un objeto Pokemon con los datos obtenidos
+	 * @return
+	 */
+	
 	public static Pokemon buscarPokemon() {
 
 		Connection connection = null;
@@ -71,6 +78,27 @@ public class CapturaCrud {
 		return p;
 	}
 
+	/**
+	 * este metodo inserta un nuevo Pokémon en la base de datos
+	 * crea una declaración SQL para insertar los valores proporcionados en la tabla "pokemon" y ejecuta la declaración
+	 * Muestra un mensaje de éxito después de insertar el Pokémon y devuelve un objeto Pokemon.
+	 * @param idEntrenador
+	 * @param numPokedex
+	 * @param mote
+	 * @param sexo
+	 * @param nivel
+	 * @param vitalidad
+	 * @param ataque
+	 * @param defensa
+	 * @param ataEspecial
+	 * @param defEspecial
+	 * @param velocidad
+	 * @param estamina
+	 * @param fertilidad
+	 * @param equipo
+	 * @return
+	 */
+	
 	public static Pokemon InsertarPokemon(int idEntrenador, int numPokedex, String mote, char sexo, int nivel,
 			int vitalidad, int ataque, int defensa, int ataEspecial, int defEspecial, int velocidad, int estamina,
 			int fertilidad, int equipo) {
@@ -119,6 +147,15 @@ public class CapturaCrud {
 
 	}
 
+	/**
+	 * este metodo asigna un mote a un Pokémon existente en la base de datos
+	 * crea una declaración SQL para actualizar el campo "mote" del Pokémon con el mote proporcionado y ejecuta la declaración
+	 * 
+	 * @param mote
+	 * @param idPokemon
+	 * @return
+	 */
+	
 	public static Pokemon ponerMote(String mote, int idPokemon) {
 
 		Pokemon pokemon = new Pokemon();

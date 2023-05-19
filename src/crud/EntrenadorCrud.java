@@ -10,6 +10,13 @@ import java.sql.Statement;
 public class EntrenadorCrud {
 
 	public static boolean cambioDeVentana;
+	
+	/**
+	 * este metodo inserta nuevos datos de un entrenador en la base de datos
+	 * @param nombre
+	 * @param contraseña
+	 * @param pokedolar
+	 */
 
 	public static void insertarDatos(String nombre, String contraseña, int pokedolar) {
 
@@ -52,6 +59,14 @@ public class EntrenadorCrud {
 		}
 	}
 
+	/**
+	 * este metodo verifica los datos de inicio de sesión de un entrenador
+	 * Establece una conexión con la base de datos, crea una declaración SQL para buscar el nombre del entrenador proporcionado en la tabla "entrenador"
+	 * 
+	 * @param nombre
+	 * @param contraseña
+	 */
+	
 	public static void comprobarDatos(String nombre, String contraseña) {
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -102,16 +117,29 @@ public class EntrenadorCrud {
 		}
 	}
 
+	/**
+	 * este metodo devuelve el valor actual de la variable de cambio de ventana.
+	 * @return
+	 */
 	public static boolean obtenerCambioDeVentana() {
 
 		return cambioDeVentana;
 	}
 
+	/**
+	 * este metodo establece la variable de cambio de ventana en verdadero.
+	 */
+	
 	public static void ValorCambioDeVentana() {
 
 		cambioDeVentana = true;
 	}
 
+	/**
+	 * este metodo recupera los datos de un entrenador de la base de datos. 
+	 * Establece una conexión con la base de datos, crea una declaración SQL para buscar el nombre del entrenador en la tabla "entrenador" y ejecuta la declaración
+	 */
+	
 	public static void getEntrenador() {
 		Connection connection = null;
 		PreparedStatement statement = null;
