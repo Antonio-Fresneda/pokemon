@@ -76,6 +76,7 @@ public class CapturaController {
 		PreguntaMote.setVisible(false);
 		pokeball.setVisible(false);
 		btnAceptar.setVisible(false);
+		btnCapturar.setVisible(false);
 	}
 
 	/**
@@ -108,6 +109,7 @@ public class CapturaController {
 		PreguntaMote.setVisible(false);
 		pokeball.setVisible(false);
 		txtAccion.setVisible(true);
+		btnCapturar.setVisible(true);
 
 		txtAccion.setText("HAS ENCONTRADO UN " + CapturaCrud.nombrePokemon + " SALVAJE ");
 
@@ -162,19 +164,11 @@ public class CapturaController {
 				imgPokemonEncontrado.setVisible(false);
 				pokeball.setVisible(true);
 				txtAccion.setVisible(false);
+				btnCapturar.setVisible(false);
 
 				Logger.write("Has capturado un " + CapturaCrud.nombrePokemon + " salvaje " + simpleDateFormat.format(d)
 						+ ".log");
 
-//				p = CapturaCrud.InsertarPokemon(1, numPokedex = CapturaCrud.numPokedex, null, sexo = 'H', 1,
-//						vitalidad = (int) (Math.random() * ((20 - 1) + 1)) + 1,
-//						ataque = (int) (Math.random() * ((20 - 1) + 1)),
-//						defensa = (int) (Math.random() * ((20 - 1) + 1)),
-//						ataEspecial = (int) (Math.random() * ((20 - 1) + 1)),
-//						defEspecial = (int) (Math.random() * ((20 - 1) + 1)),
-//						velocidad = (int) (Math.random() * ((20 - 1) + 1)),
-//						estamina = (int) (Math.random() * ((20 - 1) + 1)),
-//						fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
 
 			} else {
 				System.out.println("El pokemon se ha escapado");
