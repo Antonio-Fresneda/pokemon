@@ -378,8 +378,8 @@ public class Pokemon {
 	 * @param velocidad
 	 * @param estamina
 	 */
-	public static void subirNivel() {
-			Pokemon p=new Pokemon();
+	public static void subirNivel(Pokemon p) {
+			
 		if (p.experiencia == 10 * p.nivel) {
 			p.nivel++;
 			p.vitalidad = p.vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
@@ -481,8 +481,8 @@ public class Pokemon {
 	 * 
 	 * @param aumentoEstadisticas
 	 */
-	public void aumentarEstadisticas() {
-		Pokemon p=new Pokemon();
+	public void aumentarEstadisticas(Pokemon p) {
+		
 		
 		p.vitalidad = p.vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
 		p.ataque = p.ataque + (int) Math.floor(Math.random() * (1 - 5) + 5);
