@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class EntrenadorCrud {
-	
+
 	public static boolean cambioDeVentana;
 
 	public static void insertarDatos(String nombre, String contraseña, int pokedolar) {
@@ -109,6 +109,41 @@ public class EntrenadorCrud {
 
 	public static void ValorCambioDeVentana() {
 
-		cambioDeVentana =true;
+		cambioDeVentana = true;
+	}
+
+	public static void getEntrenador() {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		String url = "jdbc:mysql://localhost:3306/pokemon";
+		String login = "root";
+		String password = "";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(url, login, password);
+
+			String sql = "SELECT id_entrenador nom_entrenador, PASSWORD FROM entrenador WHERE nom_entrenador = ?";
+			statement = connection.prepareStatement(sql);
+//			statement.setString(1, nombre);
+
+			ResultSet resultSet = statement.executeQuery();
+			
+
+			
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

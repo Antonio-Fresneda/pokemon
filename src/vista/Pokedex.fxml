@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PokedexController">
+   <children>
+      <ImageView fitHeight="1176.0" fitWidth="568.0" layoutX="252.0" layoutY="-295.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../resources/img/desktop-wallpaper-pokedex-template-by-hatirem-pokemon-pokedex-background.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tablaPokedex" layoutX="231.0" layoutY="29.0" prefHeight="473.0" prefWidth="619.0">
+        <columns>
+          <TableColumn fx:id="numeroPokedex" prefWidth="102.0" text="NUMERO " />
+          <TableColumn fx:id="nombrePokedex" prefWidth="147.0" text="NOMBRE" />
+            <TableColumn fx:id="tipo1Pokedex" prefWidth="173.0" text="TIPO 1" />
+            <TableColumn fx:id="tipo2Pokedex" prefWidth="196.0" text="TIPO 2" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAtrasPokedex" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAccionAtrasPokedex" prefHeight="44.0" prefWidth="111.0" text="ATRAS" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

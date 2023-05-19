@@ -63,6 +63,7 @@ public class EntrenarController {
 	private Stage stage;
 
 	private Entrenador e;
+	
 	static LinkedList<Pokemon> coleccion;
 
 	public ObservableList<Pokemon> metodo() {

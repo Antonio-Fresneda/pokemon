@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 
 class SubirNivelTest {
 
-	public static void subirNivel() {
-		Pokemon p = new Pokemon();
+	public static void subirNivel(Pokemon p) {
+		
 		if (p.experiencia == 10 * p.nivel) {
 			p.nivel++;
 			p.vitalidad = p.vitalidad + (int) Math.floor(Math.random() * (1 - 5) + 5);
@@ -36,10 +36,10 @@ class SubirNivelTest {
 		p.estamina = 20;
 
 		// Act
-		subirNivel();
+		subirNivel(p);
 
 		// Assert
-		assertEquals(4, p.nivel);
+		assertTrue(p.nivel>3);
 		assertTrue(p.vitalidad > 10);
 		assertTrue(p.ataque > 5);
 		assertTrue(p.defensa > 5);

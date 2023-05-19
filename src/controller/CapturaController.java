@@ -256,6 +256,7 @@ public class CapturaController {
 		pokeball.setVisible(false);
 		txtParaMote.setVisible(false);
 		btnAceptar.setVisible(false);
+		pokemonCapturado.setVisible(false);
 
 	}
 
@@ -289,6 +290,7 @@ public class CapturaController {
 		pokeball.setVisible(false);
 		txtParaMote.setVisible(false);
 		btnAceptar.setVisible(false);
+		pokemonCapturado.setVisible(false);
 
 	}
 
